@@ -72,3 +72,10 @@ strictly prohibited. Such instances of academic dishonesty will be reported to
 the appropriate personnel and officials. Please refer to the most recent version
 of the College of Saint Benedict & Saint John's University's Academic Catalog
 for further relevant information and guidelines on this matter.
+
+### Extra Help
+This is a challenging course and exposes students to several new algorithmic
+concepts and programming environments in a relatively short amount of time.
+Students are strongly encouraged to seek help from the instructor on course
+material when needed. Please contact me during office hours or by appointment to
+discuss a homework problem or any aspect of the course.

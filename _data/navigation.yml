@@ -1,16 +1,8 @@
-main:
-  - title: "Quick-Start Guide"
-    url: /howto/guick-start-guide/
-  - title: "Modules"
-    url: /modules/
-  - title: "Exercises"
-    url: /exercises/
-  - title: "HOWTO"
-    url: /howto/
-
 docs:
   - title: "Logistics"
     children:
+    - title: "Instructor"
+      url: http://www.users.csbsju.edu/~jiverson002/
     - title: "Syllabus"
       url: /syllabus/
     - title: "Schedule"
@@ -25,6 +17,8 @@ docs:
       url: /exercises/
   - title: "XXX"
     children:
+    - title: "Quick-Start Guide"
+      url: /howto/guick-start-guide/
     - title: "HOWTO"
       url: /howto/
     - title: "FAQs"
