@@ -1,7 +1,7 @@
 docs:
   - title: "Logistics"
     children:
-    - title: "*Instructor*"
+    - title: 'Instructor&nbsp;&nbsp;<i class="fa fa-fw fa-share" aria-hidden=true></i>'
       url: http://www.users.csbsju.edu/~jiverson002/
     - title: "Syllabus"
       url: /syllabus/
