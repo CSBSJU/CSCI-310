@@ -1,0 +1,25 @@
+title: CSCI/310
+title_separator: "-"
+author: CSBSJU
+description: Course materials for CSCI 310.
+lang: en-US
+timezone: UTC
+exclude:
+  - AUTHORS
+  - LICENSE
+  - LICENSE.MIT
+
+plugins:
+  - jekyll-remote-theme
+  
+remote_theme: mmistakes/minimal-mistakes
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: single
+      read_time: false
+      author_profile: false
+      share: false
+      comments: false
