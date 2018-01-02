@@ -1,13 +1,13 @@
 docs:
   - title: "Logistics"
     children:
-    - title: 'Instructor&nbsp;&nbsp;<i class="fa fa-fw fa-share" aria-hidden=true></i>'
+    - title: 'Instructor <span class="fa fa-share-square" aria-hidden=true></span>'
       url: http://www.users.csbsju.edu/~jiverson002/
     - title: "Syllabus"
       url: /syllabus/
     - title: "Schedule"
       url: /schedule/
-    - title: "*Grades*"
+    - title: 'Grades <span class="fa fa-share-square" aria-hidden=true></span>'
       url: https://csbsju.instructure.com/courses/9216/grades
   - title: "Course material"
     children:
