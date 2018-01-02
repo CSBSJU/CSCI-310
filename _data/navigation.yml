@@ -23,5 +23,9 @@ docs:
       url: /modules/
     - title: "Exercises"
       url: /exercises/
-  - title: "FAQs"
-    url: /faqs/
+  - title: "XXX"
+    children:
+    - title: "HOWTO"
+      url: /howto/
+    - title: "FAQs"
+      url: /faqs/
