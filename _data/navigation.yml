@@ -1,9 +1,27 @@
 main:
-  - title: "Syllabus"
-    url: /syllabus/
+  - title: "Quick-Start Guide"
+    url: /howto/guick-start-guide/
   - title: "Modules"
     url: /modules/
   - title: "Exercises"
     url: /exercises/
   - title: "HOWTO"
     url: /howto/
+
+docs:
+  - title: "Logistics"
+    children:
+    - title: "Syllabus"
+      url: /syllabus/
+    - title: "Schedule"
+      url: /schedule/
+    - title: "Grades"
+      url: https://csbsju.instructure.com/courses/7664/grades
+  - title: "Course material"
+    children:
+    - title: "Modules"
+      url: /modules/
+    - title: "Exercises"
+      url: /exercises/
+  - title: "FAQs"
+    url: /faqs/
