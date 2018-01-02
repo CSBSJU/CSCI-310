@@ -1,6 +1,6 @@
 ## To clone
 ```
-git clone --recursive https://github.com/CSBSJU/CSCI-160
+git clone --recursive https://github.com/CSBSJU/CSCI-310
 ```
 
 ## To update
