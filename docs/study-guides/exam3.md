@@ -1,6 +1,6 @@
 ---
 title: "Exam 3 study guide"
-permalink: /docs/study-guides/exam3/
+permalink: /study-guides/exam3/
 ---
 
 ## Exam 3 study guide
