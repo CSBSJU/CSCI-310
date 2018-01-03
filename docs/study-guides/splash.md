@@ -1,6 +1,5 @@
 ---
 title: "Study guides"
-layout: splash
 permalink: /study-guides/
 sidebar:
   nav: "docs"
