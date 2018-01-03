@@ -53,20 +53,20 @@ permalink: /schedule/
 |      41 | TBD                                           |           | [EX8] due |
 |         | [Final exam]                                  |           |           |
 
-[Exam 1]:     /study-guides/exam1/
-[Exam 2]:     /study-guides/exam2/
-[Exam 3]:     /study-guides/exam3/
-[Final exam]: /study-guides/final/
-[EX1]: /exercises/1/
-[EX2]: /exercises/2/
-[EX3]: /exercises/XXX
-[EX4]: /exercises/XXX
-[EX5]: /exercises/XXX
-[EX6]: /exercises/XXX
-[EX7]: /exercises/XXX
-[EX8]: /exercises/XXX
-[HOL6]: /assets/slides/hol6/slides-final.pdf
-[ASM5]: /assets/slides/asm5/slides-final.pdf
-[OS4]:  /assets/slides/os4/slides-final.pdf
-[ISA3]: /assets/slides/isa3/slides-final.pdf
-[LG1]:  /assets/slides/lg1/slides-final.pdf
+[Exam 1]:     ../study-guides/exam1/
+[Exam 2]:     ../study-guides/exam2/
+[Exam 3]:     ../study-guides/exam3/
+[Final exam]: ../study-guides/final/
+[EX1]: ../exercises/1/
+[EX2]: ../exercises/2/
+[EX3]: ../exercises/XXX
+[EX4]: ../exercises/XXX
+[EX5]: ../exercises/XXX
+[EX6]: ../exercises/XXX
+[EX7]: ../exercises/XXX
+[EX8]: ../exercises/XXX
+[HOL6]: ../assets/slides/hol6/slides-final.pdf
+[ASM5]: ../assets/slides/asm5/slides-final.pdf
+[OS4]:  ../assets/slides/os4/slides-final.pdf
+[ISA3]: ../assets/slides/isa3/slides-final.pdf
+[LG1]:  ../assets/slides/lg1/slides-final.pdf
