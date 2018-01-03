@@ -34,7 +34,7 @@ permalink: /schedule/
 |      24 | .                                             |           | [EX5] due |
 |      25 | .                                             | 6.5       |           |
 |      26 | .                                             |           |           |
-|         | **Exam 2**                                    |           |           |
+|         | [Exam 2]                                      |           |           |
 |      27 | .                                             |           |           |
 |      28 | OS4: Process management                       | 8.1-8.2   |           |
 |      29 | .                                             | 8.3       |           |
@@ -53,6 +53,7 @@ permalink: /schedule/
 |      41 | TBD                                           |           | [EX8] due |
 
 [Exam 1]: ../docs/study-guides/exam1/
+[Exam 2]: ../docs/study-guides/exam2/
 [EX1]: ../exercises/XXX
 [EX2]: ../exercises/XXX
 [EX3]: ../exercises/XXX
