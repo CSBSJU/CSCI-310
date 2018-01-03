@@ -34,8 +34,6 @@ Solve the following problems
       ```c
       // printf
       #include <stdio.h>
-      // EXIT_SUCCESS
-      #include <stdlib.h>
 
       int main (void) {
         char c;
@@ -47,7 +45,7 @@ Solve the following problems
         }
         printf("%c\n", c);
 
-        return EXIT_SUCCESS;
+        return 0;
       }
       ```
    1. (Extra credit) Modify the program to print the alphabet of a language of
