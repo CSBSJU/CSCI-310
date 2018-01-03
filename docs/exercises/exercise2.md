@@ -13,50 +13,50 @@ Solve the following problems
 
 1. Using the 8-bit floating-point design (excess 3) we used in class, find the
    floating-point representation for each of the following numbers:
-  a. 4.6
-  a. 4.55
-  a. Do you find the results to be logical (i.e. do they reflect the actual
-     decimal values)? Can you justify what is going on?
+   1. 4.6
+   1. 4.55
+   1. Do you find the results to be logical (i.e. do they reflect the actual
+      decimal values)? Can you justify what is going on?
 
 1. Using the 8-bit floating-point design (excess 3) we used in class, can you
    figure out the exponent and mantissa portions of the floating-point number
    representation for any power of 2 decimal normalized number such as 2n?
    Justify your answer. (Recall that any floating-point number can be formatted
-   as +/&minus; 1.(mantissa) &times; 2<sup>exponent<sup>).
-  a. mantissa = ???
-  a. exponent = ???
+   as +/&minus; 1.(mantissa) &times; 2<sup>exponent</sup>).
+   1. mantissa = ???
+   1. exponent = ???
 
 1. The following simple program displays all characters in the standard ASCII
    table.
-  a. Modify the program to display two lines, one containing all upper case
-     letters in the English alphabet and one containing all lower case letters.
-     You must use hexadecimal codes.
-```c
-// printf
-#include <stdio.h>
-// EXIT_SUCCESS
-#include <stdlib.h>
+   1. Modify the program to display two lines, one containing all upper case
+      letters in the English alphabet and one containing all lower case letters.
+      You MUST use hexadecimal codes.
+      ```c
+      // printf
+      #include <stdio.h>
+      // EXIT_SUCCESS
+      #include <stdlib.h>
 
-int main (void) {
-  char c;
+      int main (void) {
+        char c;
 
-  /* Starting a character with \x means that we're providing the hexadecimal
-   * value of the intended character from the ASCII table. */
-  for (c='\x00'; c<'\x7F'; c++) {
-    printf("%c ", c);
-  }
-  printf("%c\n", c);
+        /* Starting a character with \x means that we're providing the hexadecimal
+         * value of the intended character from the ASCII table. */
+        for (c='\x00'; c<'\x7F'; c++) {
+          printf("%c ", c);
+        }
+        printf("%c\n", c);
 
-  return EXIT_SUCCESS;
-}
-```
-  a. (Extra credit) Modify the program to print the alphabet of a language of
-     your choosing (other than Latin/English). You’ll need to do some research
-     to figure out how to use Unicode instead of ASCII in C++ (hint: changing
-     locale might help).
+        return EXIT_SUCCESS;
+      }
+      ```
+   1. (Extra credit) Modify the program to print the alphabet of a language of
+      your choosing (other than Latin/English). You’ll need to do some research
+      to figure out how to use Unicode instead of ASCII in C (hint: changing
+      locale might help).
 
-1. Go to the Web page:
-   http://www.csbsju.edu/computerscience/curriculum/launch/default.htm and
+1. Go to [this](http://www.csbsju.edu/computerscience/curriculum/launch/default.htm) webpage
+   and
    launch the Data Representation program (Click on it and then click Open). If
    you’re working on Linux instead of Windows, go to
    Applications\>CSBSJU\>Computer Science\>Launch Page Apps\>Data Representation
@@ -91,23 +91,23 @@ int main (void) {
    to the one discussion in class. I suggest you try to figure out the location
    of the sign bit first, followed by the number of bits and the location of
    exponent bits (Hint: examine powers of 2 as such numbers always have a zero
-   significand/mantissa !). The remaining bits should be the
+   significand/mantissa!). The remaining bits should be the
    significand/mantissa bits.
 
    ANSWER THE FOLLOWING QUESTIONS WITH JUSTIFICATIONS. Answers alone are not
    acceptable.
-  a. Find the location of the sign bit:
-  a. Find the number and location of the exponent bits:
-  a. Find the number of location of the mantissa bits:
-  a. What is the excess value used in this design?
-  a. Show the final design for the number indicating the sign bit with an S,
-     each exponent bit with an E and each mantissa bit with an M such as [S] [E
-     E E] [M M M M] for our class example.
-  a. Find the bit pattern (or patterns if more than one exist) used for the
-     following special values:
-    * Zero:
-    * Positive infinity:
-    * Negative infinity:
-    * Not a number (NaN):
-  a. Find the range in binary AND in decimal for positive normalized numbers
-  a. Find the range in binary AND in decimal for positive denormalized numbers
+   1. Find the location of the sign bit:
+   1. Find the number and location of the exponent bits:
+   1. Find the number of location of the mantissa bits:
+   1. What is the excess value used in this design?
+   1. Show the final design for the number indicating the sign bit with an S,
+      each exponent bit with an E and each mantissa bit with an M such as [S] [E
+      E E] [M M M M] for our class example.
+   1. Find the bit pattern (or patterns if more than one exist) used for the
+      following special values:
+      * Zero:
+      * Positive infinity:
+      * Negative infinity:
+      * Not a number (NaN):
+   1. Find the range in binary AND in decimal for positive normalized numbers
+   1. Find the range in binary AND in decimal for positive denormalized numbers
