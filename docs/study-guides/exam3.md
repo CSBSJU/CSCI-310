@@ -36,10 +36,10 @@ permalink: /docs/study-guides/exam3/
     * passing parameters by value and by reference
     * recursion
     * **arrays (local, global, and parameters)**
-    * **```switch``` statements**
+    * ```switch``` **statements**
     * **pointers (local, global, and parameters)**
     * **dynamic memory allocation via new operator**
-    * **```structs``` (local, global, and via local as well as global pointers)**
+    * ```structs``` **(local, global, and via local as well as global pointers)**
     * **linked data structures**
   * **Pep/9 OS (understand Pep/9 OS code)**
     * **RAM**
