@@ -5,67 +5,57 @@ permalink: /schedule/
 
 ## Course schedule
 
-| Lecture | Topic                        | Reading      | Notes  |
-| ------- | ---------------------------- | ------------ | ------ |
-|       1 | [Introduction to CSCI 160]   |              |        |
-|       2 | [Introduction to GNU/Linux]  |              |        |
-|       3 | [Introduction to Java]       |            4 |        |
-|       4 | [Using methods]              |              |        |
-|       5 | .                            |              |        |
-|       6 | .                            |              | Quiz 1 |
-|       7 | [Using objects]              |      2.1-2.3 |        |
-|       8 | .                            |      2.4,2.8 |        |
-|       9 | .                            |      2.5-2.6 |        |
-|      10 | [Decisions]                  |            5 |        |
-|      11 | [Iterations]                 |            6 |        |
-|      12 | .                            |          5,6 | Quiz 2 |
-|      13 | [Arrays]                     |      7.1-7.2 |        |
-|      14 | .                            |      7.3-7.6 |        |
-|      15 | .                            |          7.7 |        |
-|         | **Exam 1**                   |              |        |
-|      16 | [Classes]                    |      3.1-3.3 |        |
-|      17 | .                            | 3.6-3.7,8,12 |        |
-|      18 | [Inheritance & polymorphism] |      9.1-9.2 |        |
-|      19 | .                            |          9.3 |        |
-|      20 | .                            |      9.4-9.5 | Quiz 3 |
-|      21 | [Interfaces]                 |    10.1-10.2 |        |
-|      22 | .                            |    10.3-10.5 |        |
-|      23 | [File I/O]                   |    11.1-11.2 |        |
-|      24 | .                            |         11.3 |        |
-|      25 | [Exceptions]                 |    11.4-11.5 | Quiz 4 |
-|      26 | [Recursion]                  |              |        |
-|      27 | .                            |              |        |
-|      28 | .                            |              |        |
-|      29 | [Searching]                  |    14.6-14.7 |        |
-|      30 | [Sorting]                    |    14.1-14.5 |        |
-|      31 | .                            |         14.8 | Quiz 5 |
-|      32 | [Java collections]           |    15.1-15.2 |        |
-|      33 | .                            |    15.3-15.4 |        |
-|      34 | .                            |    15.5-15.6 |        |
-|         | **Exam 2**                   |              |        |
-|      35 | [Advanced topics]            |              |        |
-|      36 | .                            |              |        |
-|      37 | .                            |              |        |
-|      38 | .                            |              |        |
-|      39 | .                            |              |        |
-|      40 | .                            |              |        |
-|      41 | .                            |              | Quiz 6 |
+| Lecture | Topic                                         | Reading   | Notes     |
+| ------- | --------------------------------------------- | --------- | --------- |
+|       1 | Introduction to CSCI 310                      |           |           |
+|       2 | XXX                                           |           |           |
+|       3 | Computer systems                              | 1.1-1.3   |           |
+|       4 | .                                             |           |           |
+|       5 | HOL6: C (variables, flow control, functions)  | 2.1-2.3   |           |
+|       6 | HOL6: C (recursion)                           | 2.4       |           |
+|       7 | HOL6: C (dynamic memory allocation)           | 2.5       |           |
+|       8 | .                                             |           |           |
+|       9 | ISA3: Data rep (integers)                     | 3.1-3.2   |           |
+|      10 | ISA3: Data rep (binary ops, hex, ASCII, etc.) | 3.3-3.4   | [EX1] due |
+|      11 | ISA3: Data rep (floating-point)               | 3.5       |           |
+|      12 | ISA3: Computer arch (hardware & instructions) | 4.1-4.2   |           |
+|      13 | .                                             | 4.3       |           |
+|      14 | .                                             | 4.4       | [EX2] due |
+|      15 | ASM5: Assembly programming                    | 5.1       |           |
+|      16 | .                                             | 5.2       |           |
+|      17 | .                                             | 5.3-5.4   | [EX3] due |
+|      18 | .                                             |           |           |
+|      19 | .                                             | 6.1       |           |
+|         | **Exam 1**                                    |           |           |
+|      20 | ASM5: Compiling                               | 6.2       |           |
+|      21 | .                                             | 6.3       | [EX4] due |
+|      22 | .                                             |           |           |
+|      23 | .                                             | 6.4       |           |
+|      24 | .                                             |           | [EX5] due |
+|      25 | .                                             | 6.5       |           |
+|      26 | .                                             |           |           |
+|         | **Exam 2**                                    |           |           |
+|      27 | .                                             |           |           |
+|      28 | OS4: Process management                       | 8.1-8.2   |           |
+|      29 | .                                             | 8.3       |           |
+|      30 | .                                             | 8.4       |           |
+|      31 | .                                             |           | [EX6] due |
+|      32 | OS4: Storage management                       | 9.1-9.2   |           |
+|      33 | .                                             | 9.3       |           |
+|      34 | .                                             |           |           |
+|      35 | LG1: Combinational circuits                   | 10.1-10.2 |           |
+|      36 | .                                             | 10.3      | [EX7] due |
+|      37 | .                                             | 10.4      |           |
+|      38 | LG1: Sequential circuits                      | 11.1,11.3 |           |
+|      39 | .                                             |           |           |
+|      40 | .                                             |           |           |
+|      41 | TBD                                           |           | [EX8] due |
 
-[Introduction to CSCI 160]:   ../modules/00%20introduction
-[Introduction to GNU/Linux]:  ../modules/00%20introduction
-[Introduction to Java]:       ../modules/00%20introduction
-[Using methods]:              ../modules/01%20methods
-[Using objects]:              ../modules/02%20objects
-[Decisions]:                  ../modules/03%20decisions
-[Iterations]:                 ../modules/04%20iterations
-[Arrays]:                     ../modules/05%20arrays
-[Classes]:                    ../modules/06%20classes
-[Inheritance & polymorphism]: ../modules/07%20inheritance
-[Interfaces]:                 ../modules/08%20interfaces
-[File I/O]:                   ../modules/09%20io
-[Exceptions]:                 ../modules/10%20exceptions
-[Recursion]:                  ../modules/11%20recursion
-[Searching]:                  ../modules/12%20searching
-[Sorting]:                    ../modules/13%20sorting
-[Java collections]:           ../modules/14%20collections
-[Advanced topics]:            ../modules/15%20advanced
+[EX1]: ../exercises/XXX
+[EX2]: ../exercises/XXX
+[EX3]: ../exercises/XXX
+[EX4]: ../exercises/XXX
+[EX5]: ../exercises/XXX
+[EX6]: ../exercises/XXX
+[EX7]: ../exercises/XXX
+[EX8]: ../exercises/XXX
