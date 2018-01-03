@@ -16,7 +16,7 @@ docs:
     - title: "Exercises"
       url: /exercises/
     - title: "Study guides"
-      url: /docs/study-guides/
+      url: /study-guides/
   - title: "XXX"
     children:
     - title: "Quick-Start Guide"
