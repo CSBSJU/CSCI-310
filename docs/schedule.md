@@ -11,7 +11,7 @@ permalink: /schedule/
 |       2 | XXX                                             |           |           |
 |       3 | Computer systems                                | 1.1-1.3   |           |
 |       4 | .                                               |           |           |
-|       5 | [HOL6]: C (variables, flow control, functions)  | 2.1-2.3   |           |
+|       5 | HOL6: C (variables, flow control, functions)    | 2.1-2.3   | [<span class="fa fa-file-pdf-o" aria-hidden="true"></span>][HOL6] |
 |       6 | [HOL6]: C (recursion)                           | 2.4       |           |
 |       7 | [HOL6]: C (dynamic memory allocation)           | 2.5       |           |
 |       8 | .                                               |           |           |
