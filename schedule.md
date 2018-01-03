@@ -26,7 +26,7 @@ permalink: /schedule/
 |      17 | .                                             | 5.3-5.4   | [EX3] due |
 |      18 | .                                             |           |           |
 |      19 | .                                             | 6.1       |           |
-|         | **Exam 1**                                    |           |           |
+|         | [Exam 1]                                      |           |           |
 |      20 | ASM5: Compiling                               | 6.2       |           |
 |      21 | .                                             | 6.3       | [EX4] due |
 |      22 | .                                             |           |           |
@@ -52,6 +52,7 @@ permalink: /schedule/
 |      40 | .                                             |           |           |
 |      41 | TBD                                           |           | [EX8] due |
 
+[Exam 1]: ../docs/exam1/
 [EX1]: ../exercises/XXX
 [EX2]: ../exercises/XXX
 [EX3]: ../exercises/XXX
