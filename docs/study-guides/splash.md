@@ -3,6 +3,6 @@ title: "Study guides"
 permalink: /study-guides/
 ---
 
-#### &nbsp;
+&nbsp;
 
 {% include nav_list nav="study-guides" %}
