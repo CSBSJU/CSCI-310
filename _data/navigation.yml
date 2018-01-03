@@ -17,11 +17,11 @@ docs:
       url: /exercises/
     - title: "Study guides"
       url: /study-guides/
-  - title: "XXX"
-    children:
-    - title: "Quick-Start Guide"
-      url: /howto/guick-start-guide/
-    - title: "HOWTO"
-      url: /howto/
-    - title: "FAQs"
-      url: /faqs/
+#  - title: "XXX"
+#    children:
+#    - title: "Quick-Start Guide"
+#      url: /howto/guick-start-guide/
+#    - title: "HOWTO"
+#      url: /howto/
+#    - title: "FAQs"
+#      url: /faqs/
