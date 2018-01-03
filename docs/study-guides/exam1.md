@@ -23,7 +23,7 @@ permalink: /docs/study-guides/exam1/
 * **Chapter 3**
    * Integers
       * Range (min, max) for an N-bit signed/unsigned number
-      * Convert among all the numbering systems discussed (decimal, binary, hexadecimal, etc., ...)
+      * Convert among all the numbering systems discussed (decimal, binary, hexadecimal, etc.)
       * 2's complement notation for signed numbers
       * Perform arithmetic/logical operations: **ADD**, **SUBTRACT**, **NEGATE**, **NOT**, **AND**, **OR**, **NOT**, **XOR**, <span class="fa fa-long-arrow-right"></span> (i.e. implies), etc.
       * Status bits (**N**, **Z**, **V**, **C**)
