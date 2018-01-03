@@ -27,7 +27,6 @@ docs:
       url: /faqs/
 
 study-guides:
-  - title: "Study guides"
     children:
       - title: "Exam 1"
         url: /study-guides/exam1/
