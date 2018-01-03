@@ -3,51 +3,54 @@ title: "Syllabus"
 permalink: /syllabus/
 ---
 
+### Textbook
+(*Required*) Computer Systems, Fifth Edition, J. Stanley Warford, published by
+Jones and Bartlett Learning
+
 ### Course overview & objectives
-Programming is at the core of computer science. Although most of the work done
-by computer scientists is not programming per se, that work is almost always
-under-girded by a knowledge of programming. It is essential that both
-programmers and computer scientists learn to program and to do so well. This
-course will provide students with the opportunity to learn the fundamental
-concepts and techniques of object-oriented computer programming. The
-object-oriented programming paradigm promises to improve the quality and
-reliability of computer software. In this course we will use the Java language,
-which is currently the most popular object-oriented language. Upon successful
-completion of the course, students will be able to:
-* write well-designed Java programs for small-scale problems,
-* identify appropriate object classes for solving a given problem, and
-* write good documentation for programs.
+This course is an introduction to computer systems and architecture. Topics
+covered include digital systems, machine level data representation, processor
+design, assembly-level machine organization, memory systems, system control,
+organization of operating systems, concurrency, and scheduling. We will focus on
+the layered architecture of computer systems in order to understand how parts
+operate and cooperate to make an integrated machine. An important outcome of
+this course is helping students become more informed programmers and computer
+scientists. Students who complete the class successfully should be able to:
+* Identify and describe the key components of a computer system and how the
+  components interact. 
+* Explain the layered architecture of computer systems and how each layer
+  relates to the others. 
+* Explain how data and programs are represented inside computers. 
+* Convert data from one representation to another. 
+* Read, write, and debug assembly language and machine language programs. 
+* Use logic equations, tables, and circuits to make the connection between
+  software and hardware. 
+* Explain the role of operating systems in managing storage, processes and
+  programs.
 
 ### Course requirements
-Labs and lab attendance: There will be two scheduled 80-minute labs each cycle.
-In most cases, each lab will consist of prelab exercises to be completed before
-the scheduled lab time and selected exercises to be completed during the lab
-period. Students who complete the lab exercises during the lab period will
-demonstrate their completion to the instructor or TA before leaving the lab.
-Those in attendance who do not complete the exercises during the allotted lab
-time may still earn full credit by showing their solutions to their lab
-instructor or TA at the beginning of the next scheduled Tuesday lab (in effect,
-lab exercises are due on the Tuesday following the lab). Attendance at all labs
-is required and will be enforced. Each unexcused lab absence will result in the
-loss of points incurred by not completing the lab on time. (i.e., no credit can
-be earned for unexcused absences). A total of 3 unexcused lab absences will
-automatically result in a failing grade. Valid excuses include things like
-documented illness or death in your family, prearranged absences because of
-varsity athletic events (NOT practices) or other performances. Habitual lateness
-in attending labs will be treated as absences.
+**Attendance:** Class attendance is required. Each unexcused absence will result
+in a 1% reduction in the final grade for the course. Students who miss more than
+three classes without a documented excuse WILL RECEIVE A FAILING GRADE on the
+course. Valid excuses include things like documented illness or death in your
+family, prearranged absences because of varsity athletic events (NOT practices)
+or other performances. Habitual lateness in attending classes will be treated as
+absences. 
 
-**Assignments:** There will be several assignments during the course, which
-include assigned readings, in-class exercises, and homework. While labs are
-intended to be collaborative in nature, unless noted otherwise, assignments are
-to be your own work — i.e., INDIVIDUAL WORK.
+**Assignments:** There will be eight assignments during the semester, which
+include assigned readings, in-class exercises, and take-home exercises. All of
+these exercises are intended to be collaborative in nature and you are
+encouraged to work together to come up with solutions. However, ALL work
+submitted MUST be your own, you must produce your own, original version, of any
+solution resulting from group work. If you require clarification on this point,
+PLEASE ask. Late assignments submissions won't be accepted.
 
-**Quizzes & exams:** There will be two closed book/note in-class exams, six
-closed book/note in-class quizzes, and three open book/note in-lab exams. I will
-drop the lowest in-class quiz grade. Under no circumstances will make-up quizzes
-be given. The syllabus lists all quiz and exam times; you are responsible for
-keeping those times clear in your schedule. There will be a comprehensive final
-closed book/open note exam. Students will be allowed to make up missed exams
-only in the case of a documented emergency and at the discretion of the
+**Exams:** There will be three closed book/open note in-class exams and one
+closed book/open note cumulative final exam. All exam times are documented on
+your [Canvas calendar](https://csbsju.instructure.com/calendar) <span class="fa
+fa-external-link" aria-hidden=true></span>; you are responsible for keeping
+those times clear in your schedule. Students will be allowed to make up missed
+exams ONLY in the case of a documented emergency and at the discretion of the
 instructor.
 
 **Emails / Outlook meeting invitations:** I welcome emails and Outlook meeting
@@ -56,7 +59,31 @@ guideline when sending either to me: start the subject line with CS310, CS 310,
 CSCI310, or CSCI 310. This way, I can easily filter through my email and respond
 to the important ones (from students) in a more timely manner.
 
-### Special accomodations
+### Course evaluation
+The final grade for the course will be based on the percentages shown below.
+
+| Assignments    | 30% |
+| In-class exams | 42% |
+| Final exam     | 28% |
+
+Grading is mainly based on the performance of each student compared to the class
+as a whole. In general, the following guidelines are followed expect in certain
+situations where the instructor sees a need for adjustments. A grade of F may be
+given in situations of frequent unexcused absences, unsuccessful completion of
+required work in a timely manner, or evident lack of understanding of core
+material as illustrated by exam scores (e.g., failing all exams will result in
+an F grade regardless of your total final score).
+
+| A  | &ge;94% |
+| AB | &ge;87% |
+| B  | &ge;84% |
+| BC | &ge;77% |
+| C  | &ge;74% |
+| CD | &ge;67% |
+| D  | &ge;60% |
+| F  | &lt;60% |
+
+### Special accommodations
 Students needing special accommodations or who have special needs are invited to
 share this information with the instructor as early as possible.
 
