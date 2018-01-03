@@ -42,7 +42,7 @@ permalink: /docs/study-guides/exam1/
       * Byte vs. word operations
       * RTL specification for instructions
       * Effects on CPU, NZVC, and memory
-   * Von Neumann Architecture
+   * von Neumann Architecture
       * Memory holds both program and data
       * Sequence of steps in the von Neumann cycle
       * Be able to trace the effects of program execution on CPU registers and memory
@@ -59,5 +59,5 @@ permalink: /docs/study-guides/exam1/
    * Converting among decimal, binary, and hex (signed and unsigned)
    * Logical/arithmetic operations on signed integers and effects on NZVC
    * The IEEE floating-point format (normalized, denormalized, and special values)
-   * Find output and/or trace the execution of a given machine language program (Von Neumann tracing)
+   * Find output and/or trace the execution of a given machine language program (von Neumann tracing)
    * Write or modify a machine language program
