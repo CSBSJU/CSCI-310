@@ -5,14 +5,14 @@ permalink: /docs/study-guides/exam2/
 
 ## Exam 2 study guide
 
-#### During the exam, I will provide you with the following (IF NEEDED)
+### During the exam, I will provide you with the following (IF NEEDED)
 * Pep/9 assembly instructions table
 * Pep/9 addressing modes table
 * Pep/9 pseudo-ops (e.g., ```.ASCII```, ```.BLOCK```, etc.)
 * Pep/9 memory architecture
 * ASCII table
    
-#### Topics
+### Topics
 * Pep/9 CPU registers and memory architecture
 * Improvements of assembly language over machine language
 * Assemblers and loaders
@@ -36,7 +36,7 @@ permalink: /docs/study-guides/exam2/
   * passing parameters by value and by reference
   * recursion
       
-#### Sample exam questions
+### Sample exam questions
 * (Literally) translate a given C program to Pep/9 assembly
 * Complete/change a given Pep/9 assembly program to serve as a (literal) translation of a given C program
 * Change a given Pep/9 assembly language to achieve something different (e.g., use a while loop instead of a do loop or use local variables instead of global variables)
