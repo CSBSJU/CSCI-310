@@ -52,7 +52,7 @@ permalink: /schedule/
 |      40 | .                                             |           |           |
 |      41 | TBD                                           |           | [EX8] due |
 
-[Exam 1]: ../docs/exam1/
+[Exam 1]: ../docs/study-guides/exam1/
 [EX1]: ../exercises/XXX
 [EX2]: ../exercises/XXX
 [EX3]: ../exercises/XXX
