@@ -8,7 +8,7 @@ permalink: /docs/study-guides/exam1/
 * **Chapter 1**
    * The 7-layer architecture of a typical computer system along with a clear understanding of how abstraction plays a role in this architecture
    * Major hardware components of a computer system
-   * Data & control flow in a computer system
+   * Data and control flow in a computer system
    * System software vs. applications software
    * Operating systems and their functions
 
@@ -58,6 +58,6 @@ permalink: /docs/study-guides/exam1/
    * Show memory (static memory, stack and heap) for a given C program (also find output)
    * Converting among decimal, binary, and hex (signed and unsigned)
    * Logical/arithmetic operations on signed integers and effects on NZVC
-   * The IEEE floating-point format (normalized, denormalized & special values)
+   * The IEEE floating-point format (normalized, denormalized, and special values)
    * Find output and/or trace the execution of a given machine language program (Von Neumann tracing)
    * Write or modify a machine language program
