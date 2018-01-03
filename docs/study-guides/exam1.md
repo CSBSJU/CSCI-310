@@ -1,6 +1,6 @@
 ---
 title: "Exam 1 study guide"
-permalink: /docs/study-guides/exam1/
+permalink: /study-guides/exam1/
 ---
 
 ## Exam 1 study guide
