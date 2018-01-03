@@ -46,6 +46,7 @@ permalink: /schedule/
 |      35 | LG1: Combinational circuits                   | 10.1-10.2 |           |
 |      36 | .                                             | 10.3      | [EX7] due |
 |      37 | .                                             | 10.4      |           |
+|         | **Exam 3**                                    |           |           |
 |      38 | LG1: Sequential circuits                      | 11.1,11.3 |           |
 |      39 | .                                             |           |           |
 |      40 | .                                             |           |           |
