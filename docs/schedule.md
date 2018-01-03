@@ -58,7 +58,7 @@ permalink: /schedule/
 [Exam 3]:     ../study-guides/exam3/
 [Final exam]: ../study-guides/final/
 [EX1]: ../exercises/1/
-[EX2]: ../exercises/XXX
+[EX2]: ../exercises/2/
 [EX3]: ../exercises/XXX
 [EX4]: ../exercises/XXX
 [EX5]: ../exercises/XXX
