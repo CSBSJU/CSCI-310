@@ -1,6 +1,6 @@
 ---
 title: "Exam 2 study guide"
-permalink: /docs/study-guides/exam2/
+permalink: /study-guides/exam2/
 ---
 
 ## Exam 2 study guide
