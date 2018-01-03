@@ -47,8 +47,9 @@ PLEASE ask. Late assignments submissions won't be accepted.
 
 **Exams:** There will be three closed book/open note in-class exams and one
 closed book/open note cumulative final exam. All exam times are documented on
-your [Canvas calendar](https://csbsju.instructure.com/calendar) <span class="fa
-fa-external-link" aria-hidden="true"></span>; you are responsible for keeping
+your [Canvas calendar <span class="fa
+fa-external-link" aria-hidden="true"></span>]
+(https://csbsju.instructure.com/calendar); you are responsible for keeping
 those times clear in your schedule. Students will be allowed to make up missed
 exams ONLY in the case of a documented emergency and at the discretion of the
 instructor.
