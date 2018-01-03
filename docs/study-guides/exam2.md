@@ -22,10 +22,10 @@ permalink: /study-guides/exam2/
   * I/O commands
   * local/global variables
   * constants
-  * ```if/else``` statements with ```OR``` and/or ```AND``` conditions
-  * ```while``` loops
-  * ```do``` loops
-  * ```for``` loops
+  * `if/else` statements with `OR` and/or `AND` conditions
+  * `while` loops
+  * `do` loops
+  * `for` loops
   * procedure/function calls
   * passing parameters by value and by reference
   * recursion
@@ -33,7 +33,7 @@ permalink: /study-guides/exam2/
 ### During the exam, I will provide you with the following (IF NEEDED)
 * Pep/9 assembly instructions table
 * Pep/9 addressing modes table
-* Pep/9 pseudo-ops (e.g., ```.ASCII```, ```.BLOCK```, etc.)
+* Pep/9 pseudo-ops (e.g., `.ASCII`, `.BLOCK`, etc.)
 * Pep/9 memory architecture
 * ASCII table
 

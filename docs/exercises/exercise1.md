@@ -13,7 +13,7 @@ Solve the following problems from the text book
     (i.e., static, heap, and stack memory) AND THEIR VALUES as in Figure 2.19.
     Make sure you clearly differentiate among the different types of memories
     being utilized by the program.
-    
+
 1. Chapter 2, problem 7
   * See NOTE above.
 
@@ -31,5 +31,5 @@ Solve the following problems from the text book
     * *After* call to `rect()` finishes execution, but *before* it
       returns back to `main()`
     * *After* call to `rect()` returns back to `main()`
-    
+
 1. Chapter 2, problem 18

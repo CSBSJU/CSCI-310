@@ -55,10 +55,10 @@ Solve the following problems
       to figure out how to use Unicode instead of ASCII in C (hint: changing
       locale might help).
 
-1. Go to [this](http://www.csbsju.edu/computerscience/curriculum/launch/default.htm) webpage
-   and
-   launch the Data Representation program (Click on it and then click Open). If
-   you’re working on Linux instead of Windows, go to
+1. Go to
+   [this](http://www.csbsju.edu/computerscience/curriculum/launch/default.htm)
+   webpage and launch the Data Representation program (Click on it and then
+   click Open). If you’re working on Linux instead of Windows, go to
    Applications\>CSBSJU\>Computer Science\>Launch Page Apps\>Data Representation
    and then click to maximize in order to see all text fields and buttons. This
    simulator program is a tool to assist beginners in learning several different

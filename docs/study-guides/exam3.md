@@ -22,18 +22,18 @@ permalink: /study-guides/exam3/
   * I/O commands
   * local/global variables
   * constants
-  * ```if/else``` statements with ```OR``` and/or ```AND``` conditions
-  * ```while``` loops
-  * ```do``` loops
-  * ```for``` loops
+  * `if/else` statements with `OR` and/or `AND` conditions
+  * `while` loops
+  * `do` loops
+  * `for` loops
   * procedure/function calls
   * passing parameters by value and by reference
   * recursion
   * **arrays (local, global, and parameters)**
-  * ```switch``` **statements**
+  * `switch` **statements**
   * **pointers (local, global, and parameters)**
   * **dynamic memory allocation via new operator**
-  * ```structs``` **(local, global, and via local as well as global pointers)**
+  * `structs` **(local, global, and via local as well as global pointers)**
   * **linked data structures**
 
 ### Chapters 8-9
@@ -52,7 +52,7 @@ permalink: /study-guides/exam3/
 ### During the exam, I will provide you with the following (IF NEEDED)
 * Pep/9 assembly instructions table
 * Pep/9 addressing modes table
-* Pep/9 pseudo-ops (e.g., ```.ASCII```, ```.BLOCK```, etc.)
+* Pep/9 pseudo-ops (e.g., `.ASCII`, `.BLOCK`, etc.)
 * Pep/9 memory architecture
 * ASCII table
 

@@ -54,18 +54,18 @@ permalink: /study-guides/final/
   * I/O commands
   * local/global variables
   * constants
-  * ```if/else``` statements with ```OR``` and/or ```AND``` conditions
-  * ```while``` loops
-  * ```do``` loops
-  * ```for``` loops
+  * `if/else` statements with `OR` and/or `AND` conditions
+  * `while` loops
+  * `do` loops
+  * `for` loops
   * procedure/function calls
   * passing parameters by value and by reference
   * recursion
   * arrays (local, global, and parameters)
-  * ```switch``` statements
+  * `switch` statements
   * pointers (local, global, and parameters)
   * dynamic memory allocation via new operator
-  * ```structs``` (local, global, and via local as well as global pointers)
+  * `structs` (local, global, and via local as well as global pointers)
   * linked data structures
 
 ### Chapters 8-9
@@ -103,8 +103,8 @@ permalink: /study-guides/final/
   * Sum of products method
   * NAND’s functional completeness (how to create any gate and/or any circuit
     using NANDs alone)
-  * Designing circuits for given certain functionalities (e.g., ```ADD```,
-    ```SUB```, ```AND```, etc.) given a truth table
+  * Designing circuits for given certain functionalities (e.g., `ADD`, `SUB`,
+    `AND`, etc.) given a truth table
   * Commonly used circuits
     * Enable lines
     * Selective inverters
@@ -144,7 +144,7 @@ permalink: /study-guides/final/
 ### During the exam, I will provide you with the following (IF NEEDED)
 * Pep/9 assembly/machine instructions table
 * Pep/9 addressing modes table
-* Pep/9 pseudo-ops (e.g., ```.ASCII```, ```.BLOCK```, etc.)
+* Pep/9 pseudo-ops (e.g., `.ASCII`, `.BLOCK`, etc.)
 * Pep/9 memory architecture
 * Bollean algebra laws
 * ASCII table
