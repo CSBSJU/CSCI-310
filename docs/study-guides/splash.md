@@ -2,6 +2,8 @@
 title: "Study guides"
 layout: splash
 permalink: /study-guides/
+sidebar:
+  nav: "docs"
 feature_row:
   - image_path: assets/images/unsplash-gallery-image-1-th.jpg
     alt: "placeholder image 1"
