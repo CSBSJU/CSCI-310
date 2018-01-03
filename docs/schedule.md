@@ -51,10 +51,12 @@ permalink: /schedule/
 |      39 | .                                             |           |           |
 |      40 | .                                             |           |           |
 |      41 | TBD                                           |           | [EX8] due |
+|         | [Final exam]                                  |           |           |
 
 [Exam 1]: ../study-guides/exam1/
 [Exam 2]: ../study-guides/exam2/
 [Exam 3]: ../study-guides/exam3/
+[Final exam]: ../study-guides/final/
 [EX1]: ../exercises/XXX
 [EX2]: ../exercises/XXX
 [EX3]: ../exercises/XXX
