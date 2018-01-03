@@ -46,14 +46,15 @@ permalink: /schedule/
 |      35 | LG1: Combinational circuits                   | 10.1-10.2 |           |
 |      36 | .                                             | 10.3      | [EX7] due |
 |      37 | .                                             | 10.4      |           |
-|         | **Exam 3**                                    |           |           |
+|         | [Exam 3]                                      |           |           |
 |      38 | LG1: Sequential circuits                      | 11.1,11.3 |           |
 |      39 | .                                             |           |           |
 |      40 | .                                             |           |           |
 |      41 | TBD                                           |           | [EX8] due |
 
-[Exam 1]: ../docs/study-guides/exam1/
-[Exam 2]: ../docs/study-guides/exam2/
+[Exam 1]: ../study-guides/exam1/
+[Exam 2]: ../study-guides/exam2/
+[Exam 3]: ../study-guides/exam3/
 [EX1]: ../exercises/XXX
 [EX2]: ../exercises/XXX
 [EX3]: ../exercises/XXX
