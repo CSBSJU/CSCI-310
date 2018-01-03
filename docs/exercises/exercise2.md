@@ -9,7 +9,7 @@ Solve the following problems
 
 1. Chapter 3, problem 18
 
-1. Chapter 3, problem 19, part e ONLY
+1. Chapter 3, problem 19, part e
 
 1. Using the 8-bit floating-point design (excess 3) we used in class, find the
    floating-point representation for each of the following numbers:
