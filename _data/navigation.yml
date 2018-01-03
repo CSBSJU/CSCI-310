@@ -25,15 +25,3 @@ docs:
       url: /howto/
     - title: "FAQs"
       url: /faqs/
-
-study-guides:
-  - title: "Study guides"
-    children:
-      - title: "Exam 1"
-        url: /study-guides/exam1/
-      - title: "Exam 2"
-        url: /study-guides/exam1/
-      - title: "Exam 3"
-        url: /study-guides/exam1/
-      - title: "Final exam"
-        url: /study-guides/final/
