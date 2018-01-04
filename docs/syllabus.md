@@ -5,12 +5,12 @@ permalink: /syllabus/
 
 ## CSCI 310 Syllabus
 
-### Preface[<sup>1</sup>](#ref1)
+### Preface [<sup>1</sup>](#ref1)
 The CSCI 310 Syllabus serves to set forth what is expected during the semester
 from the instructor and the students and to guide the behaviors of both parties.
 More specifically, this syllabus delineates the responsibilities of students and
 of the instructor for various tasks, including attendance, assignments,
-examinations, and other requirements[<sup>2</sup>](#ref2). It also describes appropriate
+examinations, and other requirements [<sup>2</sup>](#ref2). It also describes appropriate
 procedures and course policies so that both students and the instructor know
 ahead of time how certain potential occurrences&mdash;such as missing an exam or
 submitting a late assignment&mdash;will be handled.
