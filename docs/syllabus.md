@@ -106,6 +106,7 @@ use the following guidelines when sending either to me:
 * provide a concise description in subject line
 * use a salutation like, "Good Afternoon Prof. Iverson" or just "Prof. Iverson"
 * use standard punctuation, capitalization, spelling, and grammar
+
 If you fail to incorporate any of the above suggestions when corresponding with
 me via email or meeting invitations, the I MAY NOT respond in a timely manner.
 
