@@ -110,7 +110,8 @@ SHOULD use the following guidelines when sending either to me:
 * use standard punctuation, capitalization, spelling, and grammar
 
 If you fail to incorporate any of the above suggestions when corresponding with
-me via email or meeting invitations, the I MAY NOT respond in a timely manner.
+me via email or meeting invitations, then I MAY NOT respond in a timely manner,
+or for grievous infractions, at all.
 
 ### Course evaluation
 The final grade for the course will be based on the percentages shown below.
