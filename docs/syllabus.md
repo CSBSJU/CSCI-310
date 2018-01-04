@@ -49,36 +49,56 @@ Stanley Warford. This course is based on the fifth edition of the book, thus, it
 is RECOMMENDED that students acquire this edition.
 
 #### Terminology
-unexcused absence  
-  * An absence from a schedule class meeting without prior permission from the
-    instructor. In the event that prior permission cannot be obtained, the
-    student MUST notify the instructor of the reason for the absence as soon as
-    resonably possible. Valid reasons for missing class include, but are not
-    limited to documented illness, death in your family, varsity athletic events
-    (MUST NOT be practices), or other performances.
+class meeting
+  * A meeting scheduled during the time slot assigned to the course and during the
+    university approved academic calendar for the relevant semester. Such meetings
+    will normally take place in the assigned classroom, however, they MAY occur
+    elsewhere.
+    
+excused absence                                                                  
+  * An absence from a scheduled class meeting with prior permissino from the     
+    instructor. In the event that prior permission cannot be obtained, the       
+    student MUST notify the instructor of the reason for the absence as soon as  
+    reasonably possible. Reasons for missing a class meeting that qualify as     
+    excused include, but are not limited to, documented illness, death in your   
+    family, varsity athletic events (MUST NOT be practices), or other            
+    performances.
+    
+unexcused absence
+  * An absence that is not excused. 
+    
+original work
+  * ...
+  
+closed book
+  * ...
+  
+open note
+  * ...
 
 ### Course policies
 #### Attendance
-Class attendance is REQUIRED. Each unexcused absence MAY result in a 1% reduction
-in the final grade for the course. Students who have more than three unexcused
-absences MAY receive a failing grade for the course. Habitual lateness in
-attending classes MAY be treated as absence. 
+Attendance is REQUIRED at all class meetings. Each unexcused absence MAY result in
+a 1% reduction in the final grade for the course. Students who have more than
+three unexcused absences MAY receive a failing grade for the course. Habitual
+lateness in attending class meetings MAY be treated as unexcused absence. 
 
-**Assignments:** There will be eight assignments during the semester, which
-include assigned readings, in-class exercises, and take-home exercises. All of
-these exercises are intended to be collaborative in nature and you are
-encouraged to work together to come up with solutions. However, ALL work
-submitted MUST be your own, you must produce your own, original version, of any
-solution resulting from group work. If you require clarification on this point,
-PLEASE ask. Late assignments submissions won't be accepted.
+#### Assignments
+There will be several assignments during the semester including: readings,
+in-class exercises, and take-home exercises. All of these assignments are
+intended to be collaborative in nature and you are encouraged to work together
+to understand the material and come up with solutions. However, all work
+submitted for a grade MUST be your own original work. Late assignment
+submissions MAY NOT be accepted.
 
-**Examinations:** There will be three closed book/open note in-class exams and one
-closed book/open note cumulative final exam. All exam times are documented on
-your <a href="https://csbsju.instructure.com/calendar">Canvas calendar <span
-class="fa fa-external-link" aria-hidden="true"></span></a>; you are responsible
-for keeping those times clear in your schedule. Students will be allowed to make
-up missed exams ONLY in the case of a documented emergency and at the discretion
-of the instructor.
+#### Examinations
+There will be three in-class exams and one cumulative final exam. All exams are  
+closed book/open note. All exam times are documented on the <a                   
+href="https://csbsju.instructure.com/calendar">Canvas calendar <span class="fa   
+fa-external-link" aria-hidden="true"></span></a> for this course; you are        
+responsible for keeping those times clear in your schedule. Students MAY be      
+allowed to make up missed exams in the case of an excused absence and at the     
+discretion of the instructor.
 
 **Emails / Outlook meeting invitations:** I welcome emails and Outlook meeting
 invitations from students. However, I do ask that you please use the following
