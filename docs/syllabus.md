@@ -48,32 +48,34 @@ Stanley Warford. This course is based on the fifth edition of the book, thus, it
 is RECOMMENDED that students acquire this edition.
 
 #### Terminology
-class meeting
-  * A meeting scheduled during the time slot assigned to the course and during
-    the university approved academic calendar for the relevant semester. Such
-    meetings will normally take place in the assigned classroom, however, they
-    MAY occur elsewhere.
+<dl>
+  <dt>class meeting</dt>
+  <dd>A meeting scheduled during the time slot assigned to the course and during
+      the university approved academic calendar for the relevant semester. Such
+      meetings will normally take place in the assigned classroom, however, they
+      MAY occur elsewhere.</dd>
 
-excused absence
-  * An absence from a scheduled class meeting with prior permission from the
-    instructor. In the event that prior permission cannot be obtained, the
-    student MUST notify the instructor of the reason for the absence as soon as
-    reasonably possible. Reasons for missing a class meeting that qualify as
-    excused include, but are not limited to, documented illness, death in your
-    family, varsity athletic events (MUST NOT be practices), or other
-    performances.
+  <dt>excused absence</dt>
+  <dd>An absence from a scheduled class meeting with prior permission from the
+      instructor. In the event that prior permission cannot be obtained, the
+      student MUST notify the instructor of the reason for the absence as soon
+      as reasonably possible. Reasons for missing a class meeting that qualify
+      as excused include, but are not limited to, documented illness, death in
+      your family, varsity athletic events (MUST NOT be practices), or other
+      performances.</dd>
 
-unexcused absence
-  * An absence that is not excused.
+  <dt>unexcused absence</dt>
+  <dd>An absence that is not excused.</dd>
 
-original work
-  * ...
+  <dt>original work</dt>
+  <dd>...</dd>
 
-closed book
-  * ...
+  <dt>closed book</dt>
+  <dd>...</dd>
 
-open note
-  * ...
+  <dt>open note</dt>
+  <dd>...</dd>
+</dl>
 
 ### Course policies
 #### Attendance
