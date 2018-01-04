@@ -3,6 +3,26 @@ title: "Syllabus"
 permalink: /syllabus/
 ---
 
+## CSCI 310 Syllabus
+{: .text-center}
+
+### Introduction
+
+#### Purpose [1](../syllabus#ref1)
+The CSCI 310 Syllabus serves to set forth what is expected during the semester
+from the instructor and the students and to guide the behaviors of both parties.
+More specifically, this syllabus delineates the responsibilities of students and
+of the instructor for various tasks, including attendance, assignments,
+examinations, and other requirements [2](../syllabus#ref2). It also describes appropriate
+procedures and course policies so that both students and the instructor know
+ahead of time how certain potential occurrences&mdash;such as missing an exam or
+submitting a late assignment&mdash;will be handled.
+
+#### Requirements
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
+"SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
+interpreted as described in [RFC 2119](https://tools.ietf.org/html/rfc2119).
+
 ### Textbook
 (*Required*) Computer Systems, Fifth Edition, J. Stanley Warford, published by
 Jones and Bartlett Learning
@@ -106,3 +126,7 @@ concepts and programming environments in a relatively short amount of time.
 Students are strongly encouraged to seek help from the instructor on course
 material when needed. Please contact me during office hours or by appointment to
 discuss a homework problem or any aspect of the course.
+
+### References
+<a name="ref1"></a>[1] Parkes, J. and Harris, M.B., 2002. The purposes of a syllabus. College Teaching, 50(2), pp.55-61.  
+<a name="ref2"></a>[2] Matejka, K. and Kurke, L.B., 1994. Designing a great syllabus. College Teaching, 42(3), pp.115-117.
