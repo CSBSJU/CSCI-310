@@ -10,7 +10,6 @@
 \usepackage{../solarized}         % use solarized themed listings
 \usepackage{appendixnumberbeamer} % do not number appendix frames
 \usepackage[scale=3]{ccicons}     % creative commons icons
-\usepackage{enumitem}             % fancier lists
 \usepackage{subcaption}           % subfigures
 
 % fix-up the handling of the notes pages
@@ -19,23 +18,37 @@
   \usepackage{pgfpages}
   \setbeamertemplate{note page}[plain]
   \setbeameroption{show notes on second screen=right}
-  % the following fixes bug which causes normal text to be white instead of
-  % template default when notes are enabled
-  % (see https://tex.stackexchange.com/questions/232168/normal-text-is-invisible-when-using-beamer-with-notes-and-xelatex)
-  \makeatletter
-  \def\beamer@framenotesbegin{% at beginning of slide
-       \usebeamercolor[fg]{normal text}
-        \gdef\beamer@noteitems{}%
-        \gdef\beamer@notes{}%
+  \AtBeginNote{%
+    \let\enumerate\itemize%
+    \let\endenumerate\enditemize%
   }
-  \makeatother
 \fi
+
+% overrides default description environment
+\newlength\wideleftmargin{}
+\newlength\tightleftmargin{}
+\newlength\diffleftmargin{}
+\setlength\wideleftmargin{6em}    % controls location of term (> is more left)
+\setlength\tightleftmargin{1.5em} % controls location of description (same)
+\setlength\diffleftmargin{\dimexpr\wideleftmargin-\tightleftmargin}
+\makeatletter
+\providecommand{\nextline}{
+  \setlength\labelwidth{\tightleftmargin}
+  \setlength\leftmargin{\tightleftmargin}
+  \advance\linewidth\diffleftmargin{}
+  \advance\@totalleftmargin-\diffleftmargin{}
+  \parshape\@ne\@totalleftmargin\linewidth{}
+  \setlength\itemsep{1.5ex}
+}
+\makeatother
+\let\origdescription\description
+\let\endorigdescription\enddescription
+\renewenvironment{description}{\origdescription\nextline}{\endorigdescription}
 
 %-------------------------------------------------------------------------------
 
 \usepackage{tabularx}
 \usepackage{tikz}
-\usetikzlibrary{decorations.pathreplacing}
 \usetikzlibrary{patterns}
 
 \title{C programming language}
@@ -59,11 +72,7 @@
       \end{column}
     \end{columns}
 
-    \note{
-      \begin{itemize}
-        \item Dennis Ritchie and Brian Kernighan creators of C circa 1972
-      \end{itemize}
-    }
+    \note[item]{Dennis Ritchie and Brian Kernighan creators of C circa 1972}
   %}}}1
   \end{frame}
 
@@ -127,13 +136,9 @@
     hello, world
     \end{termblock}
 
-    \note{
-      \begin{itemize}
-        \item The tradition of using the phrase "Hello, world!" as a test
-          message was influenced by an example program in the seminal book
-          \emph{The C Programming Language}
-      \end{itemize}
-    }
+    \note[item]{The tradition of using the phrase "Hello, world!" as a test
+      message was influenced by an example program in the seminal book \emph{The
+      C Programming Language}}
   %}}}1
   \end{frame}
 
@@ -172,9 +177,14 @@
 
     \note{
       \begin{itemize}
-        \item This program would behave exactly the same had this program
-          declared \texttt{ch} and \texttt{j} as local variables instead of
-          global variables.
+        \item What \emph{kind} of variables are \texttt{ch} and \texttt{j}?
+        \item What would you expect for input
+          '\texttt{\textasciitilde~2147483643}'?
+      \end{itemize}
+      \begin{itemize}
+      \item This program would behave exactly the same had this program declared
+        \texttt{ch} and \texttt{j} as local variables instead of global
+        variables.
       \end{itemize}
     }
   %}}}1
@@ -182,13 +192,13 @@
 
   \begin{frame}{memory model --- part i}
   %{{{1
-    \begin{description}[style=nextline]
-      \item[global variables] declared outside of any function and remain in
-        place throughout the execution of the entire program. they are stored at
-        a fixed location in memory.
-      \item[local variables] declared within a function and come into existence
-        when the function is called and cease to exist when the function
-        terminates. they are stored on the run-time stack.
+    \begin{description}
+      \item[global variables] \hfill \\ declared outside of any function and
+        remain in place throughout the execution of the entire program. they are
+        stored at a fixed location in memory.
+      \item[local variables] \hfill \\ declared within a function and come into
+        existence when the function is called and cease to exist when the
+        function terminates. they are stored on the run-time stack.
     \end{description}
 
     \vspace{1\baselineskip}
@@ -210,9 +220,17 @@
             },
           ]
 
+          % phantom shadow to align with the run-time stack
+          \draw[color=bg] (-0.5,0.0) -- (3.5,0.0);
+          \fill[color=bg] (-0.5,-0.5) rectangle ++(4.0,0.5);
           % global variables
-          \foreach [count=\i,evaluate=\i as \y using 1.5*(\i-1)] \l in {j,ch}
-            \node[var,label=left:\l]  at (0,\y) {};
+          \foreach [
+            count=\i,
+            evaluate=\i as \y using 1.5*(\i-1)
+          ] \l/\v in {j/424,ch/N}
+          {
+            \node[var,label=left:\l] at (0,\y) {\v};
+          }
         \end{tikzpicture}
         \caption{Fixed location.}
       \end{subfigure}
@@ -232,13 +250,104 @@
             },
           ]
 
+          % the shadow for the run-time stack
+          \draw (-0.5,0.0) -- (3.5,0.0);
+          \fill[pattern=north east lines] (-0.5,-0.5) rectangle ++(4.0,0.5);
           % stack variables
-          \foreach [count=\i,evaluate=\i as \y using 1.5*(\i-1)] \l in {retVal,retAddr}
-            \node[var,label=right:\l]  at (0,\y) {};
+          \foreach [
+            count=\i,
+            evaluate=\i as \y using 1.5*(\i-1)
+          ] \l/\v in {retVal/0,retAddr/ra0}
+          {
+            \node[var,label=right:\l] at (0,\y) {\v};
+          }
+          % stack frames
+          \foreach [
+            evaluate=\s as \y using (1.5*\s),
+            evaluate=\f as \h using (1.5*\f),
+          ] \s/\f in {0/2}
+          {
+            \draw[ultra thick] (0,\y) rectangle ++(3.0,\h);
+          }
+        \end{tikzpicture}
+        \caption{Run-time stack.}
+      \end{subfigure}
+    \end{figure}
+
+    \note[item]{(a) and (b) represent the state of relevant memory for the
+      previous program just before it terminates, i.e., in the process of
+      executing line 15.}
+  %}}}1
+  \end{frame}
+
+  \begin{frame}{FIXME --- testing}
+  %{{{1
+    \begin{figure}
+      \centering
+      \begin{subfigure}[b]{.30\textwidth}
+        \centering
+        \begin{tikzpicture}[
+            x=1em,
+            y=1em,
+            font=\ttfamily,
+            var/.style={
+              draw,
+              rectangle,
+              anchor=south west,
+              minimum width=3.0em,
+              minimum height=1.5em,
+            },
+          ]
+
+          % phantom shadow to align with the run-time stack
+          \draw[color=bg] (-0.5,0.0) -- (3.5,0.0);
+          \fill[color=bg] (-0.5,-0.5) rectangle ++(4.0,0.5);
+          % global variables
+          \foreach [
+            count=\i,
+            evaluate=\i as \y using 1.5*(\i-1)
+          ] \l/\v in {j/424,ch/N}
+          {
+            \node[var,label=left:\l] at (0,\y) {\v};
+          }
+        \end{tikzpicture}
+        \caption{Fixed location.}
+      \end{subfigure}
+      \quad
+      \begin{subfigure}[b]{.30\textwidth}
+        \centering
+        \begin{tikzpicture}[
+            x=1em,
+            y=1em,
+            font=\ttfamily,
+            var/.style={
+              draw,
+              rectangle,
+              anchor=south west,
+              minimum width=3.0em,
+              minimum height=1.5em,
+            },
+          ]
 
           % the shadow for the run-time stack
-          \draw (-0.4,0.0) -- (3.4,0.0);
-          \fill[pattern=north east lines] (-0.4,-0.5) rectangle ++(3.8,0.5);
+          \draw (-0.5,0.0) -- (3.5,0.0);
+          \fill[pattern=north east lines] (-0.5,-0.5) rectangle ++(4.0,0.5);
+          % stack variables
+          \foreach [
+            count=\i,
+            evaluate=\i as \y using 1.5*(\i-1),
+          ] \l/\v in {retVal/,retAddr/ra0,n/3,retAddr/ra1,k/}
+          {
+            \node[var,label=right:\l] at (0,\y) {\v};
+          }
+          % stack frames
+          \foreach [
+            evaluate=\s as \y using (1.5*\s),
+            evaluate=\f as \h using (1.5*\f),
+          ] \s/\f in {0/2,2/3}
+          {
+            \draw[ultra thick] (0,\y) rectangle ++(3.0,\h);
+          }
         \end{tikzpicture}
         \caption{Run-time stack.}
       \end{subfigure}
