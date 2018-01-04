@@ -101,7 +101,7 @@ discretion of the instructor.
 
 #### Emails / Outlook meeting invitations
 I welcome emails and Outlook meeting invitations from students. However, please
-use the following guideline when sending either to me:
+use the following guidelines when sending either to me:
 * start the subject line with CS310, CS 310, CSCI310, or CSCI 310
 * provide a concise description in subject line
 * use a salutation like, "Good Afternoon Prof. Iverson" or just "Prof. Iverson"
