@@ -53,25 +53,25 @@ class meeting
     university approved academic calendar for the relevant semester. Such meetings
     will normally take place in the assigned classroom, however, they MAY occur
     elsewhere.
-    
-excused absence                                                                  
-  * An absence from a scheduled class meeting with prior permissino from the     
-    instructor. In the event that prior permission cannot be obtained, the       
-    student MUST notify the instructor of the reason for the absence as soon as  
-    reasonably possible. Reasons for missing a class meeting that qualify as     
-    excused include, but are not limited to, documented illness, death in your   
-    family, varsity athletic events (MUST NOT be practices), or other            
+
+excused absence
+  * An absence from a scheduled class meeting with prior permissino from the
+    instructor. In the event that prior permission cannot be obtained, the
+    student MUST notify the instructor of the reason for the absence as soon as
+    reasonably possible. Reasons for missing a class meeting that qualify as
+    excused include, but are not limited to, documented illness, death in your
+    family, varsity athletic events (MUST NOT be practices), or other
     performances.
-    
+
 unexcused absence
-  * An absence that is not excused. 
-    
+  * An absence that is not excused.
+
 original work
   * ...
-  
+
 closed book
   * ...
-  
+
 open note
   * ...
 
@@ -80,7 +80,7 @@ open note
 Attendance is REQUIRED at all class meetings. Each unexcused absence MAY result in
 a 1% reduction in the final grade for the course. Students who have more than
 three unexcused absences MAY receive a failing grade for the course. Habitual
-lateness in attending class meetings MAY be treated as unexcused absence. 
+lateness in attending class meetings MAY be treated as unexcused absence.
 
 #### Assignments
 There will be several assignments during the semester including: readings,
