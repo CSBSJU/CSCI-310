@@ -113,7 +113,7 @@ If you fail to incorporate any of the above suggestions when corresponding with
 me via email or meeting invitations, then I MAY NOT respond in a timely manner,
 or for grievous infractions, at all.
 
-## Course evaluation
+### Evaluation
 The final grade for the course will be based on the percentages shown below.
 
 | Assignments    | 30% |
@@ -122,11 +122,11 @@ The final grade for the course will be based on the percentages shown below.
 
 Grading is mainly based on the performance of each student compared to the class
 as a whole. In general, the following guidelines are followed expect in certain
-situations where the instructor sees a need for adjustments. A grade of F may be
+situations where the instructor sees a need for adjustments. A grade of F MAY be
 given in situations of frequent unexcused absences, unsuccessful completion of
 required work in a timely manner, or evident lack of understanding of core
-material as illustrated by exam scores (e.g., failing all exams will result in
-an F grade regardless of your total final score).
+material as illustrated by exam scores (e.g., failing all exams MAY result in an
+F grade regardless of your total final score).
 
 | A  | &ge;94% |
 | AB | &ge;87% |
