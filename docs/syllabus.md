@@ -3,9 +3,9 @@ title: "Syllabus"
 permalink: /syllabus/
 ---
 
-## CSCI 310 Syllabus
+# CSCI 310 Syllabus
 
-### Preface [[1]](#ref1)
+## Preface [[1]](#ref1)
 The CSCI 310 Syllabus serves to set forth what is expected during the semester
 from the instructor and the students and to guide the behaviors of both parties.
 More specifically, this syllabus delineates the responsibilities of students and
@@ -15,8 +15,8 @@ procedures and course policies so that both students and the instructor know
 ahead of time how certain potential occurrences&mdash;such as missing an exam or
 submitting a late assignment&mdash;will be handled.
 
-### Introduction
-#### Purpose
+## Introduction
+### Purpose
 CSCI 310 is an introduction to computer systems and architecture. Topics covered
 include digital systems, machine level data representation, processor design,
 assembly-level machine organization, memory systems, system control,
@@ -38,7 +38,7 @@ be able to:
 * explain the role of operating systems in managing storage, processes and
   programs.
 
-#### Requirements
+### Requirements
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
 interpreted as described in [RFC 2119](https://tools.ietf.org/html/rfc2119).
@@ -47,7 +47,7 @@ Students are REQUIRED to have access to the textbook, *Computer Systems* by J.
 Stanley Warford. This course is based on the fifth edition of the book, thus, it
 is RECOMMENDED that students acquire this edition.
 
-#### Terminology
+### Terminology
 <dl>
   <dt style="font-weight:normal;"><i>class meeting</i></dt>
   <dd>A meeting scheduled during the time slot assigned to the course and during
@@ -77,14 +77,14 @@ is RECOMMENDED that students acquire this edition.
   <dd>...</dd>
 </dl>
 
-### Course policies
-#### Attendance
+## Course policies
+### Attendance
 Attendance is REQUIRED at all class meetings. Each unexcused absence MAY result
 in a 1% reduction in the final grade for the course. Students who have more than
 three unexcused absences MAY receive a failing grade for the course. Habitual
 lateness in attending class meetings MAY be treated as unexcused absence.
 
-#### Assignments
+### Assignments
 There will be several assignments during the semester including: readings,
 in-class exercises, and take-home exercises. All of these assignments are
 intended to be collaborative in nature and you are encouraged to work together
@@ -92,7 +92,7 @@ to understand the material and come up with solutions. However, all work
 submitted for a grade MUST be your own original work. Late assignment
 submissions MAY NOT be accepted.
 
-#### Examinations
+### Examinations
 There will be three in-class exams and one cumulative final exam. All exams are
 closed book/open note. All exam times are documented on the <a
 href="https://csbsju.instructure.com/calendar">Canvas calendar <span class="fa
@@ -101,7 +101,7 @@ responsible for keeping those times clear in your schedule. Students MAY be
 allowed to make up missed exams in the case of an excused absence and at the
 discretion of the instructor.
 
-#### Emails / Outlook meeting invitations
+### Emails / Outlook meeting invitations
 I welcome emails and Outlook meeting invitations from students. However, you
 SHOULD use the following guidelines when sending either to me:
 * start the subject line with CS310, CS 310, CSCI310, or CSCI 310
@@ -115,7 +115,7 @@ If you fail to incorporate any of the above suggestions when corresponding with
 me via email or meeting invitations, then I MAY NOT respond in a timely manner,
 or for grievous infractions, at all.
 
-### Course evaluation
+## Course evaluation
 The final grade for the course will be based on the percentages shown below.
 
 | Assignments    | 30% |
@@ -139,11 +139,11 @@ an F grade regardless of your total final score).
 | D  | &ge;60% |
 | F  | &lt;60% |
 
-### Special accommodations
+## Special accommodations
 Students needing special accommodations or who have special needs are invited to
 share this information with the instructor as early as possible.
 
-### Scholastic conduct
+## Scholastic conduct
 Work must be completed in a manner consistent with the College of Saint
 Benedict's & Saint John's University's codes for academic honesty. All outside
 work and/or ideas used in any part of this course must be properly attributed;
@@ -156,13 +156,13 @@ the appropriate personnel and officials. Please refer to the most recent version
 of the College of Saint Benedict & Saint John's University's Academic Catalog
 for further relevant information and guidelines on this matter.
 
-### Extra Help
+## Extra Help
 This is a challenging course and exposes students to several new algorithmic
 concepts and programming environments in a relatively short amount of time.
 Students are strongly encouraged to seek help from the instructor on course
 material when needed. Please contact me during office hours or by appointment to
 discuss a homework problem or any aspect of the course.
 
-### References
+## References
 <a name="ref1"></a>[1] Parkes, J. and Harris, M.B., 2002. The purposes of a syllabus. College Teaching, 50(2), pp.55-61.  
 <a name="ref2"></a>[2] Matejka, K. and Kurke, L.B., 1994. Designing a great syllabus. College Teaching, 42(3), pp.115-117.
