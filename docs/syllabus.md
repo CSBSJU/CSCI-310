@@ -4,7 +4,6 @@ permalink: /syllabus/
 ---
 
 ## CSCI 310 Syllabus
-{: .text-center}
 
 ### Preface [1](#ref1)
 The CSCI 310 Syllabus serves to set forth what is expected during the semester
@@ -92,12 +91,12 @@ submitted for a grade MUST be your own original work. Late assignment
 submissions MAY NOT be accepted.
 
 #### Examinations
-There will be three in-class exams and one cumulative final exam. All exams are  
-closed book/open note. All exam times are documented on the <a                   
-href="https://csbsju.instructure.com/calendar">Canvas calendar <span class="fa   
-fa-external-link" aria-hidden="true"></span></a> for this course; you are        
-responsible for keeping those times clear in your schedule. Students MAY be      
-allowed to make up missed exams in the case of an excused absence and at the     
+There will be three in-class exams and one cumulative final exam. All exams are
+closed book/open note. All exam times are documented on the <a
+href="https://csbsju.instructure.com/calendar">Canvas calendar <span class="fa
+fa-external-link" aria-hidden="true"></span></a> for this course; you are
+responsible for keeping those times clear in your schedule. Students MAY be
+allowed to make up missed exams in the case of an excused absence and at the
 discretion of the instructor.
 
 **Emails / Outlook meeting invitations:** I welcome emails and Outlook meeting
