@@ -104,7 +104,9 @@ I welcome emails and Outlook meeting invitations from students. However, you
 SHOULD use the following guidelines when sending either to me:
 * start the subject line with CS310, CS 310, CSCI310, or CSCI 310
 * provide a concise description in subject line
-* use a salutation like, "Good Afternoon Prof. Iverson" or just "Prof. Iverson"
+* use a salutation like, "Good afternoon Prof. Iverson" or just "Prof. Iverson"
+* conclude your message with a signature like, "Sincerely, Jeremy" or even as
+  simple as just "Jeremy", to indicate who the message is from
 * use standard punctuation, capitalization, spelling, and grammar
 
 If you fail to incorporate any of the above suggestions when corresponding with
