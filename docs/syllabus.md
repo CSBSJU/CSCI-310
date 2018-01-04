@@ -6,56 +6,63 @@ permalink: /syllabus/
 ## CSCI 310 Syllabus
 {: .text-center}
 
-### Introduction
-
-#### Purpose [1](../syllabus#ref1)
+### Preface [1](#ref1)
 The CSCI 310 Syllabus serves to set forth what is expected during the semester
 from the instructor and the students and to guide the behaviors of both parties.
 More specifically, this syllabus delineates the responsibilities of students and
 of the instructor for various tasks, including attendance, assignments,
-examinations, and other requirements [2](../syllabus#ref2). It also describes appropriate
+examinations, and other requirements [2](#ref2). It also describes appropriate
 procedures and course policies so that both students and the instructor know
 ahead of time how certain potential occurrences&mdash;such as missing an exam or
 submitting a late assignment&mdash;will be handled.
+
+### Introduction
+#### Purpose
+CSCI 310 is an introduction to computer systems and architecture. Topics covered
+include digital systems, machine level data representation, processor design,
+assembly-level machine organization, memory systems, system control,
+organization of operating systems, concurrency, and scheduling. The course will
+focus on the layered architecture of computer systems in order to understand how
+parts operate and cooperate to make an integrated machine. An important outcome
+of this course is helping students become more informed programmers and computer
+scientists. Students who complete the successfully successfully should expect to
+be able to:
+* identify and describe the key components of a computer system and how the
+  components interact.
+* explain the layered architecture of computer systems and how each layer
+  relates to the others.
+* explain how data and programs are represented inside computers.
+* convert data from one representation to another.
+* read, write, and debug assembly language and machine language programs.
+* use logic equations, tables, and circuits to make the connection between
+  software and hardware.
+* explain the role of operating systems in managing storage, processes and
+  programs.
 
 #### Requirements
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
 interpreted as described in [RFC 2119](https://tools.ietf.org/html/rfc2119).
 
-### Textbook
-(*Required*) Computer Systems, Fifth Edition, J. Stanley Warford, published by
-Jones and Bartlett Learning
+Students are REQUIRED to have access to the textbook, *Computer Systems* by J.
+Stanley Warford. This course is based on the fifth edition of the book, thus, it
+is RECOMMENDED that students acquire this edition.
 
-### Course overview & objectives
-This course is an introduction to computer systems and architecture. Topics
-covered include digital systems, machine level data representation, processor
-design, assembly-level machine organization, memory systems, system control,
-organization of operating systems, concurrency, and scheduling. We will focus on
-the layered architecture of computer systems in order to understand how parts
-operate and cooperate to make an integrated machine. An important outcome of
-this course is helping students become more informed programmers and computer
-scientists. Students who complete the class successfully should be able to:
-* Identify and describe the key components of a computer system and how the
-  components interact. 
-* Explain the layered architecture of computer systems and how each layer
-  relates to the others. 
-* Explain how data and programs are represented inside computers. 
-* Convert data from one representation to another. 
-* Read, write, and debug assembly language and machine language programs. 
-* Use logic equations, tables, and circuits to make the connection between
-  software and hardware. 
-* Explain the role of operating systems in managing storage, processes and
-  programs.
+#### Terminology
+unexcused absence  
+  * An absence from a schedule class meeting without prior permission from the
+    instructor. In the event that prior permission cannot be obtained, the
+    student MUST notify the instructor of the reason for the absence as soon as
+    resonably possible. Valid reasons for missing class include, but are not
+    limited to documented illness, death in your family, varsity athletic events
+    (MUST NOT be practices), or other performances.
 
-### Course requirements
-**Attendance:** Class attendance is required. Each unexcused absence will result
-in a 1% reduction in the final grade for the course. Students who miss more than
-three classes without a documented excuse WILL RECEIVE A FAILING GRADE on the
-course. Valid excuses include things like documented illness or death in your
-family, prearranged absences because of varsity athletic events (NOT practices)
-or other performances. Habitual lateness in attending classes will be treated as
-absences. 
+### Course policies
+#### Attendance
+Class attendance is REQUIRED. Each unexcused absence MAY result in a 1% reduction
+in the final grade for the course. Students who have more than three unexcused
+absences MAY receive a failing grade for the course. Habitual lateness in
+attending classes MAY be treated as absence. 
 
 **Assignments:** There will be eight assignments during the semester, which
 include assigned readings, in-class exercises, and take-home exercises. All of
@@ -65,7 +72,7 @@ submitted MUST be your own, you must produce your own, original version, of any
 solution resulting from group work. If you require clarification on this point,
 PLEASE ask. Late assignments submissions won't be accepted.
 
-**Exams:** There will be three closed book/open note in-class exams and one
+**Examinations:** There will be three closed book/open note in-class exams and one
 closed book/open note cumulative final exam. All exam times are documented on
 your <a href="https://csbsju.instructure.com/calendar">Canvas calendar <span
 class="fa fa-external-link" aria-hidden="true"></span></a>; you are responsible
