@@ -49,13 +49,13 @@ is RECOMMENDED that students acquire this edition.
 
 #### Terminology
 <dl>
-  <dt style="font-weight:normal;">class meeting</dt>
+  <dt style="font-weight:normal;"><i>class meeting</i></dt>
   <dd>A meeting scheduled during the time slot assigned to the course and during
       the university approved academic calendar for the relevant semester. Such
       meetings will normally take place in the assigned classroom, however, they
       MAY occur elsewhere.</dd>
 
-  <dt style="font-weight:normal;">excused absence</dt>
+  <dt style="font-weight:normal;"><i>excused absence</i></dt>
   <dd>An absence from a scheduled class meeting with prior permission from the
       instructor. In the event that prior permission cannot be obtained, the
       student MUST notify the instructor of the reason for the absence as soon
@@ -64,16 +64,16 @@ is RECOMMENDED that students acquire this edition.
       your family, varsity athletic events (MUST NOT be practices), or other
       performances.</dd>
 
-  <dt style="font-weight:normal;">unexcused absence</dt>
+  <dt style="font-weight:normal;"><i>unexcused absence</i></dt>
   <dd>An absence that is not excused.</dd>
 
-  <dt style="font-weight:normal;">original work</dt>
+  <dt style="font-weight:normal;"><i>original work</i></dt>
   <dd>...</dd>
 
-  <dt style="font-weight:normal;">closed book</dt>
+  <dt style="font-weight:normal;"><i>closed book</i></dt>
   <dd>...</dd>
 
-  <dt style="font-weight:normal;">open note</dt>
+  <dt style="font-weight:normal;"><i>open note</i></dt>
   <dd>...</dd>
 </dl>
 
