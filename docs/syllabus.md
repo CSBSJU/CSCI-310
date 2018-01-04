@@ -49,13 +49,13 @@ is RECOMMENDED that students acquire this edition.
 
 #### Terminology
 class meeting
-  * A meeting scheduled during the time slot assigned to the course and during the
-    university approved academic calendar for the relevant semester. Such meetings
-    will normally take place in the assigned classroom, however, they MAY occur
-    elsewhere.
+  * A meeting scheduled during the time slot assigned to the course and during
+    the university approved academic calendar for the relevant semester. Such
+    meetings will normally take place in the assigned classroom, however, they
+    MAY occur elsewhere.
 
 excused absence
-  * An absence from a scheduled class meeting with prior permissino from the
+  * An absence from a scheduled class meeting with prior permission from the
     instructor. In the event that prior permission cannot be obtained, the
     student MUST notify the instructor of the reason for the absence as soon as
     reasonably possible. Reasons for missing a class meeting that qualify as
@@ -77,8 +77,8 @@ open note
 
 ### Course policies
 #### Attendance
-Attendance is REQUIRED at all class meetings. Each unexcused absence MAY result in
-a 1% reduction in the final grade for the course. Students who have more than
+Attendance is REQUIRED at all class meetings. Each unexcused absence MAY result
+in a 1% reduction in the final grade for the course. Students who have more than
 three unexcused absences MAY receive a failing grade for the course. Habitual
 lateness in attending class meetings MAY be treated as unexcused absence.
 
@@ -99,11 +99,15 @@ responsible for keeping those times clear in your schedule. Students MAY be
 allowed to make up missed exams in the case of an excused absence and at the
 discretion of the instructor.
 
-**Emails / Outlook meeting invitations:** I welcome emails and Outlook meeting
-invitations from students. However, I do ask that you please use the following
-guideline when sending either to me: start the subject line with CS310, CS 310,
-CSCI310, or CSCI 310. This way, I can easily filter through my email and respond
-to the important ones (from students) in a more timely manner.
+#### Emails / Outlook meeting invitations
+I welcome emails and Outlook meeting invitations from students. However, please
+use the following guideline when sending either to me:
+* start the subject line with CS310, CS 310, CSCI310, or CSCI 310
+* provide a concise description in subject line
+* use a salutation like, "Good Afternoon Prof. Iverson" or just "Prof. Iverson"
+* use standard punctuation, capitalization, spelling, and grammar
+If you fail to incorporate any of the above suggestions when corresponding with
+me via email or meeting invitations, the I MAY NOT respond in a timely manner.
 
 ### Course evaluation
 The final grade for the course will be based on the percentages shown below.
