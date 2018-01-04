@@ -3,8 +3,6 @@ title: "Syllabus"
 permalink: /syllabus/
 ---
 
-# CSCI 310 Syllabus
-
 ## Preface [[1]](#ref1)
 The CSCI 310 Syllabus serves to set forth what is expected during the semester
 from the instructor and the students and to guide the behaviors of both parties.
