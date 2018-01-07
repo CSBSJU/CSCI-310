@@ -49,7 +49,7 @@
 
 \usepackage{tabularx}
 \usepackage{tikz}
-\usetikzlibrary{patterns}
+\usetikzlibrary{arrows,decorations.markings,patterns}
 
 \title{C programming language}
 \date{}
@@ -73,6 +73,7 @@
     \end{columns}
 
     \note[item]{Dennis Ritchie and Brian Kernighan creators of C circa 1972}
+    \note[item]{TODO: more thorough history}
   %}}}1
   \end{frame}
 
@@ -289,7 +290,12 @@
         \begin{tikzpicture}[
             x=1em,
             y=1em,
+            %node distance=1.5em,
+            %node distance=1.5em,
             font=\ttfamily,
+            base/.style={
+              anchor=north west,
+            },
             var/.style={
               draw,
               rectangle,
@@ -300,16 +306,19 @@
           ]
 
           % phantom shadow to align with the run-time stack
-          \draw[color=bg] (-0.5,0.0) -- (3.5,0.0);
-          \fill[color=bg] (-0.5,-0.5) rectangle ++(4.0,0.5);
+          \draw[color=bg] (-0.5,0.0) -- (3.5,0.0) node[base] {};
+          \fill[color=bg] (-0.5,-0.5) rectangle ++(4.0,0.5) node[base] {};
           % global variables
           \foreach [
             count=\i,
-            evaluate=\i as \y using 1.5*(\i-1)
-          ] \l/\v in {j/424,ch/N}
+            evaluate=\i as \y using (1.5*(\i-1)),
+          ] \l/\v in {j/424,ch/N,ptr/$\mathbf{\cdot}$}
           {
-            \node[var,label=left:\l] at (0,\y) {\v};
+            \node[var,label=left:\l] at (0.0,\y) (\i) {\v};
           }
+
+          \fill (3.center) circle (1.25pt);
+          \draw (3.center) edge[bend left=45,-stealth] (1.east);
         \end{tikzpicture}
         \caption{Fixed location.}
       \end{subfigure}
@@ -319,7 +328,11 @@
         \begin{tikzpicture}[
             x=1em,
             y=1em,
+            node distance=0em,
             font=\ttfamily,
+            base/.style={
+              anchor=north west,
+            },
             var/.style={
               draw,
               rectangle,
@@ -330,8 +343,8 @@
           ]
 
           % the shadow for the run-time stack
-          \draw (-0.5,0.0) -- (3.5,0.0);
-          \fill[pattern=north east lines] (-0.5,-0.5) rectangle ++(4.0,0.5);
+          \draw[] (-0.5,0.0) -- (3.5,0.0) node[base] {};
+          \fill[pattern=north east lines] (-0.5,-0.5) rectangle ++(4.0,0.5) node[base] {};
           % stack variables
           \foreach [
             count=\i,
