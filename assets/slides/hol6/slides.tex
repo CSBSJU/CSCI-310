@@ -50,7 +50,17 @@
 \usepackage{tabularx}   % tables
 \usepackage{subcaption} % subfigures
 \usepackage{tikz}       % tikz
-\usetikzlibrary{positioning}
+\usetikzlibrary{decorations.pathreplacing,positioning}
+
+\tikzset{
+  lstanchor/.style={
+    inner sep=0pt,
+    text width=0pt,
+    align=center,
+    minimum height=1.25ex,
+    node distance=0pt,
+  }
+}
 
 \title{C programming language}
 \date{}
@@ -144,7 +154,7 @@
   %}}}1
   \end{frame}
 
-  \begin{frame}[fragile]{variables}
+  \begin{frame}[fragile]{global variables}
   %{{{1
     \begin{scriptsize}
       \begin{codeblock}
@@ -177,18 +187,94 @@
       \end{termblock}
     \end{scriptsize}
 
-    \note{
-      \begin{itemize}
-        \item What \emph{kind} of variables are \texttt{ch} and \texttt{j}?
-        \item What would you expect for input
-          '\texttt{\textasciitilde~2147483643}'?
-      \end{itemize}
-      \begin{itemize}
-      \item This program would behave exactly the same had this program declared
-        \texttt{ch} and \texttt{j} as local variables instead of global
-        variables.
-      \end{itemize}
-    }
+    \note[item]{What would you expect for input '\texttt{Z~-3}'?}
+    \note[item]{What would you expect for input '\texttt{9~a}'?}
+    \note[item]{What would you expect for input
+      '\texttt{\textasciitilde~2147483643}'?}
+  %}}}1
+  \end{frame}
+
+  \begin{frame}[fragile]{program breakdown}
+  %{{{1
+    \vspace{1\baselineskip}
+
+    \begin{scriptsize}
+      \begin{codeblock}[escapechar=!,xleftmargin=.45\linewidth,firstnumber=5]
+      ###include## $$<stdio.h>$$!\tikz[remember picture] \coordinate (f);!
+
+      !\tikz[remember picture] \coordinate (a);!char ch;
+      !\tikz[remember picture] \coordinate (b);!int j;
+
+      int main() {!\tikz[remember picture] \coordinate (c);!
+        !\tikz[remember picture] \coordinate (i);!scanf([["]]%%%c%%[[ ]]%%%d%%[["]], &ch, &j);!\tikz[remember picture] \coordinate (g);!
+        j += $$5$$;
+        !\tikz[remember picture] \coordinate (d);!ch++;
+        !\tikz[remember picture] \coordinate (h);!printf([["]]%%%c\n%d\n%%[["]], ch, j);!\tikz[remember picture] \coordinate (j);!
+        return $$0$$;!\tikz[remember picture] \coordinate (e);!
+      }
+      \end{codeblock}
+        \begin{tikzpicture}[remember picture, overlay,
+            every edge/.append style={
+              ->,
+              thick,
+              >=stealth,
+              DimGray,
+              dashed,
+              thick,
+            },
+            every node/.append style={
+              draw,
+              align=center,
+              minimum height=10pt,
+              color=DimGray,
+              text=fg,
+              thin,
+              rounded corners,
+              text width=.25\linewidth,
+            },
+            group/.style = {
+              decoration={
+                brace,
+                mirror,
+                raise=5pt,
+              },
+              thick,
+              color=DimGray,
+              decorate,
+            },
+          ]
+          \only<1>{
+            \node[] at ([shift=({19.5em,.625ex})]c) (C) {C programs ALWAYS start execution with the \texttt{main} function};
+            \node[] at ([shift=({20em,.625ex})]e) (E) {returning from \texttt{main} ends the program};
+            \draw (C.west) edge ([shift=({.4em,.625ex})]c);
+            \draw (E.west) edge ([shift=({.4em,.625ex})]e);
+          }
+          \only<2>{
+            \draw[group] ([shift=({.4em,1.65ex})]a) -- node[left=4.5em] (AB) {global variables are declared here --- outside of any function} ([shift=({.4em,-.4ex})]b);
+            \node[] at ([shift=({-11em,.625ex})]d) (D) {characters in C are treated internally like signed integers};
+            \draw (AB.east) edge ([xshift=3em]AB.east);
+            \draw (D.east) edge ([shift=({-.4em,.625ex})]d);
+          }
+          \only<3>{
+            \node[] at ([shift=({16em,.625ex})]f) (F) {correct headers must be included to access library functions};
+            \node[] at ([shift=({-11em,.625ex})]h) (H) {print data to \texttt{stdout} (the terminal)};
+            \node[] at ([shift=({-11em,.625ex})]i) (I) {read data from \texttt{stdin} (the terminal)};
+            \node[] at ([shift=({11em,-3.625ex})]g) (GJ) {\texttt{scanf} and \texttt{printf} are both library functions declared in \texttt{stdio.h}};
+            \draw (F.west) edge ([shift=({.4em,.625ex})]f);
+            \draw (GJ.west) edge ([shift=({.4em,.625ex})]g);
+            \draw (GJ.west) edge ([shift=({.4em,.625ex})]j);
+            \draw (H.east) edge ([shift=({-.4em,.625ex})]h);
+            \draw (I.east) edge ([shift=({-.4em,.625ex})]i);
+          }
+          \only<4>{
+            \node[] at ([shift=({11em,.625ex})]g) (G) {\texttt{\&} is the address of operator --- \texttt{scanf} expects the address of the variables where the data will be stored};
+            \draw (G.west) edge ([shift=({.4em,.625ex})]g);
+          }
+        \end{tikzpicture}
+      \end{scriptsize}
+
+      \note[item]<3>{C has no ``built-in'' functions; however, it does have a
+        standard library that includes many useful utility functions.}
   %}}}1
   \end{frame}
 
@@ -232,9 +318,30 @@
       \end{subfigure}
     \end{figure}
 
-    \note[item]{(a) and (b) represent the state of relevant memory for the
-      previous program just before it terminates, i.e., in the process of
-      executing line 15.}
+    \note{
+      \begin{itemize}
+        \item I will be using graphical notation consistent with that of the
+          book.
+        \item In this case, (a) and (b) represent the state of relevant memory
+          for the previous program just before it terminates, i.e., in the
+          process of executing line 15.
+        \item How would the previous program behave had it declared \texttt{ch}
+          and \texttt{j} as local variables instead of global variables?
+        \item What would the memory model look like given the above?\\[1\baselineskip]
+
+        \begin{figure}
+          \begin{tikzstack}[fg]
+            \begin{stack}{east}
+              % stack variables
+              \variables{retVal/0,retAddr/ra0,j/424,ch/N}
+              % stack frames
+              \frames{0/4}
+            \end{stack}
+          \end{tikzstack}
+          \caption{Run-time stack.}
+        \end{figure}
+      \end{itemize}
+    }
   %}}}1
   \end{frame}
 
@@ -276,52 +383,6 @@
         \caption{Run-time stack.}
       \end{subfigure}
     \end{figure}
-  %}}}1
-  \end{frame}
-
-  \begin{frame}[fragile]{FIXME --- listings testing}
-  %{{{1
-    \vspace{3\baselineskip}
-
-    \begin{scriptsize}
-      \begin{codeblock}[escapechar=!,linewidth=.6\linewidth]
-       int!
-         \tikz[remember picture] \node [] (a) {};
-       !puissance!
-         \tikz[remember picture] \node [] (b) {};
-       !(int x,!
-         \tikz[remember picture] \node [] (c){};
-       !int n) { 
-
-           int i, p = 1; !\tikz[remember picture] \node [] (d){};!           
-
-           for (i = 1; i <= n; i++) 
-             p = p * x; !\tikz[remember picture] \node [inner xsep=40pt] (e){};!
-
-           return p; !
-             \tikz[remember picture] \node [] (f){};!  
-       }
-      \end{codeblock}
-      \begin{tikzpicture}[remember picture, overlay,
-          every edge/.append style = { ->, thick, >=stealth,
-                                        DimGray, dashed, line width = 1pt },
-          every node/.append style = { align = center, minimum height = 10pt,
-                                       font = \bfseries, fill= green!20},
-                        text width=1.5cm ]
-        \node [above left=1em and -2.5em of a] (A) {return value type};
-        \node [above left=4em and -0.5em of b] (B) {function name};
-        \node [above=2em of c] (C) {list of formal parameters};
-        \node [right = 4.cm of d]  (D) {local variables declaration};
-        \node [right = 2.cm of e]  (E) {instructions};
-        \node [right = 5.cm of f]  (F) {instruction \texttt{\bfseries return}};
-        \draw (A.south) + (0, 0) coordinate(x1) edge (x1|-a.north);
-        \draw (B.south) + (0, 0) coordinate(x2) edge (x2|-b.north);
-        \draw (C.south) + (0, 0) coordinate(x3) edge (x3|-c.north);
-        \draw (D.west) edge (d.east) ;
-        \draw (E.west) edge (e.east) ;  
-        \draw (F.west) edge (f.east) ;
-      \end{tikzpicture}
-    \end{scriptsize}
   %}}}1
   \end{frame}
 
