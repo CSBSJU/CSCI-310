@@ -18,9 +18,10 @@
 \definecolor{solarized-cyan}{HTML}{2AA198}
 \definecolor{solarized-green}{HTML}{859900}
 
-\lstnewenvironment{codeblock}
+\lstnewenvironment{codeblock}[1][]
   {
     \lstset{
+      #1,
       language=c,
       showstringspaces=false,
       upquote=false,
