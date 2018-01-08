@@ -301,69 +301,21 @@
       \centering
       \begin{subfigure}[b]{.30\textwidth}
         \centering
-        \begin{tikzpicture}[
-            x=1em,
-            y=1em,
-            font=\ttfamily,
-            var/.style={
-              draw,
-              rectangle,
-              anchor=south west,
-              minimum width=3.0em,
-              minimum height=1.5em,
-            },
-          ]
-
-          % phantom shadow to align with the run-time stack
-          \draw[color=bg] (-0.5,0.0) -- (3.5,0.0);
-          \fill[color=bg] (-0.5,-0.5) rectangle ++(4.0,0.5);
+        \begin{tikzstack}[bg]{west}
           % global variables
-          \foreach [
-            count=\i,
-            evaluate=\i as \y using 1.5*(\i-1)
-          ] \l/\v in {j/424,ch/N}
-          {
-            \node[var,label=left:\l] at (0,\y) {\v};
-          }
-        \end{tikzpicture}
+          \variables{j/424,ch/N}
+        \end{tikzstack}
         \caption{Fixed location.}
       \end{subfigure}
       \quad
       \begin{subfigure}[b]{.30\textwidth}
         \centering
-        \begin{tikzpicture}[
-            x=1em,
-            y=1em,
-            font=\ttfamily,
-            var/.style={
-              draw,
-              rectangle,
-              anchor=south west,
-              minimum width=3.0em,
-              minimum height=1.5em,
-            },
-          ]
-
-          % the shadow for the run-time stack
-          \draw (-0.5,0.0) -- (3.5,0.0);
-          \fill[pattern=north east lines] (-0.5,-0.5) rectangle ++(4.0,0.5);
+        \begin{tikzstack}[fg]{east}
           % stack variables
-          \foreach [
-            count=\i,
-            evaluate=\i as \y using 1.5*(\i-1)
-          ] \l/\v in {retVal/0,retAddr/ra0}
-          {
-            \node[var,label=right:\l] at (0,\y) {\v};
-          }
+          \variables{retVal/0,retAddr/ra0}
           % stack frames
-          \foreach [
-            evaluate=\s as \y using (1.5*\s),
-            evaluate=\f as \h using (1.5*\f),
-          ] \s/\f in {0/2}
-          {
-            \draw[ultra thick] (0,\y) rectangle ++(3.0,\h);
-          }
-        \end{tikzpicture}
+          \frames{0/2}
+        \end{tikzstack}
         \caption{Run-time stack.}
       \end{subfigure}
     \end{figure}
