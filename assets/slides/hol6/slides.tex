@@ -72,7 +72,7 @@
     anchor=south west,
     minimum width=3.0em,
     minimum height=1.5em,
-    label={left:##1},
+    label={#1:##1},
   },
   ptr/.style={
     ->,
@@ -84,6 +84,12 @@
     ground,
     scale=0.5,
     anchor=west,
+  },
+  east of/.style={
+    [xshift=1em]#1.east
+  },
+  west of/.style={
+    [xshift=-1em]#1.west
   },
 }}
 
@@ -324,7 +330,7 @@
       \centering
       \begin{subfigure}[b]{.30\textwidth}
         \centering
-        \begin{tikzpicture}[memory]
+        \begin{tikzpicture}[memory=left]
           % phantom shadow to align with the run-time stack
           \fill[color=bg] (-0.5,-0.5) rectangle ++(4.0,0.5) node[base] {};
           % global variables
@@ -341,15 +347,15 @@
             \draw[ptr]
               (var\s.center) node[dot] {} --
               ([xshift=1em]var\s.east) --
-              ([shift=({1,0})]var\e.east) --
+              ([xshift=1em]var\e.east) --
               (var\e.east);
           }
           % null pointers
-          \foreach \p in {4}
+          \foreach \s in {4}
           {
             \draw[fill]
-              (var\p.center) node[dot] {} --
-              ([xshift=1em]var\p.east) node[null] {};
+              (var\s.center) node[dot] {} --
+              ([xshift=1em]var\s.east) node[null] {};
           }
         \end{tikzpicture}
         \caption{Fixed location.}
@@ -357,23 +363,7 @@
       \quad
       \begin{subfigure}[b]{.30\textwidth}
         \centering
-        \begin{tikzpicture}[
-            x=1em,
-            y=1em,
-            node distance=0em,
-            font=\ttfamily,
-            base/.style={
-              anchor=north west,
-            },
-            var/.style={
-              draw,
-              rectangle,
-              anchor=south west,
-              minimum width=3.0em,
-              minimum height=1.5em,
-            },
-          ]
-
+        \begin{tikzpicture}[memory=right]
           % the shadow for the run-time stack
           \draw[] (-0.5,0.0) -- (3.5,0.0) node[base] {};
           \fill[pattern=north east lines] (-0.5,-0.5) rectangle ++(4.0,0.5) node[base] {};
@@ -383,15 +373,15 @@
             evaluate=\i as \y using 1.5*(\i-1),
           ] \l/\v in {retVal/,retAddr/ra0,n/3,retAddr/ra1,k/}
           {
-            \node[var,label=right:\l] at (0,\y) {\v};
+            \node[var=\l] at (0.0,\y) {\v};
           }
           % stack frames
           \foreach [
             evaluate=\s as \y using (1.5*\s),
-            evaluate=\f as \h using (1.5*\f),
-          ] \s/\f in {0/2,2/3}
+            evaluate=\e as \h using (1.5*\e),
+          ] \s/\e in {0/2,2/3}
           {
-            \draw[ultra thick] (0,\y) rectangle ++(3.0,\h);
+            \draw[ultra thick] (0.0,\y) rectangle ++(3.0,\h);
           }
         \end{tikzpicture}
         \caption{Run-time stack.}
