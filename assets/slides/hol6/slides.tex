@@ -48,8 +48,45 @@
 %-------------------------------------------------------------------------------
 
 \usepackage{tabularx}
+
+% tikz stuff
 \usepackage{tikz}
-\usetikzlibrary{arrows,decorations.markings,patterns}
+\usetikzlibrary{arrows,patterns,circuits.ee.IEC}
+\tikzset{memory/.style={
+  x=1em,
+  y=1em,
+  font=\ttfamily,
+  circuit ee IEC,
+  dot/.style={
+    circle,
+    inner sep=0pt,
+    minimum size=3pt,
+    fill,
+  },
+  base/.style={
+    anchor=north west,
+  },
+  var/.style={
+    draw,
+    rectangle,
+    anchor=south west,
+    minimum width=3.0em,
+    minimum height=1.5em,
+    label={left:##1},
+  },
+  ptr/.style={
+    ->,
+    >=stealth',
+    semithick,
+    rounded corners,
+  },
+  null/.style={
+    ground,
+    scale=0.5,
+    anchor=west,
+  },
+}}
+
 
 \title{C programming language}
 \date{}
@@ -287,38 +324,33 @@
       \centering
       \begin{subfigure}[b]{.30\textwidth}
         \centering
-        \begin{tikzpicture}[
-            x=1em,
-            y=1em,
-            %node distance=1.5em,
-            %node distance=1.5em,
-            font=\ttfamily,
-            base/.style={
-              anchor=north west,
-            },
-            var/.style={
-              draw,
-              rectangle,
-              anchor=south west,
-              minimum width=3.0em,
-              minimum height=1.5em,
-            },
-          ]
-
+        \begin{tikzpicture}[memory]
           % phantom shadow to align with the run-time stack
-          \draw[color=bg] (-0.5,0.0) -- (3.5,0.0) node[base] {};
           \fill[color=bg] (-0.5,-0.5) rectangle ++(4.0,0.5) node[base] {};
           % global variables
           \foreach [
             count=\i,
             evaluate=\i as \y using (1.5*(\i-1)),
-          ] \l/\v in {j/424,ch/N,ptr/$\mathbf{\cdot}$}
+          ] \l/\v in {j/424,ch/N,ptr1/,ptr2/}
           {
-            \node[var,label=left:\l] at (0.0,\y) (\i) {\v};
+            \node[var=\l] at (0.0,\y) (var\i) {\v};
           }
-
-          \fill (3.center) circle (1.25pt);
-          \draw (3.center) edge[bend left=45,-stealth] (1.east);
+          % valid pointers
+          \foreach \s/\e in {3/1,3/2}
+          {
+            \draw[ptr]
+              (var\s.center) node[dot] {} --
+              ([xshift=1em]var\s.east) --
+              ([shift=({1,0})]var\e.east) --
+              (var\e.east);
+          }
+          % null pointers
+          \foreach \p in {4}
+          {
+            \draw[fill]
+              (var\p.center) node[dot] {} --
+              ([xshift=1em]var\p.east) node[null] {};
+          }
         \end{tikzpicture}
         \caption{Fixed location.}
       \end{subfigure}
