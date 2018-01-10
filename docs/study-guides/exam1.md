@@ -28,8 +28,8 @@ permalink: /study-guides/exam1/
     hexadecimal, etc.)
   * 2's complement notation for signed numbers
   * Perform arithmetic/logical operations: **ADD**, **SUBTRACT**, **NEGATE**,
-    **NOT**, **AND**, **OR**, **NOT**, **XOR**, <span class="fa
-    fa-long-arrow-right"></span> (i.e. implies), etc.
+    **NOT**, **AND**, **OR**, **NOT**, **XOR**, <span class="fas
+    fa-long-arrow-alt-right"></span> (i.e. implies), etc.
   * Status bits (**N**, **Z**, **V**, **C**)
 * Characters
   * Characters and their ASCII numeric codes **(ASCII TABLE WILL BE PROVIDED)**
