@@ -39,7 +39,8 @@ be able to:
 ### Requirements
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
-interpreted as described in [RFC 2119](https://tools.ietf.org/html/rfc2119).
+interpreted as described in <a href="https://tools.ietf.org/html/rfc2119">RFC
+2119 <span class="fas fa-external-link-alt"></span></a>.
 
 Students are REQUIRED to have access to the textbook, *Computer Systems* by J.
 Stanley Warford. This course is based on the fifth edition of the book, thus, it
