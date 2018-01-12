@@ -23,7 +23,7 @@ docs:
       url: /assets/pep9/Linux-x86_64/Pep9
     - title: 'Pep/9 CPU <span class="far fa-arrow-alt-circle-down"></span>'
       url: /assets/pep9/Linux-x86_64/Pep9CPU
-    - title: "HOWTO"
-      url: /howto/
-    - title: "FAQs"
-      url: /faqs/
+    #- title: "HOWTO"
+    #  url: /howto/
+    #- title: "FAQs"
+    #  url: /faqs/
