@@ -1,13 +1,21 @@
-## Accessing an assignment
-1. Go to the link for the assignment provided to you by your instructor.
+---
+title: "Exercise workflow"
+permalink: /howto/workflow/
+toc: true
+---
+
+## Accessing an exercise
+1. Go to the link for the exercise provided to you by your instructor.
 1. [**Clone**][ref-clone] the repository to your computer.
 1. After cloning the repository to your computer, change to the directory
    that was created and execute the following command
 ```
 git remote add upstream https://github.com/CSBSJU/<repo>
 ```
+   `<repo>` will be the name of the exercise with your GitHub username appended
+   to it.
 
-## Working on an assignment
+## Working on an exercise
 1. Modify the files and [**commit**][ref-commit] changes to create a history of
    the work that you have completed.
 1. At any time, you may [**push**][ref-push]/sync your changes to GitHub. This
@@ -17,7 +25,7 @@ git remote add upstream https://github.com/CSBSJU/<repo>
    1. Changes become permanent -- even if your computer crashes, your work will
       not be lost.
 
-## Submitting an assignment
+## Submitting an exercise
 1. [**Commit**][ref-commit] your final solution, if you have made any changes
    since your last commit.
 1. [**Push**][ref-push]/sync your changes up to GitHub if you have not done so
@@ -27,7 +35,7 @@ git remote add upstream https://github.com/CSBSJU/<repo>
 https://github.com/CSBSJU/<repo>/compare/base...master
 ```
    `<repo>` should be replaced with the name of the repository that you cloned
-   in step 2 under [Accessing an assignment](#accessing-an-assignment).
+   in step 2 under [Accessing an exercise](#accessing-an-exercise).
    
 ## Further reading
 * [Learning outcomes](Learning-outcomes.md)
