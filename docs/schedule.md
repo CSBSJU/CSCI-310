@@ -9,7 +9,7 @@ permalink: /schedule/
 
 | Date&nbsp;&nbsp;                 | Topic                                                                                                                             | Reading                   | Notes                                                                 |
 | -------------------------------: | --------------------------------------------------------------------------------------------------------------------------------- | ------------------------- | --------------------------------------------------------------------- |
-| 15 JAN \|<br>\|<br>\|            | Intro to CSCI 310<br>XXX<br>Computer systems                                                                                      | <br><br>1.1-1.3           |                                                                       |
+| 15 JAN \|<br>\|<br>\|            | Intro to CSCI 310<br>Computer systems<br>.                                                                                        | <br>1.1-1.3<br>&nbsp;     | <br>[<span class="far fa-file-pdf"></span>][INTRO]<br>&nbsp;          |
 | <del>22 JAN \|</del><br>\|<br>\| | <br>HOL6: C (variables, flow control, functions)<br>HOL6: C (recursion)                                                           | <br>2.1-2.3<br>2.4        | <br>[<span class="far fa-file-pdf"></span>][HOL6]<br>&nbsp;           |
 | 29 JAN \|<br>\|<br>\|            | HOL6: C (dynamic memory allocation)<br>.<br>ISA3: Data rep (integers)                                                             | 2.5<br><br>3.1-3.2        | <br><br>[<span class="far fa-file-pdf"></span>][ISA3]                 |
 | 05 FEB \|<br>\|<br>\|            | ISA3: Data rep (binary ops, hex, ASCII, etc.)<br>ISA3: Data rep (floating-point)<br>ISA3: Computer arch (hardware & instructions) | 3.3-3.4<br>3.5<br>4.1-4.2 | [<span class="fas fa-pencil-alt"></span>][EX1]<br><br>&nbsp;          |
@@ -33,14 +33,15 @@ permalink: /schedule/
 [Final exam]: ../study-guides/final/
 [EX1]: ../exercises/1/
 [EX2]: ../exercises/2/
-[EX3]: ../exercises/XXX
-[EX4]: ../exercises/XXX
-[EX5]: ../exercises/XXX
-[EX6]: ../exercises/XXX
-[EX7]: ../exercises/XXX
-[EX8]: ../exercises/XXX
-[HOL6]: ../assets/slides/hol6/slides-final.pdf
-[ASM5]: ../assets/slides/asm5/slides-final.pdf
-[OS4]:  ../assets/slides/os4/slides-final.pdf
-[ISA3]: ../assets/slides/isa3/slides-final.pdf
-[LG1]:  ../assets/slides/lg1/slides-final.pdf
+[EX3]: ../exercises/3/
+[EX4]: ../exercises/4/
+[EX5]: ../exercises/5/
+[EX6]: ../exercises/6/
+[EX7]: ../exercises/7/
+[EX8]: ../exercises/8/
+[INTRO]: ../assets/slides/intro/slides-final.pdf
+[HOL6]:  ../assets/slides/hol6/slides-final.pdf
+[ASM5]:  ../assets/slides/asm5/slides-final.pdf
+[OS4]:   ../assets/slides/os4/slides-final.pdf
+[ISA3]:  ../assets/slides/isa3/slides-final.pdf
+[LG1]:   ../assets/slides/lg1/slides-final.pdf
