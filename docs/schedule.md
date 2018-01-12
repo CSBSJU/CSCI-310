@@ -5,53 +5,29 @@ permalink: /schedule/
 
 ## Course schedule
 
-| Lecture | Topic                                         | Reading   | Notes     |
-| ------- | --------------------------------------------- | --------- | --------- |
-|       1 | Introduction to CSCI 310                      |           |           |
-|       2 | XXX                                           |           |           |
-|       3 | Computer systems                              | 1.1-1.3   |           |
-|       4 | .                                             |           |           |
-|       5 | HOL6: C (variables, flow control, functions)  | 2.1-2.3   | [<span class="far fa-file-pdf"></span>][HOL6] |
-|       6 | HOL6: C (recursion)                           | 2.4       |           |
-|       7 | HOL6: C (dynamic memory allocation)           | 2.5       |           |
-|       8 | .                                             |           |           |
-|       9 | ISA3: Data rep (integers)                     | 3.1-3.2   | [<span class="far fa-file-pdf"></span>][ISA3] |
-|      10 | ISA3: Data rep (binary ops, hex, ASCII, etc.) | 3.3-3.4   | [EX1] due |
-|      11 | ISA3: Data rep (floating-point)               | 3.5       |           |
-|      12 | ISA3: Computer arch (hardware & instructions) | 4.1-4.2   |           |
-|      13 | .                                             | 4.3       |           |
-|      14 | .                                             | 4.4       | [EX2] due |
-|      15 | ASM5: Assembly programming                    | 5.1       | [<span class="far fa-file-pdf"></span>][ASM5] |
-|      16 | .                                             | 5.2       |           |
-|      17 | .                                             | 5.3-5.4   | [EX3] due |
-|      18 | .                                             |           |           |
-|      19 | .                                             | 6.1       |           |
-|         | [Exam 1]                                      |           |           |
-|      20 | ASM5: Compiling                               | 6.2       |           |
-|      21 | .                                             | 6.3       | [EX4] due |
-|      22 | .                                             |           |           |
-|      23 | .                                             | 6.4       |           |
-|      24 | .                                             |           | [EX5] due |
-|      25 | .                                             | 6.5       |           |
-|      26 | .                                             |           |           |
-|         | [Exam 2]                                      |           |           |
-|      27 | .                                             |           |           |
-|      28 | OS4: Process management                       | 8.1-8.2   | [<span class="far fa-file-pdf"></span>][OS4] |
-|      29 | .                                             | 8.3       |           |
-|      30 | .                                             | 8.4       |           |
-|      31 | .                                             |           | [EX6] due |
-|      32 | OS4: Storage management                       | 9.1-9.2   |           |
-|      33 | .                                             | 9.3       |           |
-|      34 | .                                             |           |           |
-|      35 | LG1: Combinational circuits                   | 10.1-10.2 | [<span class="far fa-file-pdf"></span>][LG1] |
-|      36 | .                                             | 10.3      | [EX7] due |
-|      37 | .                                             | 10.4      |           |
-|         | [Exam 3]                                      |           |           |
-|      38 | LG1: Sequential circuits                      | 11.1,11.3 |           |
-|      39 | .                                             |           |           |
-|      40 | .                                             |           |           |
-|      41 | TBD                                           |           | [EX8] due |
-|         | [Final exam]                                  |           |           |
+| Legend |   |
+| -----: | - |
+| <span class="far fa-file-pdf"></span><br><span class="fas fa-pencil-alt"></span> | link to a slide deck<br>exercise due date and link to write-up |
+
+| Date&nbsp;&nbsp;                 | Topic                                                                                                                             | Reading                   | Notes                                                                 |
+| -------------------------------: | --------------------------------------------------------------------------------------------------------------------------------- | ------------------------- | --------------------------------------------------------------------- |
+| 15 JAN \|<br>\|<br>\|            | Intro to CSCI 310<br>XXX<br>Computer systems                                                                                      | <br><br>1.1-1.3           |                                                                       |
+| <del>22 JAN \|</del><br>\|<br>\| | <br>HOL6: C (variables, flow control, functions)<br>HOL6: C (recursion)                                                           | <br>2.1-2.3<br>2.4        | <br>[<span class="far fa-file-pdf"></span>][HOL6]<br>&nbsp;           |
+| 29 JAN \|<br>\|<br>\|            | HOL6: C (dynamic memory allocation)<br>.<br>ISA3: Data rep (integers)                                                             | 2.5<br><br>3.1-3.2        | <br><br>[<span class="far fa-file-pdf"></span>][ISA3]                 |
+| 05 FEB \|<br>\|<br>\|            | ISA3: Data rep (binary ops, hex, ASCII, etc.)<br>ISA3: Data rep (floating-point)<br>ISA3: Computer arch (hardware & instructions) | 3.3-3.4<br>3.5<br>4.1-4.2 | [<span class="fas fa-pencil-alt"></span>][EX1]<br><br>&nbsp;          |
+| 12 FEB \|<br>\|<br>\|            | .<br>.<br>ASM5: Assembly programming                                                                                              | 4.3<br>4.4<br>5.1         | <br>[<span class="fas fa-pencil-alt"></span>][EX2]<br>[<span class="far fa-file-pdf"></span>][ASM5] |
+| 19 FEB \|<br>\|<br>\|            | .<br>.<br>.                                                                                                                       | 5.2<br>5.3-5.4<br>&nbsp;  | <br>[<span class="fas fa-pencil-alt"></span>][EX3]<br>&nbsp;          |
+| 26 FEB \|<br>\|<br>\|            | .<br>[Exam 1]<br>ASM5: Compiling                                                                                                  | 6.1<br><br>6.2            |                                                                       |
+| <del>05 MAR \|<br>\|<br>\|</del> |                                                                                                                                   |                           |                                                                       |
+| 12 MAR \|<br>\|<br>\|            | .<br>.<br>.                                                                                                                       | 6.3<br><br>6.4            | [<span class="fas fa-pencil-alt"></span>][EX4]<br><br>&nbsp;          |
+| 19 MAR \|<br>\|<br>\|            | .<br>.<br>.                                                                                                                       | <br>6.5<br>&nbsp;         | [<span class="fas fa-pencil-alt"></span>][EX5]<br><br>&nbsp;          |
+| 26 MAR \|<br>\|<br><del>\|</del> | [Exam 2]<br>.<br>&nbsp;                                                                                                           |                           |                                                                       |
+| <del>02 APR \|</del><br>\|<br>\| | <br>OS4: Process management<br>.                                                                                                  | <br>8.1-8.2<br>8.3        | <br>[<span class="far fa-file-pdf"></span>][OS4]<br>&nbsp;            |
+| 09 APR \|<br>\|<br>\|            | .<br>.<br>OS4: Storage management                                                                                                 | 8.4<br><br>9.1-9.2        | <br>[<span class="fas fa-pencil-alt"></span>][EX6]<br>&nbsp;          |
+| 16 APR \|<br>\|<br>\|            | .<br>.<br>LG1: Combinational circuits                                                                                             | 9.3<br><br>10.1-10.2      | <br><br>[<span class="far fa-file-pdf"></span>][LG1]                  |
+| 23 APR \|<br>\|<br>\|            | .<br>.<br>[Exam 3]                                                                                                                | 10.3<br>10.4<br>&nbsp;    | [<span class="fas fa-pencil-alt"></span>][EX7]<br><br>&nbsp;          |
+| 30 APR \|<br>\|<br>\|            | LG1: Sequential circuits<br>.<br>.                                                                                                | 11.1,11.3<br><br>&nbsp;   | <br><br>[<span class="fas fa-pencil-alt"></span>][EX8]                |
+| 08 MAY \|                        | [Final exam]                                                                                                                      |                           |                                                                       |
 
 [Exam 1]:     ../study-guides/exam1/
 [Exam 2]:     ../study-guides/exam2/
