@@ -3,8 +3,6 @@ title: "Exercise 1"
 permalink: /exercises/1/
 ---
 
-## Exercise 1
-
 Solve the following problems from the text book
 
 1. Chapter 2, problem 3

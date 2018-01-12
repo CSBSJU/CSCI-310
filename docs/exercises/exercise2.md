@@ -3,8 +3,6 @@ title: "Exercise 2"
 permalink: /exercises/2/
 ---
 
-## Exercise 2
-
 Solve the following problems
 
 1. Chapter 3, problem 18

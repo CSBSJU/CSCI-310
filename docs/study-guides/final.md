@@ -1,9 +1,25 @@
 ---
 title: "Final exam study guide"
 permalink: /study-guides/final/
+toc: true
 ---
 
-## Final exam study guide
+{% capture notice-text %}
+During the exam, I will provide you with the following (IF NEEDED):
+* Pep/9 assembly/machine instructions table
+* Pep/9 addressing modes table
+* Pep/9 pseudo-ops (e.g., `.ASCII`, `.BLOCK`, etc.)
+* Pep/9 memory architecture
+* Bollean algebra laws
+* ASCII table
+* Pep/9 ALU control instructions table
+* Diagram of Pep/9 data section
+* Excitation and characterization tables for basic flip-flops
+{% endcapture %}
+
+<div class="notice--info">
+  {{ notice-text | markdownify }}
+</div>
 
 ### Chapter 1
 * The 7-layer architecture of a typical computer system along with a clear
@@ -140,17 +156,6 @@ permalink: /study-guides/final/
 * CISC vs. RISC architectures
 * Control section: Microprogrammed control vs. hardwired control
 * Pipelining: How it is achieved and its advantages
-
-### During the exam, I will provide you with the following (IF NEEDED)
-* Pep/9 assembly/machine instructions table
-* Pep/9 addressing modes table
-* Pep/9 pseudo-ops (e.g., `.ASCII`, `.BLOCK`, etc.)
-* Pep/9 memory architecture
-* Bollean algebra laws
-* ASCII table
-* Pep/9 ALU control instructions table
-* Diagram of Pep/9 data section
-* Excitation and characterization tables for basic flip-flops
 
 ### Sample questions
 * Multiple choice

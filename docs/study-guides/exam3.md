@@ -1,9 +1,21 @@
 ---
 title: "Exam 3 study guide"
 permalink: /study-guides/exam3/
+toc: true
 ---
 
-## Exam 3 study guide
+{% capture notice-text %}
+During the exam, I will provide you with the following (IF NEEDED):
+* Pep/9 assembly instructions table
+* Pep/9 addressing modes table
+* Pep/9 pseudo-ops (e.g., `.ASCII`, `.BLOCK`, etc.)
+* Pep/9 memory architecture
+* ASCII table
+{% endcapture %}
+
+<div class="notice--info">
+  {{ notice-text | markdownify }}
+</div>
 
 ### Chapters 5-6
 * Pep/9 CPU registers and memory architecture
@@ -48,13 +60,6 @@ permalink: /study-guides/exam3/
 * **Multitasking and process life cycle**
 * **Concurrency: attempts including Peterson’s algorithm, critical sections,
   mutual exclusion, deadlocks, and semaphores**
-
-### During the exam, I will provide you with the following (IF NEEDED)
-* Pep/9 assembly instructions table
-* Pep/9 addressing modes table
-* Pep/9 pseudo-ops (e.g., `.ASCII`, `.BLOCK`, etc.)
-* Pep/9 memory architecture
-* ASCII table
 
 ### Sample exam questions
 * (Literally) translate a given C program to Pep/9 assembly

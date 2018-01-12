@@ -1,9 +1,8 @@
 ---
 title: "Exam 1 study guide"
 permalink: /study-guides/exam1/
+toc: true
 ---
-
-## Exam 1 study guide
 
 ### Chapter 1
 * The 7-layer architecture of a typical computer system along with a clear
