@@ -8,6 +8,8 @@ exclude:
   - AUTHORS
   - LICENSE
   - LICENSE.MIT
+  - assests/pep9
+  - assests/slides
 
 plugins:
   - jekyll-remote-theme
