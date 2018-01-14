@@ -1,3 +1,8 @@
+---
+title: "Welcome to Computer Organization"
+permalink: /
+---
+
 ## Getting started
 
 ### To clone
