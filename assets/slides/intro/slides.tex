@@ -1,0 +1,854 @@
+\ifnotes
+\else
+  \PassOptionsToClass{handout}{beamer}
+\fi
+
+\documentclass[10pt,t,svgnames]{beamer}
+
+\usetheme{metropolis} % use metropolis theme
+
+\usepackage{../solarized}         % use solarized themed listings
+\usepackage{../stack}             % use the tikzstack environment
+\usepackage{appendixnumberbeamer} % do not number appendix frames
+\usepackage[scale=3]{ccicons}     % creative commons icons
+
+% fix-up the handling of the notes pages
+\ifnotes
+  \hypersetup{final}
+  \usepackage{pgfpages}
+  \setbeamertemplate{note page}[plain]
+  \setbeameroption{show notes on second screen=right}
+  \AtBeginNote{%
+    \let\enumerate\itemize%
+    \let\endenumerate\enditemize%
+  }
+\fi
+
+% overrides default description environment
+\newlength\wideleftmargin{}
+\newlength\tightleftmargin{}
+\newlength\diffleftmargin{}
+\setlength\wideleftmargin{6em}    % controls location of term (> is more left)
+\setlength\tightleftmargin{1.5em} % controls location of description (same)
+\setlength\diffleftmargin{\dimexpr\wideleftmargin-\tightleftmargin}
+\makeatletter
+\providecommand{\nextline}{
+  \setlength\labelwidth{\tightleftmargin}
+  \setlength\leftmargin{\tightleftmargin}
+  \advance\linewidth\diffleftmargin{}
+  \advance\@totalleftmargin-\diffleftmargin{}
+  \parshape\@ne\@totalleftmargin\linewidth{}
+  \setlength\itemsep{1.5ex}
+}
+\makeatother
+\let\origdescription\description
+\let\endorigdescription\enddescription
+\renewenvironment{description}{\origdescription\nextline}{\endorigdescription}
+
+%-------------------------------------------------------------------------------
+
+\usepackage{tabularx}   % tables
+\usepackage{subcaption} % subfigures
+\usepackage{tikz}       % tikz
+\usetikzlibrary{decorations.pathreplacing,positioning}
+
+\tikzset{
+  lstanchor/.style={
+    inner sep=0pt,
+    text width=0pt,
+    align=center,
+    minimum height=1.25ex,
+    node distance=0pt,
+  }
+}
+
+\title{Computer systems}
+\date{}
+\author{}
+\institute{College of Saint Benedict \& Saint John's University}
+\begin{document}
+  \maketitle
+
+  \begin{frame}[c]{great insights of computer science\footnotemark}
+  %{{{1
+    \begin{description}
+      \item[Bacon, Leibniz, Boole, Turing, Shannon, \& Morse] \hfill \\
+        There are only \textbf{two nouns} that a computer has to deal with in
+        order to represent ``anything'': 0, 1.
+    \end{description}
+
+    \note[item]{``anything'': there are some things computers cannot do --- like
+      determine if a program will ever finish.}
+
+    \footnotetext[1]{\href{https://en.wikipedia.org/wiki/Computer\_science\#The\_great\_insights\_of\_computer\_science}{The great insights of computer science}~/~\href{http://creativecommons.org/licenses/by-sa/3.0}{CC~BY-SA~3.0}}
+  %}}}1
+  \end{frame}
+
+  \begin{frame}[c]{great insights of computer science, cont'd}
+  %{{{1
+    \begin{description}
+      \item[Turing] \hfill \\
+        There are only \textbf{five verbs} that a computer has to perform in
+        order to do ``anything'':
+        \begin{enumerate}
+          \item move left one location;
+          \item move right one location;
+          \item read symbol at current location;
+          \item print 0 at current location;
+          \item print 1 at current location.
+        \end{enumerate}
+    \end{description}
+  %}}}1
+  \end{frame}
+
+  \begin{frame}[c]{great insights of computer science, cont'd}
+  %{{{1
+    \begin{description}
+      \item[Boehm and Jacopini] \hfill \\
+        There are only \textbf{three grammar rules} needed to combine these
+        verbs (into more complex ones) that are needed in order for a computer
+        to do "anything":
+        \begin{enumerate}
+          \item \emph{sequence}: first do this, then do that;
+          \item \emph{selection}: IF such-and-such is the case, THEN do this,
+            ELSE do that;
+          \item \emph{repetition}: WHILE such-and-such is the case DO this.
+        \end{enumerate}
+    \end{description}
+  %}}}1
+  \end{frame}
+
+  \begin{frame}[fragile]{great insights of computer science, cont'd}
+  %{{{1
+    \begin{enumerate}
+      \item two nouns
+      \item five verbs
+      \item three grammar rules
+    \end{enumerate}
+    \vspace{\baselineskip}
+
+    \begin{tabular}{l|l}
+      \hline
+      \texttt{\textless}    & move left one location\\
+      \texttt{\textgreater} & move right one location\\
+      \texttt{0}            & print \texttt{0} at current location\\
+      \texttt{1}            & print \texttt{1} at current location\\
+      \texttt{[}            & if current location is \texttt{0}, then go to
+                              instruction after matching \texttt{]}\\
+      \texttt{]}            & go to matching \texttt{[} instruction\\
+      \hline
+    \end{tabular}
+
+    \begin{termblock}
+    1>1>0>1>0<<<<[0>]1
+    \end{termblock}
+
+    \note[item]{\emph{sequence}: start at left-most instruction and progress a
+      single instruction to the right}
+    \note[item]{\emph{selection} and \emph{repetition:}
+      \texttt{[}\dots\texttt{]} provide both --- repetition is just fancy
+      selection}
+  %}}}1
+  \end{frame}
+
+  % TODO
+  % * control abstraction
+  %   * addition (small), multiplication (medium), power (large)
+  % * data abstraction
+  %   * numerical data types
+  %   * character types
+  %   * boolean type (nice abstraction, because it is really just a number)
+  % history of computing abstraction
+  %   * key people involved at each level
+
+  \begin{frame}{comparison}
+  %{{{1
+    \begin{center}
+      \begin{tabularx}{.8\textwidth}{XX}
+        \hline
+        \textbf{Java} & \textbf{C}\\
+        \hline
+        object-oriented & procedural\\
+        interpreted & compiled\\
+        \texttt{String} & \texttt{char} array\\
+        condition (\texttt{boolean}) & condition (\texttt{int})\\
+        garbage-collected & no memory management\\
+        references & pointers\\
+        exceptions & error codes\\
+        \hline
+      \end{tabularx}
+    \end{center}
+
+    \note{
+      \begin{itemize}
+        \item in Java, everything is a method that is called on an object
+        \item in C, everything is a function
+      \end{itemize}
+      \begin{itemize}
+        \item in Java, source code is compiled to byte code, which is then
+          interpreted by Java VM
+        \item in C, source code is compiled into binary machine code
+      \end{itemize}
+      \begin{itemize}
+        \item in Java, String is a class
+        \item in C, a string is just an array of \texttt{char} values which ends
+          with the \texttt{char~'\textbackslash0'}
+      \end{itemize}
+      \begin{itemize}
+        \item in Java, the Java VM takes care of deallocating memory used
+        \item in C, any memory you allocate, you must also deallocate
+      \end{itemize}
+    }
+  %}}}1
+  \end{frame}
+
+  \begin{frame}[fragile]{hello, world}
+  %{{{1
+    \begin{codeblock}
+    /* file: helloworld.c */
+
+    ###include## $$<stdio.h>$$
+
+    int main() {
+      printf([["hello, world]]%%\n%%[["]]);
+      return $$0$$;
+    }
+    \end{codeblock}
+
+    \begin{termblock}
+    $ gcc -o helloworld helloworld.c
+    $ ./helloworld
+    hello, world
+    \end{termblock}
+
+    \note[item]{The tradition of using the phrase "Hello, world!" as a test
+      message was influenced by an example program in the seminal book \emph{The
+      C Programming Language}}
+  %}}}1
+  \end{frame}
+
+  \begin{frame}[fragile]{global variables}
+  %{{{1
+    \begin{scriptsize}
+      \begin{codeblock}
+      // file: figure2-4.c
+      // Stan Warford
+      // A nonsense program to illustrate global variables
+
+      ###include## $$<stdio.h>$$
+
+      char ch;
+      int j;
+
+      int main() {
+        scanf([["]]%%%c%%[[ ]]%%%d%%[["]], &ch, &j);
+        j += $$5$$;
+        ch++;
+        printf([["]]%%%c\n%d\n%%[["]], ch, j);
+        return $$0$$;
+      }
+      \end{codeblock}
+    \end{scriptsize}
+
+    \begin{scriptsize}
+      \begin{termblock}
+      $ gcc -o figure2-4 figure2-4.c
+      $ ./figure2-4
+      M 419
+      N
+      424
+      \end{termblock}
+    \end{scriptsize}
+
+    \note[item]{What would you expect for input '\texttt{Z~-3}'?}
+    \note[item]{What would you expect for input '\texttt{9~a}'?}
+    \note[item]{What would you expect for input
+      '\texttt{\textasciitilde~2147483643}'?}
+  %}}}1
+  \end{frame}
+
+  \begin{frame}[fragile]{program breakdown}
+  %{{{1
+    \vspace{1\baselineskip}
+
+    \begin{scriptsize}
+      \begin{codeblock}[escapechar=!,xleftmargin=.45\linewidth,firstnumber=5]
+      ###include## $$<stdio.h>$$!\tikz[remember picture] \coordinate (f);!
+
+      !\tikz[remember picture] \coordinate (a);!char ch;
+      !\tikz[remember picture] \coordinate (b);!int j;
+
+      int main() {!\tikz[remember picture] \coordinate (c);!
+        !\tikz[remember picture] \coordinate (i);!scanf([["]]%%%c%%[[ ]]%%%d%%[["]], &ch, &j);!\tikz[remember picture] \coordinate (g);!
+        j += $$5$$;
+        !\tikz[remember picture] \coordinate (d);!ch++;
+        !\tikz[remember picture] \coordinate (h);!printf([["]]%%%c\n%d\n%%[["]], ch, j);!\tikz[remember picture] \coordinate (j);!
+        return $$0$$;!\tikz[remember picture] \coordinate (e);!
+      }
+      \end{codeblock}
+        \begin{tikzpicture}[remember picture, overlay,
+            every edge/.append style={
+              ->,
+              thick,
+              >=stealth,
+              DimGray,
+              dashed,
+              thick,
+            },
+            every node/.append style={
+              draw,
+              align=center,
+              minimum height=10pt,
+              color=DimGray,
+              text=fg,
+              thin,
+              rounded corners,
+              text width=.25\linewidth,
+            },
+            group/.style = {
+              decoration={
+                brace,
+                mirror,
+                raise=5pt,
+              },
+              thick,
+              color=DimGray,
+              decorate,
+            },
+          ]
+          \only<1>{
+            \node[] at ([shift=({19.5em,.625ex})]c) (C) {C programs ALWAYS start execution with the \texttt{main} function};
+            \node[] at ([shift=({20em,.625ex})]e) (E) {returning from \texttt{main} ends the program};
+            \draw (C.west) edge ([shift=({.4em,.625ex})]c);
+            \draw (E.west) edge ([shift=({.4em,.625ex})]e);
+          }
+          \only<2>{
+            \draw[group] ([shift=({.4em,1.65ex})]a) -- node[left=4.5em] (AB) {global variables are declared here --- outside of any function} ([shift=({.4em,-.4ex})]b);
+            \node[] at ([shift=({-11em,.625ex})]d) (D) {characters in C are treated internally like signed integers};
+            \draw (AB.east) edge ([xshift=3em]AB.east);
+            \draw (D.east) edge ([shift=({-.4em,.625ex})]d);
+          }
+          \only<3>{
+            \node[] at ([shift=({16em,.625ex})]f) (F) {correct headers must be included to access library functions};
+            \node[] at ([shift=({-11em,.625ex})]h) (H) {print data to \texttt{stdout} (the terminal)};
+            \node[] at ([shift=({-11em,.625ex})]i) (I) {read data from \texttt{stdin} (the terminal)};
+            \node[] at ([shift=({11em,-3.625ex})]g) (GJ) {\texttt{scanf} and \texttt{printf} are both library functions declared in \texttt{stdio.h}};
+            \draw (F.west) edge ([shift=({.4em,.625ex})]f);
+            \draw (GJ.west) edge ([shift=({.4em,.625ex})]g);
+            \draw (GJ.west) edge ([shift=({.4em,.625ex})]j);
+            \draw (H.east) edge ([shift=({-.4em,.625ex})]h);
+            \draw (I.east) edge ([shift=({-.4em,.625ex})]i);
+          }
+          \only<4>{
+            \node[] at ([shift=({11em,.625ex})]g) (G) {\texttt{\&} is the address of operator --- \texttt{scanf} expects the address of the variables where the data will be stored};
+            \draw (G.west) edge ([shift=({.4em,.625ex})]g);
+          }
+        \end{tikzpicture}
+      \end{scriptsize}
+
+      \note[item]<3>{C has no ``built-in'' functions; however, it does have a
+        standard library that includes many useful utility functions.}
+  %}}}1
+  \end{frame}
+
+  \begin{frame}{memory model --- part i}
+  %{{{1
+    \begin{description}
+      \item[global variables] \hfill \\ declared outside of any function and
+        remain in place throughout the execution of the entire program. they are
+        stored at a fixed location in memory.
+      \item[local variables] \hfill \\ declared within a function and come into
+        existence when the function is called and cease to exist when the
+        function terminates. they are stored on the run-time stack.
+    \end{description}
+
+    \vspace{1\baselineskip}
+
+    \begin{figure}
+      \centering
+      \begin{subfigure}[b]{.30\textwidth}
+        \centering
+        \begin{tikzstack}[bg]
+          \begin{stack}{west}
+            % global variables
+            \variables{j/424,ch/N}
+          \end{stack}
+        \end{tikzstack}
+        \caption{Fixed location.}
+      \end{subfigure}
+      \quad
+      \begin{subfigure}[b]{.30\textwidth}
+        \centering
+        \begin{tikzstack}[fg]
+          \begin{stack}{east}
+            % stack variables
+            \variables{retVal/0,retAddr/ra0}
+            % stack frames
+            \frames{0/2}
+          \end{stack}
+        \end{tikzstack}
+        \caption{Run-time stack.}
+      \end{subfigure}
+    \end{figure}
+
+    \note{
+      \begin{itemize}
+        \item I will be using graphical notation consistent with that of the
+          book.
+        \item In this case, (a) and (b) represent the state of relevant memory
+          for the previous program just before it terminates, i.e., in the
+          process of executing line 15.
+        \item How would the previous program behave had it declared \texttt{ch}
+          and \texttt{j} as local variables instead of global variables?
+        \item What would the memory model look like given the above?\\[1\baselineskip]
+
+        \begin{figure}
+          \begin{tikzstack}[fg]
+            \begin{stack}{east}
+              % stack variables
+              \variables{retVal/0,retAddr/ra0,j/424,ch/N}
+              % stack frames
+              \frames{0/4}
+            \end{stack}
+          \end{tikzstack}
+          \caption{Run-time stack.}
+        \end{figure}
+      \end{itemize}
+    }
+  %}}}1
+  \end{frame}
+
+  \begin{frame}{FIXME --- tikzstack testing}
+  %{{{1
+    \begin{figure}
+      \centering
+      \begin{subfigure}[b]{.50\textwidth}
+        \centering
+        \begin{tikzstack}[bg]
+          \begin{stack}{west}
+            % global variables
+            \variables{j/424,ch/N,ptr2/}
+            % valid pointers
+            %\pointers{3/1,3/2}
+            % null pointers
+            \nulls{3}
+          \end{stack}
+          \begin{stack}[xshift=7em]{east}
+            % global variables
+            \variables{a/,b/1,c/}
+            % valid pointers
+            \pointers{1/1-2,3/1-2}
+          \end{stack}
+        \end{tikzstack}
+        \caption{Fixed location.}
+      \end{subfigure}
+      \quad
+      \begin{subfigure}[b]{.30\textwidth}
+        \centering
+        \begin{tikzstack}[fg]
+          \begin{stack}{east}
+            % stack variables
+            \variables{retVal/,retAddr/ra0,n/3,retAddr/ra1,k/}
+            % stack frames
+            \frames{0/2,2/3}
+          \end{stack}
+        \end{tikzstack}
+        \caption{Run-time stack.}
+      \end{subfigure}
+    \end{figure}
+  %}}}1
+  \end{frame}
+
+  \begin{frame}[fragile]{conditions}
+  %{{{1
+    \begin{itemize}
+      \item under what conditions will each of the following be execute?
+    \end{itemize}
+    \begin{codeblock}
+    if (x) {
+      /* ??? */
+    }
+    if (x-y) {
+      /* ??? */
+    }
+    if (x=y) {
+      /* ??? */
+    }
+    \end{codeblock}
+
+    \note{
+      \begin{itemize}
+        \item x != 0
+        \item x != y
+        \item y != 0
+      \end{itemize}
+    }
+  %}}}1
+  \end{frame}
+
+%  \begin{frame}{add evens}
+%    \begin{itemize}
+%      \item create program called \texttt{add\_even.c} that adds all the even
+%        numbers between 1 and 100 and prints the sum
+%    \end{itemize}
+%  \end{frame}
+%
+%  \begin{frame}[fragile]{cli}
+%    \begin{codeblock}
+%    ###include## $$<stdio.h>$$
+%
+%    int main(int argc, char * argv[]) {
+%      printf([["(]]%%%d%%[[) ]]%%%s%%[[:]]%%%s\n%%[["]], argc, argv[$$0$$],
+%        argv[$$1$$]);
+%      return $$0$$;
+%    }
+%    \end{codeblock}
+%
+%    \begin{itemize}
+%      \item modify \texttt{add\_even.c} to get maximum value from the
+%        command-line instead of hard-coded as 100
+%    \end{itemize}
+%  \end{frame}
+%
+%  \begin{frame}[fragile]{printf / scanf}
+%    \begin{itemize}
+%      \item \texttt{printf()} interprets variables and prints character
+%        representations to standard out (usually the terminal)
+%      \item \texttt{scanf()} scans characters from standard in (usually the
+%        terminal) and interprets them for storage in variables
+%    \end{itemize}
+%
+%    \begin{codeblock}
+%    ###include## $$<stdio.h>$$
+%
+%    int main() {
+%      int i;
+%      scanf([["]]%%%d%%[["]], &i);
+%      return $$0$$;
+%    }
+%    \end{codeblock}
+%
+%    \note{
+%      \begin{itemize}
+%        \item scanf requires you to pass the address of the variable, so that
+%          its value can be changed
+%      \end{itemize}
+%    }
+%  \end{frame}
+%
+%  \begin{frame}[fragile]{echo}
+%    \begin{itemize}
+%      \item modify \texttt{helloworld.c} to ask user for an input and then print
+%        it back
+%      \item change its name to \texttt{echo.c}
+%    \end{itemize}
+%
+%    \begin{termblock}
+%    $ ./echo
+%    Enter a string to echo: hello, world
+%    hello,
+%    \end{termblock}
+%
+%    \note{
+%      \begin{itemize}
+%        \item why did it print \texttt{hello,} instead of \texttt{hello, world}?
+%      \end{itemize}
+%    }
+%  \end{frame}
+%
+%  \begin{frame}[fragile]{pointers}
+%    \begin{itemize}
+%      \item a pointer is a variable whose value is a memory address
+%    \end{itemize}
+%    \begin{codeblock}
+%    int   i  = $$0x1A$$;
+%    int * ip = &i;
+%    \end{codeblock}
+%    \begin{itemize}
+%      \item \texttt{\&i} evaluates to the address where the variable \texttt{i}
+%        is stored in memory
+%      \item \texttt{i} is an \texttt{int}, so \texttt{ip} is a \emph{pointer} to
+%        an \texttt{int}
+%    \end{itemize}
+%
+%    \hspace{8pt}%
+%    \begin{tikzpicture}[font=\ttfamily,noname/.style={text height=1.5ex, text depth=.25ex, text centered, minimum height=3em}]
+%      \node[noname] at (-1.3,.3) {\textbf{0x000012A0}};
+%      \foreach \x in {0,.6,...,2.4}
+%        \draw (\x,0) rectangle ++(.6,.6);
+%      \draw[bg, ultra thick] (-.1,.6) -- ++(3.2,0);
+%      \foreach [count=\i,evaluate=\i as \x using .3+(\i-1)*.6] \c in {00,00,00,1A}
+%        \node[noname] at (\x,.3) {\c};
+%      \draw[decoration={brace,mirror,raise=5pt},decorate] (2.4,0) -- node[right=6pt] {i} ++(0,.6);
+%
+%      \node[noname] at (-1.3,-.7) {\textbf{0x????????}};
+%      \foreach \x in {0,.6,...,2.4}
+%        \draw (\x,-1) rectangle ++(.6,.6);
+%      \draw[bg, ultra thick] (-.1,-.4) -- ++(3.2,0);
+%      \foreach [count=\i,evaluate=\i as \x using .3+(\i-1)*.6] \c in {00,00,12,A0}
+%        \node[noname] at (\x,-.7) {\c};
+%      \draw[decoration={brace,mirror,raise=5pt},decorate] (2.4,-1) -- node[right=6pt] {ip} ++(0,.6);
+%    \end{tikzpicture}
+%  \end{frame}
+%
+%  \begin{frame}[fragile]{pointers cont.}
+%    \begin{codeblock}
+%    printf([["0x]]%%%X\n%%[["]], i);    /* 0x1A */
+%    printf([["0x]]%%%#X\n%%[["]], &i);  /* 0x12A0 */
+%    printf([["0x]]%%%#X\n%%[["]], ip);  /* 0x12A0 */
+%    printf([["0x]]%%%#X\n%%[["]], &ip); /* 0x???????? */
+%    \end{codeblock}
+%
+%    \note{
+%      \begin{itemize}
+%        \item so how can we use the pointer, \texttt{ip}, to access the value of
+%          \texttt{i}?
+%      \end{itemize}
+%    }
+%  \end{frame}
+%
+%  \begin{frame}[fragile]{pointer dereference}
+%    \begin{itemize}
+%      \item \texttt{*ptr} will
+%        \begin{enumerate}
+%          \item treat the value of \texttt{ptr} as a memory address
+%          \item get the bytes of data located at that memory address
+%          \item interpret those bytes according to the type of pointer that
+%            \texttt{ptr} is
+%        \end{enumerate}
+%    \end{itemize}
+%    \begin{codeblock}
+%    printf([["0x]]%%%X\n%%[["]], *ip);   /* 0x1A */
+%    \end{codeblock}
+%
+%    \begin{onlyenv}<2->
+%      \begin{itemize}
+%        \item \texttt{ip[X] = *(ip + X)}
+%      \end{itemize}
+%      \begin{codeblock}
+%    printf([["0x]]%%%X\n%%[["]], ip[0]); /* 0x1A */
+%      \end{codeblock}
+%    \end{onlyenv}
+%
+%    \note{
+%      \begin{itemize}
+%        \item the C compiler is ''smart enough'' to ''know'' that \texttt{+ X}
+%          really means add \texttt{X * sizeof(*ip)} to \texttt{ip}
+%      \end{itemize}
+%    }
+%  \end{frame}
+%
+%  \begin{frame}[fragile]{pointers cont.}
+%    \begin{codeblock}
+%    printf([["0x]]%%%X\n%%[["]], i);       /* 0x1A */
+%    printf([["0x]]%%%X\n%%[["]], *ip);     /* 0x1A */
+%    printf([["0x]]%%%X\n%%[["]], ip[$$0$$]);   /* 0x1A */
+%    printf([["0x]]%%%X\n%%[["]], *(ip+$$0$$)); /* 0x1A */
+%    printf([["0x]]%%%#X\n%%[["]], &i);     /* 0x12A0 */
+%    printf([["0x]]%%%#X\n%%[["]], ip);     /* 0x12A0 */
+%    printf([["0x]]%%%#X\n%%[["]], &ip);    /* 0x???????? */
+%    \end{codeblock}
+%  \end{frame}
+%
+%
+%  \begin{frame}[fragile]{pointers cont.}
+%    \begin{codeblock}
+%    char * cp = "hello, world";
+%    \end{codeblock}
+%    \begin{itemize}
+%      \item \texttt{cp} is a \emph{pointer} to a \texttt{char}
+%    \end{itemize}
+%
+%    \vspace{-14pt}%
+%    \hspace{8pt}%
+%    \begin{tikzpicture}[font=\ttfamily,noname/.style={text height=1.5ex, text depth=.25ex, text centered, minimum height=3em}]
+%      \node[noname] at (-1.3,.3) {\textbf{0x00004C80}};
+%      \foreach \x in {0,.6,...,7.8}
+%        \draw (\x,0) rectangle ++(.6,.6);
+%      \draw[bg, ultra thick] (-.1,.6) -- ++(8.4,0);
+%      \foreach [count=\i,evaluate=\i as \x using .3+(\i-1)*.6] \c in {h,e,l,l,o,{,}, ,w,o,r,l,d,\textbackslash0}
+%        \node[noname] at (\x,.3) {\c};
+%
+%      \node[noname] at (-1.3,-.7) {\textbf{0x????????}};
+%      \foreach \x in {0,.6,...,2.4}
+%        \draw (\x,-1) rectangle ++(.6,.6);
+%      \draw[bg, ultra thick] (-.1,-.4) -- ++(3.2,0);
+%      \foreach [count=\i,evaluate=\i as \x using .3+(\i-1)*.6] \c in {00,00,4C,80}
+%        \node[noname] at (\x,-.7) {\c};
+%    \end{tikzpicture}
+%
+%    \vspace{-6pt}%
+%    \begin{codeblock}
+%    printf([["]]%%%c\n%%[["]], *cp);     /* h */
+%    printf([["]]%%%c\n%%[["]], cp[$$0$$]);   /* h */
+%    printf([["]]%%%c\n%%[["]], cp[$$4$$]);   /* o */
+%    printf([["]]%%%c\n%%[["]], *(cp+$$4$$)); /* o */
+%    printf([["]]%%%s\n%%[["]], cp);      /* hello, world */
+%    printf([["]]%%%s\n%%[["]], cp+7);    /* world */
+%    printf([["0x]]%%%#X\n%%[["]], cp);   /* 0x4C80 */
+%    printf([["0x]]%%%#X\n%%[["]], &cp);  /* 0x???????? */
+%    \end{codeblock}
+%
+%    \note{
+%      \begin{itemize}
+%        \item why not say \texttt{cp} is a \emph{pointer} to a \texttt{char}
+%          array?
+%      \end{itemize}
+%    }
+%  \end{frame}
+%
+%  \begin{frame}[fragile]{practice}
+%    \begin{codeblock}
+%    ###include## $$<stdio.h>$$
+%
+%    void swap(int n1, int n2) {
+%      int tmp = n1;
+%      n1 = n2;
+%      n2 = tmp;
+%    }
+%
+%    int main() {
+%      int v1 = $$11$$, v2 = $$77$$;
+%      printf([["BEFORE  v1=]]%%%d%%[[, v2=]]%%%d\n%%[["]], v1, v2);
+%      swap(v1, v2);
+%      printf([["AFTER  v1=]]%%%d%%[[, v2=]]%%%d\n%%[["]], v1, v2);
+%      return $$0$$;
+%    }
+%    \end{codeblock}
+%
+%    \note{
+%      \begin{itemize}
+%        \item what's wrong with this program?
+%        \item fix the program so that it correctly swaps the two variables'
+%          values
+%      \end{itemize}
+%    }
+%  \end{frame}
+%
+%  \begin{frame}[fragile]{heap memory}
+%    \begin{itemize}
+%      \item designate a block of memory to store value(s) of a particular
+%        data type
+%    \end{itemize}
+%    \begin{codeblock}
+%    int * ip = malloc($$100$$*sizeof(int));
+%    \end{codeblock}
+%
+%    \hspace{8pt}%
+%    \begin{tikzpicture}[font=\ttfamily,noname/.style={text height=1.5ex, text depth=.25ex, text centered, minimum height=3em}]
+%      \node[noname] at (-1.3,.3) {\textbf{0x000063DA}};
+%      \foreach \x in {0,.6,...,7.2}
+%        \draw (\x,0) rectangle ++(.6,.6);
+%      \draw[bg, ultra thick] (-.1,.6) -- ++(8,0);
+%      \foreach [count=\i,evaluate=\i as \x using .3+(\i-1)*.6] \c in {r,@,!,X,t,v,9,1,S,?,{)},.}
+%        \node[noname] at (\x,.3) {\c};
+%      \node at (7.6,.3) {$\boldsymbol{\cdots}$};
+%
+%      \node[noname] at (-1.3,-.7) {\textbf{0x????????}};
+%      \foreach \x in {0,.6,...,2.4}
+%        \draw (\x,-1) rectangle ++(.6,.6);
+%      \draw[bg, ultra thick] (-.1,-.4) -- ++(3.2,0);
+%      \foreach [count=\i,evaluate=\i as \x using .3+(\i-1)*.6] \c in {00,00,63,DA}
+%        \node[noname] at (\x,-.7) {\c};
+%    \end{tikzpicture}
+%
+%    \begin{onlyenv}<2->
+%      \begin{itemize}
+%        \item release a block of memory back to system to be used elsewhere
+%      \end{itemize}
+%      \begin{codeblock}
+%    free(ip);
+%      \end{codeblock}
+%    \end{onlyenv}
+%
+%    \note{
+%      \begin{itemize}
+%        \item allocates enough consecutive memory for 100 \texttt{int} values
+%      \end{itemize}
+%    }
+%  \end{frame}
+%
+%  \begin{frame}[fragile]{heap memory cont.}
+%    \begin{codeblock}
+%    ip[$$0$$] = $$0x7$$; /* *ip = 0x7; */
+%    \end{codeblock}
+%
+%    \hspace{8pt}%
+%    \begin{tikzpicture}[font=\ttfamily,noname/.style={text height=1.5ex, text depth=.25ex, text centered, minimum height=3em}]
+%      \node[noname] at (-1.3,.3) {\textbf{0x000063DA}};
+%      \foreach \x in {0,.6,...,7.2}
+%        \draw (\x,0) rectangle ++(.6,.6);
+%      \draw[bg, ultra thick] (-.1,.6) -- ++(8,0);
+%      \foreach [count=\i,evaluate=\i as \x using .3+(\i-1)*.6] \c in {00,00,00,07,t,v,9,1,S,?,{)},.}
+%        \node[noname] at (\x,.3) {\c};
+%      \node at (7.6,.3) {$\boldsymbol{\cdots}$};
+%
+%      \node[noname] at (-1.3,-.7) {\textbf{0x????????}};
+%      \foreach \x in {0,.6,...,2.4}
+%        \draw (\x,-1) rectangle ++(.6,.6);
+%      \draw[bg, ultra thick] (-.1,-.4) -- ++(3.2,0);
+%      \foreach [count=\i,evaluate=\i as \x using .3+(\i-1)*.6] \c in {00,00,63,DA}
+%        \node[noname] at (\x,-.7) {\c};
+%    \end{tikzpicture}
+%
+%    \begin{onlyenv}<2->
+%      \begin{codeblock}
+%    ip[$$1$$] = $$0xA$$; /* *(ip + 1) = 0xA; */
+%      \end{codeblock}
+%
+%      \hspace{8pt}%
+%      \begin{tikzpicture}[font=\ttfamily,noname/.style={text height=1.5ex, text depth=.25ex, text centered, minimum height=3em}]
+%        \node[noname] at (-1.3,.3) {\textbf{0x000063DA}};
+%        \foreach \x in {0,.6,...,7.2}
+%          \draw (\x,0) rectangle ++(.6,.6);
+%        \draw[bg, ultra thick] (-.1,.6) -- ++(8,0);
+%        \foreach [count=\i,evaluate=\i as \x using .3+(\i-1)*.6] \c in {00,00,00,07,00,00,00,0A,S,?,{)},.}
+%          \node[noname] at (\x,.3) {\c};
+%        \node at (7.6,.3) {$\boldsymbol{\cdots}$};
+%      \end{tikzpicture}
+%    \end{onlyenv}
+%  \end{frame}
+%
+%  \begin{frame}[fragile]{file i/o}
+%    \begin{codeblock}
+%    ###include## $$<stdio.h>$$
+%
+%    int main(int argc, char * argv[]) {
+%      int m, n;
+%      FILE * fp;
+%
+%      if (!(fp = fopen("example.txt", "r")))
+%        return $$-1$$;
+%      if ($$2$$ != fscanf(fp, [["]]%%%d %d%%[["]], &m, &n))
+%        return $$-1$$;
+%      if (!fclose(fp))
+%        return $$-1$$;
+%
+%      return $$0$$;
+%    }
+%    \end{codeblock}
+%  \end{frame}
+%
+%  \begin{frame}{final thoughts}
+%    \begin{itemize}
+%      \item matrices
+%    \end{itemize}
+%  \end{frame}
+
+  %\begin{frame}[fragile]{practice}
+  %  \begin{itemize}
+  %    \item download \href{}{this} code
+  %    \item implement the \texttt{swap} method
+  %  \end{itemize}
+  %\end{frame}
+
+  \appendix
+
+  \begin{frame}[c]
+    \begin{center}\ccbysa\end{center}
+
+    except where otherwise noted, this worked is licensed under
+    \href{http://creativecommons.org/licenses/by-sa/4.0/}{creative commons
+    attribution-sharealike 4.0 international license}
+  \end{frame}
+\end{document}
