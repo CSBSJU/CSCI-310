@@ -338,6 +338,179 @@
   %}}}1
   \end{frame}
 
+  \begin{frame}{hardware abstraction}
+  %{{{1
+    \vspace{3ex}
+    \begin{columns}
+      \begin{column}{\textwidth}
+        \includegraphics[width=\textwidth]{system.jpg}\\
+        \hfill
+        \hfill \tiny{\href{http://computersystemsbook.com/resources}{Figure 1.9}}
+      \end{column}
+    \end{columns}
+
+    \note{
+      \begin{itemize}
+        \item Ask students what the different parts of the picture are
+      \end{itemize}
+      \begin{itemize}
+        \item The only instructions that a CPU can perform are hard-wired into
+          its circuits (LG1) --- example: \texttt{add} is hard-wired,
+          \texttt{multiply} is written in MC2
+        \item MC2 requires an interpreter to be hard-wired into CPU to translate
+          MC2 to LG1
+        \item CPU can only compute on values in \emph{registers} --- modern
+          machine has on the order of tens of registers
+      \end{itemize}
+      \begin{itemize}
+        \item Show demonstration with SimHYMN
+      \end{itemize}
+      \begin{itemize}
+        \item \emph{memory-mapped i/o} --- the input and output devices are
+          treated as special locations in a process' address space --- this is
+          handled by the OS
+      \end{itemize}
+    }
+  %}}}1
+  \end{frame}
+
+  \begin{frame}{hardware abstraction, cont'd}
+  %{{{1
+    \begin{tikzpicture}[
+      scale=.3,
+      auto,
+      block/.style={
+        rectangle,
+        draw,
+        fill=blue!20,
+        text width=6em,
+        rounded corners,
+      },
+      line/.style={
+        draw,
+        -latex'
+      }
+    ]
+      % Place nodes
+      \node [block, label=left:HOL] (hol6) {j := i * 5};
+      \node [block, below of=hol6, label=left:ISA, node distance=2cm] (isa3) {load i\\mult 5\\store j};
+      \node [block, right of=isa3, node distance=6cm,label=right:MC] (mc2) {load
+        i\\store reg1\\load 0\\store reg2\\load 5\\store reg3\\loop:\\~~~load
+        reg2\\~~~add reg1\\~~~store reg2\\~~~load reg3\\~~~sub 1\\~~~store
+        reg3\\~~~jpos loop\\load reg2\\store j};
+      \node [block, below of=isa3, node distance=2.5cm, font=\ttfamily,label=left:LG] (lg1) {--|``-.\\
+~~~~|~~~~~~:--\\
+--|..-`};
+      % Draw edges
+      \path [line] (hol6) -- node {compiler} (isa3);
+      \path [line] (isa3) -- node[text width=6em] {hardware interpreter} (mc2);
+      \path [line] (mc2) -- node[text width=6em] {hardware decoder} (lg1);
+    \end{tikzpicture}
+
+    \note[item]{With the introduction of MC, there is not a 1-to-1 mapping
+      between IS3 and capabilities of CPU}
+    \note[item]{Now, ISA defines capabilities and MC implements them if LG
+      doesn't}
+  %}}}1
+  \end{frame}
+
+  \begin{frame}{software abstraction}
+  %{{{1
+    \begin{description}
+      \item [algorithm] \hfill \\
+        a set of \emph{instructions} that, when carried out in the proper
+        sequence, solves a problem in a finite amount of time
+      \item [program] \hfill \\
+        an algorithm written in a language that is understandable by a computer,
+        i.e., that can be executed on a computer
+    \end{description}
+    \note{
+      \begin{itemize}
+        \item what is an instruction
+          \begin{itemize}
+            \item this is where people get hung up, \emph{instruction} is not
+              necessarily an instruction that a machine can understand
+            \item but, if the algorithm is for a computer, the instruction
+              should be something that the computer is capable of
+          \end{itemize}
+      \end{itemize}
+    }
+  %}}}1
+  \end{frame}
+
+  \begin{frame}[fragile]{algorithms}
+  %{{{1
+    \begin{termblock}
+    while i is greater than or equal to 0
+      print i
+      subtract 1 from i
+    \end{termblock}
+    \vspace{2\baselineskip}
+    \begin{termblock}
+    print the numbers from i to 0
+    \end{termblock}
+
+    \note[item]{I consider both of these algorithms}
+  %}}}1
+  \end{frame}
+
+  \begin{frame}{system performance}
+  %{{{1
+    $$\frac{\textrm{time}}{\textrm{program}}=\frac{\textrm{instructions}}{\textrm{program}}\times\frac{\textrm{cycles}}{\textrm{instruction}}\times\frac{\textrm{time}}{\textrm{cycle}}$$\\[2\baselineskip]
+
+    \begin{block}<2>{try it yourself}
+      Suppose your CPU is rated at 2.5 GHz and you execute a program task on
+      your app that requires the execution of 16 million ISA3 instructions. If
+      each ISA3 instruction executes an average of 3.7 MC2 instructions, what is
+      the execution time of the program task in seconds?
+    \end{block}
+
+    \note{
+      \begin{itemize}
+        \item Note the prefix indicate powers of 10
+      \end{itemize}
+      \begin{itemize}
+        \item $\frac{\textrm{instructions}}{\textrm{program}}$ is \# of ISA 3
+          instructions in the program
+        \item $\frac{\textrm{cycles}}{\textrm{instruction}}$ is average \# of
+          MC2 instructions per ISA3 instruction
+        \item $\frac{\textrm{time}}{\textrm{cycle}}$ is $\frac{1}{\textrm{CPU
+          frequency}}$ -- also called the \emph{period}
+      \end{itemize}
+    }
+    \note<2>{
+      \begin{itemize}
+        \item
+          $(16\times10^6)\times(3.7)\times(1/(2.5\times10^9))=23.7\mathrm{ms}=23.7\times10^{-3}\approx0.024\mathrm{s}$
+      \end{itemize}
+    }
+  %}}}1
+  \end{frame}
+
+  \begin{frame}{bandwidth}
+  %{{{1
+    $$\textrm{information}=\frac{\textrm{information}}{\textrm{time}}\times\textrm{time}$$\\[2\baselineskip]
+
+    \begin{block}<2>{try it yourself}
+      One of the largest (but not the largest, but very close to it),
+      telecommunications companies in the U.S., offers an internet product
+      called Continuum that promises up to 100 Mb/s for the low price of
+      \$45/month. A smaller and slightly less popular telecomm company offers a
+      competing product offering up to 25 Mb/s for \$30/month. If I have two
+      devices capable of streaming Netflix HD, which product should I choose?
+      Construct an argument to explain to the customer service representative
+      for the company whose product you do not choose, why.
+    \end{block}
+
+    \note<2>{
+      \begin{itemize}
+        \item Netflix HD transfers about 3 GB/hour
+        \item $3\textrm{GB/hour}=3*1000*1000*1000*8=24,000,000,000 \textrm{b/hour}=24,000 \textrm{Mb/hour}\approx6.6 \textrm{Mb/s}$
+      \end{itemize}
+    }
+  %}}}1
+  \end{frame}
+
   \appendix
 
   \begin{frame}[c]
