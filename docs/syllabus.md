@@ -136,8 +136,8 @@ F grade regardless of your total final score).
 | BC | &ge;77% |
 | C  | &ge;74% |
 | CD | &ge;67% |
-| D  | &ge;60% |
-| F  | &lt;60% |
+| D  | &ge;64% |
+| F  | &lt;64% |
 
 ## Special accommodations
 Students needing special accommodations or who have special needs are invited to
