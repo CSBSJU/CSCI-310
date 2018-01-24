@@ -1,8 +1,3 @@
-\ifnotes
-\else
-  \PassOptionsToClass{handout}{beamer}
-\fi
-
 \documentclass[10pt,t,svgnames]{beamer}
 
 \usetheme{metropolis} % use metropolis theme
@@ -64,8 +59,7 @@
 
 \title{C programming language}
 \date{}
-\author{Jeremy Iverson}
-\institute{College of Saint Benedict \& Saint John's University}
+\author{College of Saint Benedict \& Saint John's University}
 \begin{document}
   \maketitle
 
@@ -88,47 +82,6 @@
   %}}}1
   \end{frame}
 
-  \begin{frame}{comparison}
-  %{{{1
-    \begin{center}
-      \begin{tabularx}{.8\textwidth}{XX}
-        \hline
-        \textbf{Java} & \textbf{C}\\
-        \hline
-        object-oriented & procedural\\
-        interpreted & compiled\\
-        \texttt{String} & \texttt{char} array\\
-        condition (\texttt{boolean}) & condition (\texttt{int})\\
-        garbage-collected & no memory management\\
-        references & pointers\\
-        exceptions & error codes\\
-        \hline
-      \end{tabularx}
-    \end{center}
-
-    \note{
-      \begin{itemize}
-        \item in Java, everything is a method that is called on an object
-        \item in C, everything is a function
-      \end{itemize}
-      \begin{itemize}
-        \item in Java, source code is compiled to byte code, which is then
-          interpreted by Java VM
-        \item in C, source code is compiled into binary machine code
-      \end{itemize}
-      \begin{itemize}
-        \item in Java, String is a class
-        \item in C, a string is just an array of \texttt{char} values which ends
-          with the \texttt{char~'\textbackslash0'}
-      \end{itemize}
-      \begin{itemize}
-        \item in Java, the Java VM takes care of deallocating memory used
-        \item in C, any memory you allocate, you must also deallocate
-      \end{itemize}
-    }
-  %}}}1
-  \end{frame}
-
   \begin{frame}[fragile]{hello, world}
   %{{{1
     \begin{codeblock}
@@ -148,9 +101,21 @@
     hello, world
     \end{termblock}
 
-    \note[item]{The tradition of using the phrase "Hello, world!" as a test
-      message was influenced by an example program in the seminal book \emph{The
-      C Programming Language}}
+    \note{
+      \begin{itemize}
+        \item Remind students that not everyone has same background in C ---
+          those with experience can help those without
+      \end{itemize}
+      \begin{itemize}
+        \item The tradition of using the phrase "Hello, world!" as a test
+          message was influenced by an example program in the seminal book
+          \emph{The C Programming Language}
+        \item Every statement in C exists in a function, starting with
+          \texttt{main}
+        \item Refresh students memory on the \emph{traditional} compilation
+          process
+      \end{itemize}
+    }
   %}}}1
   \end{frame}
 
@@ -187,10 +152,24 @@
       \end{termblock}
     \end{scriptsize}
 
-    \note[item]{What would you expect for input '\texttt{Z~-3}'?}
-    \note[item]{What would you expect for input '\texttt{9~a}'?}
-    \note[item]{What would you expect for input
-      '\texttt{\textasciitilde~2147483643}'?}
+    \note{
+      \begin{itemize}
+        \item Every C variable has three attributes:
+          \begin{description}
+            \item[name]  an identifier determined arbitrarily by the programmer
+            \item[type]  specifies the kind of values it can have
+            \item[value]
+          \end{description}
+        \item In C, variable declaration only reserves storage for the value;
+          nothing can be assumed about the initial value
+      \end{itemize}
+      \begin{itemize}
+        \item What would you expect for input '\texttt{Z~-3}'?
+        \item What would you expect for input '\texttt{9~a}'?
+        \item What would you expect for input
+          '\texttt{\textasciitilde~2147483643}'?
+      \end{itemize}
+    }
   %}}}1
   \end{frame}
 
@@ -275,6 +254,106 @@
 
       \note[item]<3>{C has no ``built-in'' functions; however, it does have a
         standard library that includes many useful utility functions.}
+      \note[item]<4>{address here means the location in memory}
+  %}}}1
+  \end{frame}
+
+  \begin{frame}[fragile]{conditions}
+  %{{{1
+    \begin{onlyenv}<1>
+      \begin{codeblock}
+    if ($$<cond>$$) {
+      /* ... */
+    }
+    else ($$<cond>$$) {
+      /* ... */
+    }
+    else {
+      /* ... */
+    }
+      \end{codeblock}
+    \end{onlyenv}
+    \begin{onlyenv}<2>
+      \begin{codeblock}
+    if (x) {
+      /* ??? */
+    }
+    if (x-y) {
+      /* ??? */
+    }
+    if (x=y) {
+      /* ??? */
+    }
+      \end{codeblock}
+      \begin{itemize}
+        \item under what conditions will each of the above be executed?
+      \end{itemize}
+    \end{onlyenv}
+
+    \note<1>{
+      \begin{itemize}
+        \item C only expects that the expression yield an integer value
+        \item 0 is false, non-zero is true
+      \end{itemize}
+    }
+    \note<2>{
+      \begin{itemize}
+        \item x != 0
+        \item x != y
+        \item y != 0
+      \end{itemize}
+    }
+  %}}}1
+  \end{frame}
+
+  \begin{frame}[fragile]{switch}
+  %{{{1
+    \begin{codeblock}
+    switch ($$<expr>$$) {
+      case $$<const>$$:
+      /* ... */
+
+      case $$<const>$$: /* fall-through */
+      /* ... */
+      break;
+
+      default:
+      /* ... */
+      break;
+    }
+    \end{codeblock}
+
+    \note{
+      \begin{itemize}
+        \item <expr> must evaluate to an integer value
+        \item <const> must be a constant integer value
+      \end{itemize}
+    }
+  %}}}1
+  \end{frame}
+
+  \begin{frame}[fragile]{loops}
+  %{{{1
+    \begin{codeblock}
+    for ($$<init>$$; $$<cond>$$; $$<incr>$$) {
+      /* ... */
+    }
+
+    while ($$<cond>$$)
+      /* ... */
+    }
+
+    do {
+      /* ... */
+    } while ($$<cond>$$);
+    \end{codeblock}
+
+    \note[item]{\texttt{<init>} is for initializing variables once, before loop
+    begins execution --- normally the loop control variable}
+    \note[item]{Same rules apply for \texttt{<cond>}.}
+    \note[item]{\texttt{<incr>} is for assigning variables a value, happens once
+      after the body of the loop has executed each iteration --- again, normally
+      the loop control variable}
   %}}}1
   \end{frame}
 
@@ -345,69 +424,193 @@
   %}}}1
   \end{frame}
 
-  \begin{frame}{FIXME --- tikzstack testing}
+  \begin{frame}{run-time stack a.k.a. ``the stack''}
   %{{{1
-    \begin{figure}
-      \centering
-      \begin{subfigure}[b]{.50\textwidth}
+    \begin{description}
+      \item[run-time stack] \hfill \\ stores information about the active
+        functions of a C program, including:
+        \begin{itemize}
+          \item return value,
+          \item parameters,
+          \item return address, and
+          \item local variables
+        \end{itemize}
+        in that order.
+    \end{description}
+
+    \begin{onlyenv}<2>
+      \vspace{1\baselineskip}
+
+      \begin{figure}
         \centering
-        \begin{tikzstack}[bg]
-          \begin{stack}{west}
-            % global variables
-            \variables{j/424,ch/N,ptr2/}
-            % valid pointers
-            %\pointers{3/1,3/2}
-            % null pointers
-            \nulls{3}
-          \end{stack}
-          \begin{stack}[xshift=7em]{east}
-            % global variables
-            \variables{a/,b/1,c/}
-            % valid pointers
-            \pointers{1/1-2,3/1-2}
-          \end{stack}
-        \end{tikzstack}
-        \caption{Fixed location.}
-      \end{subfigure}
-      \quad
-      \begin{subfigure}[b]{.30\textwidth}
-        \centering
-        \begin{tikzstack}[fg]
-          \begin{stack}{east}
-            % stack variables
-            \variables{retVal/,retAddr/ra0,n/3,retAddr/ra1,k/}
-            % stack frames
-            \frames{0/2,2/3}
-          \end{stack}
-        \end{tikzstack}
-        \caption{Run-time stack.}
-      \end{subfigure}
-    \end{figure}
+        \begin{subfigure}[b]{.30\textwidth}
+          \centering
+          \begin{tikzstack}[fg]
+            \begin{stack}{west}
+              % stack variables
+              \variables{retVal/0,retAddr/ra0,j/424,ch/N}
+              % stack frames
+              \frames{0/4}
+            \end{stack}
+          \end{tikzstack}
+          \caption{}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[b]{.30\textwidth}
+          \centering
+          \begin{tikzstack}[fg]
+            \begin{stack}{west}
+              % stack variables
+              \variables{ch/N,j/424,retAddr/ra0,retVal/0}
+              % stack frames
+              \frames{0/4}
+            \end{stack}
+          \end{tikzstack}
+          \caption{}
+        \end{subfigure}
+      \end{figure}
+    \end{onlyenv}
+
+    \note[item]{each program has one stack}
+    \note[item]<2>{which visualization is correct?}
   %}}}1
   \end{frame}
 
-  \begin{frame}[fragile]{conditions}
+  \begin{frame}[fragile]{functions}
   %{{{1
-    \begin{itemize}
-      \item under what conditions will each of the following be execute?
-    \end{itemize}
-    \begin{codeblock}
-    if (x) {
-      /* ??? */
-    }
-    if (x-y) {
-      /* ??? */
-    }
-    if (x=y) {
-      /* ??? */
-    }
-    \end{codeblock}
+    \vspace{2\baselineskip}
+
+    \begin{scriptsize}
+      \begin{codeblock}[escapechar=!,xleftmargin=.45\linewidth]
+      !\tikz[remember picture] \coordinate (a);!int puissance!\tikz[remember picture] \node [] (b) {};
+      !(int x,!\tikz[remember picture] \node [] (c){};
+      !int n) { 
+        /* ... */
+
+        return x+n;!\tikz[remember picture] \coordinate (d);!
+      }
+      \end{codeblock}
+      \begin{tikzpicture}[remember picture, overlay,
+          every edge/.append style={
+            ->,
+            thick,
+            >=stealth,
+            DimGray,
+            dashed,
+            thick,
+          },
+          every node/.append style={
+            draw,
+            align=center,
+            minimum height=10pt,
+            color=DimGray,
+            text=fg,
+            thin,
+            rounded corners,
+            text width=.25\linewidth,
+          },
+          group/.style = {
+            decoration={
+              brace,
+              mirror,
+              raise=5pt,
+            },
+            thick,
+            color=DimGray,
+            decorate,
+          },
+        ]  
+        \node[] at ([shift=({-10em,.625ex})]a) (A) {return value type};
+        \node[above left=.25cm and -.75cm of b] (B) {function name};
+        \node [above right=0.20cm and -.75cm of B] (C) {list of formal parameters};
+        \node[] at ([shift=({19em,.625ex})]d) (D) {type of \texttt{<expr>} must
+          match retury type of function};
+        \draw (A.east) edge ([shift=({-.4em,.625ex})]a);
+        \draw (B.south) + (0, 0) coordinate(x1) edge (x1|-b.north);
+        \draw (C.south) + (0, 0) coordinate(x3) edge (x3|-c.north);
+        \draw (D.west) edge ([shift=({.4em,.625ex})]d);
+      \end{tikzpicture} 
+    \end{scriptsize}
+  %}}}1
+  \end{frame}
+
+%  \begin{frame}{FIXME --- tikzstack testing}
+%  %{{{1
+%    \begin{figure}
+%      \centering
+%      \begin{subfigure}[b]{.50\textwidth}
+%        \centering
+%        \begin{tikzstack}[bg]
+%          \begin{stack}{west}
+%            % global variables
+%            \variables{j/424,ch/N,ptr2/}
+%            % valid pointers
+%            %\pointers{3/1,3/2}
+%            % null pointers
+%            \nulls{3}
+%          \end{stack}
+%          \begin{stack}[xshift=7em]{east}
+%            % global variables
+%            \variables{a/,b/1,c/}
+%            % valid pointers
+%            \pointers{1/1-2,3/1-2}
+%          \end{stack}
+%        \end{tikzstack}
+%        \caption{Fixed location.}
+%      \end{subfigure}
+%      \quad
+%      \begin{subfigure}[b]{.30\textwidth}
+%        \centering
+%        \begin{tikzstack}[fg]
+%          \begin{stack}{east}
+%            % stack variables
+%            \variables{retVal/,retAddr/ra0,n/3,retAddr/ra1,k/}
+%            % stack frames
+%            \frames{0/2,2/3}
+%          \end{stack}
+%        \end{tikzstack}
+%        \caption{Run-time stack.}
+%      \end{subfigure}
+%    \end{figure}
+%  %}}}1
+%  \end{frame}
+
+  \begin{frame}{comparison}
+  %{{{1
+    \begin{center}
+      \begin{tabularx}{.8\textwidth}{XX}
+        \hline
+        \textbf{Java} & \textbf{C}\\
+        \hline
+        object-oriented & procedural\\
+        interpreted & compiled\\
+        \texttt{String} & \texttt{char} array\\
+        condition (\texttt{boolean}) & condition (\texttt{int})\\
+        garbage-collected & no memory management\\
+        references & pointers\\
+        exceptions & error codes\\
+        \hline
+      \end{tabularx}
+    \end{center}
 
     \note{
       \begin{itemize}
-        \item x != 0
-        \item x != y
-        \item y != 0
+        \item in Java, everything is a method that is called on an object
+        \item in C, everything is a function
+      \end{itemize}
+      \begin{itemize}
+        \item in Java, source code is compiled to byte code, which is then
+          interpreted by Java VM
+        \item in C, source code is compiled into binary machine code
+      \end{itemize}
+      \begin{itemize}
+        \item in Java, String is a class
+        \item in C, a string is just an array of \texttt{char} values which ends
+          with the \texttt{char~'\textbackslash0'}
+      \end{itemize}
+      \begin{itemize}
+        \item in Java, the Java VM takes care of deallocating memory used
+        \item in C, any memory you allocate, you must also deallocate
       \end{itemize}
     }
   %}}}1
