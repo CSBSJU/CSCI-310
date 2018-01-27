@@ -78,6 +78,17 @@
               (var\e.##2);
           }%
         }%
+        % FIXME define a command pointers* instead of a separate command
+        \newcommand{\ipointers}[1]{%
+          \foreach \s/\e/\d in {####1}
+          {
+            \draw[ptr]
+              (var\thestack-\s.center) node[dot] {} --
+              ([xshift=\d]var\thestack-\s.\polar) --
+              ([xshift=\d]var\thestack-\e.\polar) --
+              (var\thestack-\e.\polar);
+          }%
+        }%
         \newcommand{\nulls}[1]{%
           \foreach \s in {####1}
           {
