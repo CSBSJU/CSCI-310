@@ -48,12 +48,37 @@
 \usetikzlibrary{decorations.pathreplacing,positioning}
 
 \tikzset{
-  lstanchor/.style={
-    inner sep=0pt,
-    text width=0pt,
-    align=center,
-    minimum height=1.25ex,
-    node distance=0pt,
+  annotation/.style={
+    remember picture,
+    overlay,
+    every edge/.append style={
+      ->,
+      thick,
+      >=stealth,
+      DimGray,
+      dashed,
+      thick,
+    },
+    every node/.append style={
+      draw,
+      align=center,
+      minimum height=10pt,
+      color=DimGray,
+      text=fg,
+      thin,
+      rounded corners,
+      text width=.25\linewidth,
+    },
+    group/.style = {
+      decoration={
+        brace,
+        mirror,
+        raise=5pt,
+      },
+      thick,
+      color=DimGray,
+      decorate,
+    },
   }
 }
 
@@ -192,36 +217,7 @@
         return $$0$$;!\tikz[remember picture] \coordinate (e);!
       }
       \end{codeblock}
-        \begin{tikzpicture}[remember picture, overlay,
-            every edge/.append style={
-              ->,
-              thick,
-              >=stealth,
-              DimGray,
-              dashed,
-              thick,
-            },
-            every node/.append style={
-              draw,
-              align=center,
-              minimum height=10pt,
-              color=DimGray,
-              text=fg,
-              thin,
-              rounded corners,
-              text width=.25\linewidth,
-            },
-            group/.style = {
-              decoration={
-                brace,
-                mirror,
-                raise=5pt,
-              },
-              thick,
-              color=DimGray,
-              decorate,
-            },
-          ]
+        \begin{tikzpicture}[annotation]
           \only<1>{
             \node[] at ([shift=({19.5em,.625ex})]c) (C) {C programs ALWAYS start execution with the \texttt{main} function};
             \node[] at ([shift=({20em,.625ex})]e) (E) {returning from \texttt{main} ends the program};
@@ -404,21 +400,6 @@
         \item In this case, (a) and (b) represent the state of relevant memory
           for the previous program just before it terminates, i.e., in the
           process of executing line 15.
-        \item How would the previous program behave had it declared \texttt{ch}
-          and \texttt{j} as local variables instead of global variables?
-        \item What would the memory model look like given the above?\\[1\baselineskip]
-
-        \begin{figure}
-          \begin{tikzstack}[fg]
-            \begin{stack}{east}
-              % stack variables
-              \variables{retVal/0,retAddr/ra0,j/424,ch/N}
-              % stack frames
-              \frames{0/4}
-            \end{stack}
-          \end{tikzstack}
-          \caption{Run-time stack.}
-        \end{figure}
       \end{itemize}
     }
   %}}}1
@@ -431,7 +412,7 @@
         functions of a C program, including:
         \begin{itemize}
           \item return value,
-          \item parameters,
+          \item actual parameters,
           \item return address, and
           \item local variables
         \end{itemize}
@@ -439,7 +420,7 @@
     \end{description}
 
     \begin{onlyenv}<2>
-      \vspace{1\baselineskip}
+      \vspace{.5\baselineskip}
 
       \begin{figure}
         \centering
@@ -471,66 +452,367 @@
       \end{figure}
     \end{onlyenv}
 
+    \note[item]{
+      I will not distinguish between functions and procedures
+      \begin{itemize}
+        \item functions that have no return value, i.e., return type
+          \texttt{void}, just omit the first bullet point
+      \end{itemize}
+    }
     \note[item]{each program has one stack}
-    \note[item]<2>{which visualization is correct?}
+    \note[item]<2>{which visualization is correct, had \texttt{ch} and
+      \texttt{j} been declared as local variables instead of global?}
   %}}}1
   \end{frame}
 
   \begin{frame}[fragile]{functions}
   %{{{1
-    \vspace{2\baselineskip}
+    \vspace{2.5\baselineskip}
+    % FIXME ??? why is this needed ???
+    \only<1>{\vspace{-.5125\baselineskip}}
 
     \begin{scriptsize}
+      % FIXME ??? gobble=2 not working in options for this codeblock ???
       \begin{codeblock}[escapechar=!,xleftmargin=.45\linewidth]
-      !\tikz[remember picture] \coordinate (a);!int puissance!\tikz[remember picture] \node [] (b) {};
-      !(int x,!\tikz[remember picture] \node [] (c){};
-      !int n) { 
-        /* ... */
-
-        return x+n;!\tikz[remember picture] \coordinate (d);!
+      !\tikz[remember picture] \coordinate (a);!void print_bar!\tikz[remember picture] \node [] (b) {};
+      !(int!\tikz[remember picture] \node [] (c){};!n) {
+        int k;
+        for (k=$$0$$; k<n; k++) {
+          printf([["*"]]);
+        }
+        printf([["]]%%\n%%[["]]);
       }
       \end{codeblock}
-      \begin{tikzpicture}[remember picture, overlay,
-          every edge/.append style={
-            ->,
-            thick,
-            >=stealth,
-            DimGray,
-            dashed,
-            thick,
-          },
-          every node/.append style={
-            draw,
-            align=center,
-            minimum height=10pt,
-            color=DimGray,
-            text=fg,
-            thin,
-            rounded corners,
-            text width=.25\linewidth,
-          },
-          group/.style = {
-            decoration={
-              brace,
-              mirror,
-              raise=5pt,
-            },
-            thick,
-            color=DimGray,
-            decorate,
-          },
-        ]  
+      \begin{tikzpicture}[annotation]
         \node[] at ([shift=({-10em,.625ex})]a) (A) {return value type};
-        \node[above left=.25cm and -.75cm of b] (B) {function name};
-        \node [above right=0.20cm and -.75cm of B] (C) {list of formal parameters};
-        \node[] at ([shift=({19em,.625ex})]d) (D) {type of \texttt{<expr>} must
-          match retury type of function};
+        \node[above left=.35cm and -.75cm of b] (B) {function name};
+        \node [above right=0.10cm and -1.35cm of B] (C) {list of formal parameters};
         \draw (A.east) edge ([shift=({-.4em,.625ex})]a);
         \draw (B.south) + (0, 0) coordinate(x1) edge (x1|-b.north);
         \draw (C.south) + (0, 0) coordinate(x3) edge (x3|-c.north);
-        \draw (D.west) edge ([shift=({.4em,.625ex})]d);
       \end{tikzpicture} 
     \end{scriptsize}
+
+    \vspace{-1\baselineskip}
+
+    \begin{onlyenv}<2>
+      \begin{scriptsize}
+        \begin{codeblock}[escapechar=!,xleftmargin=.45\linewidth,gobble=4]
+          !\tikz[remember picture] \coordinate (a);!int fact(int n) {
+            int f, j;
+            f = $$1$$;
+            for (j=$$1$$; j<=n; j++) {
+              f *= j;
+            }
+            return f;!\tikz[remember picture] \coordinate (b);!
+          }
+        \end{codeblock}
+        \begin{tikzpicture}[annotation]
+          \node[] at ([shift=({-10em,.625ex})]a) (A) {return value type};
+          \node[] at ([shift=({20em,.625ex})]b) (B) {type of \texttt{<expr>} must
+            match return type of function};
+          \draw (A.east) edge ([shift=({-.4em,.625ex})]a);
+          \draw (B.west) edge ([shift=({.4em,.625ex})]b);
+        \end{tikzpicture} 
+      \end{scriptsize}
+    \end{onlyenv}
+  %}}}1
+  \end{frame}
+
+  % FIXME fix the order of return address and parameters on the stack
+  \begin{frame}[fragile]{functions --- call-by-value}
+  %{{{1
+    \begin{columns}
+      \begin{column}{.6\textwidth}
+        \vspace{-15em} % FIXME ??? why is this needed ???
+        \begin{scriptsize}
+          % FIXME Use moredelim from listing package to achieve this effect
+          % without providing each animation separately
+          \begin{onlyenv}<1>
+            \begin{codeblock}[firstnumber=5, gobble=8]
+              int fact(int n) {
+                int f, j;
+                f = $$1$$;
+                for (j=$$1$$; j<=n; j++) {
+                  f *= j;
+                }
+                return f;
+              }
+
+              int main() {
+                int n;
+                scanf([["]]%%%d%%[["]], &n);
+                printf([["]]%%%d\n%%[["]], fact(n)); // ra1
+                return $$0$$;
+              }
+            \end{codeblock}
+          \end{onlyenv}
+          \begin{onlyenv}<2>
+            \begin{codeblock}[firstnumber=5, gobble=8]
+              **int fact(int n) {
+                int f, j;
+                f = 1;
+                for (j=1; j<=n; j++) {
+                  f *= j;
+                }
+                return f;
+              }
+
+              int main() {
+                int n;**
+                scanf([["]]%%%d%%[["]], &n);**
+                printf("%d\n", fact(n)); // ra1
+                return 0;
+              }**
+            \end{codeblock}
+          \end{onlyenv}
+          \begin{onlyenv}<3>
+            \begin{codeblock}[firstnumber=5, gobble=8]
+              **int fact(int n) {
+                int f, j;
+                f = 1;
+                for (j=1; j<=n; j++) {
+                  f *= j;
+                }
+                return f;
+              }
+
+              int main() {
+                int n;
+                scanf("%d", &n);**
+                printf([["]]%%%d\n%%[["]], fact(n));** // ra1
+                return 0;
+              }**
+            \end{codeblock}
+          \end{onlyenv}
+          \begin{onlyenv}<4>
+            \begin{codeblock}[firstnumber=5, gobble=8]
+              **int fact(int n) {
+                int f, j;
+                f = 1;
+                for (j=1; j<=n; j++) {
+                  f *= j;
+                }
+                return f;
+              }
+
+              int main() {
+                int n;
+                scanf("%d", &n);
+                printf("%d\n", **fact(n)**); // ra1
+                return 0;
+              }**
+            \end{codeblock}
+          \end{onlyenv}
+          \begin{onlyenv}<5>
+            \begin{codeblock}[firstnumber=5, gobble=8]
+              **int fact(int n) {
+                int f, j;
+                f = 1;
+                for (j=1; j<=n; j++) {
+                  f *= j;
+                }
+                **return f;**
+              }
+
+              int main() {
+                int n;
+                scanf("%d", &n);
+                printf("%d\n", fact(n)); // ra1
+                return 0;
+              }**
+            \end{codeblock}
+          \end{onlyenv}
+          \begin{onlyenv}<6>
+            \begin{codeblock}[firstnumber=5, gobble=8]
+              **int fact(int n) {
+                int f, j;
+                f = 1;
+                for (j=1; j<=n; j++) {
+                  f *= j;
+                }
+                return f;
+              }
+
+              int main() {
+                int n;
+                scanf("%d", &n);**
+                printf([["]]%%%d\n%%[["]], fact(n));** // ra1
+                return 0;
+              }**
+            \end{codeblock}
+          \end{onlyenv}
+          \begin{onlyenv}<7>
+            \begin{codeblock}[firstnumber=5, gobble=8]
+              **int fact(int n) {
+                int f, j;
+                // f = 1;
+                for (j=1; j<=n; j++) {
+                  f *= j;
+                }
+                return f;
+              }
+
+              int main() {
+                int n;
+                scanf("%d", &n);
+                printf("%d\n", fact(n));
+                scanf("%d", &n);**
+                printf([["]]%%%d\n%%[["]], fact(n));** // ra1
+                return 0;
+              }**
+            \end{codeblock}
+          \end{onlyenv}
+        \end{scriptsize}
+      \end{column}
+
+      \begin{column}{.4\textwidth}
+        \vspace*{5em}
+        \begin{tikzstack}[fg]
+          \draw[use as bounding box,bg] (0,0) rectangle (3,15);
+          \begin{stack}{east}
+            % stack variables
+            \only<1>{\variables{retVal/,retAddr/ra0,n/}}
+            \only<2>{\variables{retVal/,retAddr/ra0,n/3}}
+            \only<3>{\variables{retVal/,retAddr/ra0,n/3}}
+            \only<4>{\variables{retVal/,retAddr/ra0,n/3,retVal/,n/3,retAddr/ra1,f/,j/}}
+            \only<5>{\variables{retVal/,retAddr/ra0,n/3,retVal/6,n/3,retAddr/ra1,f/6,j/4}}
+            \only<6>{\variables{retVal/,retAddr/ra0,n/3,/6,/3,/ra1,/6,/4}}
+            \only<7>{\variables{retVal/,retAddr/ra0,n/3,retVal/6,n/3,retAddr/ra1,f/6,j/4}}
+            % stack frames
+            \only<1>{\frames{0/3}}
+            \only<2>{\frames{0/3}}
+            \only<3>{\frames{0/3}}
+            \only<4>{\frames{0/3,3/5}}
+            \only<5>{\frames{0/3,3/5}}
+            \only<6>{\frames{0/3}}
+            \only<7>{\frames{0/3,3/5}}
+          \end{stack}
+        \end{tikzstack}
+      \end{column}
+    \end{columns}
+
+    \note[item]<1>{you will have to reconcile this example a little bit with the
+      book, since the solution is written slightly different}
+    \note[item]<1>{assume nothing about values that are blank --- they are not 0}
+    \note[item]<2>{assume the user inputs the number 3}
+    \note[item]<3>{this statement requires that we evaluate the expression
+      \texttt{fact(n)}}
+    \note[item]<4>{\texttt{fact(n)} is a function call, so a new stack frame is
+      pushed on to the stack in the sequence described before:
+      \begin{itemize}
+        \item return value
+        \item actual parameters
+        \item return address
+        \item local variables
+      \end{itemize}
+    }
+    \note[item]<5>{the state of the run-time stack after \texttt{fact} function
+      has completed, but before returning}
+    \note[item]<6>{after \texttt{fact} returns, its stack frame is deallocated,
+      however, the values computed are still in memory --- since return value is
+      always first thing pushed on to stack, the main function knows exactly
+      where to find the value returned by \texttt{fact(n)}}
+    \note[item]<7>{assume the the first call to \texttt{fact} got lucky and the
+      value 1 happended to be in the memory cell designated to the variable
+      \texttt{f}, so that the calculation worked out correctly}
+    \note[item]<7>{this would be the state of the stack at the beginning of
+      execution of the second call to \texttt{fact}}
+  %}}}1
+  \end{frame}
+
+  \begin{frame}[fragile]{functions --- call-by-``reference''}
+  %{{{1
+    \begin{columns}
+      \begin{column}{.6\textwidth}
+        \vspace{-20em} % FIXME ??? why is this needed ???
+        \begin{scriptsize}
+          % FIXME Use moredelim from listing package to achieve this effect
+          % without providing each animation separately
+          \begin{onlyenv}<1-2>
+            \begin{codeblock}[firstnumber=5, gobble=8]
+              void swap(int r, int s) {
+                int temp;
+                temp = r;
+                r = s;
+                s = temp;
+              }
+
+              void order(int x, int y) {
+                if (x > y) {
+                  swap(x, y);
+                } // ra2
+              }
+
+              int main() {
+                int a, b;
+                scanf([["]]%%%d %d%%[["]], &a, &b);
+                order(a, b);
+                printf([["]]%%d %d\n%%[["]], a, b); // ra1
+                return $$0$$;
+              }
+            \end{codeblock}
+          \end{onlyenv}
+          \begin{onlyenv}<3>
+            \begin{codeblock}[firstnumber=5, gobble=8]
+              void swap(int *r, int *s) {
+                int temp;
+                temp = *r;
+                *r = s;
+                *s = temp;
+              }
+
+              void order(int *x, int *y) {
+                if (*x > *y) {
+                  swap(x, y);
+                } // ra2
+              }
+
+              int main() {
+                int a, b;
+                scanf([["]]%%%d %d%%[["]], &a, &b);
+                order(&a, &b);
+                printf([["]]%%d %d\n%%[["]], a, b); // ra1
+                return $$0$$;
+              }
+            \end{codeblock}
+          \end{onlyenv}
+        \end{scriptsize}
+      \end{column}
+
+      \begin{column}{.4\textwidth}
+        \vspace*{5em}
+        \begin{tikzstack}[fg]
+          \draw[use as bounding box,bg] (0,0) rectangle (3,20);
+          \begin{stack}{east}
+            % stack variables
+            \only<1>{\variables{retVal/,retAddr/ra0,a/6,b/2}}
+            \only<2>{\variables{retVal/0,retAddr/ra0,a/6,b/2,x/6,y/2,retAddr/ra1,r/2,s/6,retAddr/ra2,temp/6}}
+            \only<3>{\variables{retVal/0,retAddr/ra0,a/2,b/6,x/,y/,retAddr/ra1,r/,s/,retAddr/ra2,temp/6}}
+            % stack frames
+            \only<1>{\frames{0/4}}
+            \only<2>{\frames{0/4,4/3,7/4}}
+            \only<3>{\frames{0/4,4/3,7/4}}
+            % valid pointers
+            \only<3>{\ipointers{5/3/-1em,6/4/-1.5em,8/3/-2em,9/4/-2.5em}}
+          \end{stack}
+        \end{tikzstack}
+      \end{column}
+    \end{columns}
+
+    \note[item]<1-2>{in C, parameters are ALWAYS call-by-value, if you want the
+      behavior of call-by-reference, then you pass the address of the variable
+      instead of its value}
+    \note[item]<1-2>{but this is still call-by-value, its just that now, the
+      value happens to represent an address of a value}
+    \note[item]<1-2>{you will have to reconcile this example a little bit with
+      the book, since the solution is written slightly different}
+    \note[item]<1-2>{assume the user inputs the numbers 6 \& 2}
+    \note[item]<1>{what will the stack look like at the end of execution, i.e.,
+      when returning from \texttt{main} function?}
+    \note[item]<3>{now, instead of passing the values \texttt{a} and \texttt{b},
+      we will pass their addresses, so that we can update their values, i.e.,
+      pass them by ``reference''}
   %}}}1
   \end{frame}
 
