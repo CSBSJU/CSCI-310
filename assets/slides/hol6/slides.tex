@@ -469,7 +469,7 @@
   %{{{1
     \vspace{2.5\baselineskip}
     % FIXME ??? why is this needed ???
-    \only<1>{\vspace{-.5125\baselineskip}}
+    \only<1>{\vspace{-.1125\baselineskip}}
 
     \begin{scriptsize}
       % FIXME ??? gobble=2 not working in options for this codeblock ???
@@ -523,7 +523,7 @@
   \begin{frame}[fragile]{functions --- call-by-value}
   %{{{1
     \begin{columns}
-      \begin{column}{.6\textwidth}
+      \begin{column}{.65\textwidth}
         \vspace{-15em} % FIXME ??? why is this needed ???
         \begin{scriptsize}
           % FIXME Use moredelim from listing package to achieve this effect
@@ -666,7 +666,7 @@
         \end{scriptsize}
       \end{column}
 
-      \begin{column}{.4\textwidth}
+      \begin{column}{.35\textwidth}
         \vspace*{5em}
         \begin{tikzstack}[fg]
           \draw[use as bounding box,bg] (0,0) rectangle (3,15);
@@ -724,7 +724,7 @@
   \begin{frame}[fragile]{functions --- call-by-``reference''}
   %{{{1
     \begin{columns}
-      \begin{column}{.6\textwidth}
+      \begin{column}{.65\textwidth}
         \vspace{-20em} % FIXME ??? why is this needed ???
         \begin{scriptsize}
           % FIXME Use moredelim from listing package to achieve this effect
@@ -780,7 +780,7 @@
         \end{scriptsize}
       \end{column}
 
-      \begin{column}{.4\textwidth}
+      \begin{column}{.35\textwidth}
         \vspace*{5em}
         \begin{tikzstack}[fg]
           \draw[use as bounding box,bg] (0,0) rectangle (3,20);
@@ -966,46 +966,468 @@
   %}}}1
   \end{frame}
 
-%  \begin{frame}{FIXME --- tikzstack testing}
-%  %{{{1
-%    \begin{figure}
-%      \centering
-%      \begin{subfigure}[b]{.50\textwidth}
-%        \centering
-%        \begin{tikzstack}[bg]
-%          \begin{stack}{west}
-%            % global variables
-%            \variables{j/424,ch/N,ptr2/}
-%            % valid pointers
-%            %\pointers{3/1,3/2}
-%            % null pointers
-%            \nulls{3}
-%          \end{stack}
-%          \begin{stack}[xshift=7em]{east}
-%            % global variables
-%            \variables{a/,b/1,c/}
-%            % valid pointers
-%            \pointers{1/1-2,3/1-2}
-%          \end{stack}
-%        \end{tikzstack}
-%        \caption{Fixed location.}
-%      \end{subfigure}
-%      \quad
-%      \begin{subfigure}[b]{.30\textwidth}
-%        \centering
-%        \begin{tikzstack}[fg]
-%          \begin{stack}{east}
-%            % stack variables
-%            \variables{retVal/,retAddr/ra0,n/3,retAddr/ra1,k/}
-%            % stack frames
-%            \frames{0/2,2/3}
-%          \end{stack}
-%        \end{tikzstack}
-%        \caption{Run-time stack.}
-%      \end{subfigure}
-%    \end{figure}
-%  %}}}1
-%  \end{frame}
+  \begin{frame}[fragile]{recursion}
+  %{{{1
+    \begin{columns}
+      \begin{column}{.65\textwidth}
+        \vspace{-20em} % FIXME ??? why is this needed ???
+        \begin{scriptsize}
+          % FIXME Use moredelim from listing package to achieve this effect
+          % without providing each animation separately
+          \begin{onlyenv}<1>
+            \begin{codeblock}[gobble=8]
+              ###include## $$<stdio.h>$$
+
+              int fact(int n) {
+                if (n <= $$1$$) {
+                  return $$1$$;
+                }
+                else {
+                  return n * fact(n - $$1$$); // ra1
+                }
+              }
+
+              int main() {
+                int num;
+                printf([["Enter a small integer: "]]);
+                scanf([["]]%%%d%%[["]], &num);
+                printf([["Its factorial is: "]]);
+                printf([["]]%%%d\n%%[["]], fact(num)); // ra1
+                return $$0$$;
+              }
+            \end{codeblock}
+          \end{onlyenv}
+          \begin{onlyenv}<2>
+            \begin{codeblock}[gobble=8]
+              **#include <stdio.h>
+
+              int fact(int n) {
+                if (n <= 1) {
+                  return 1;
+                }
+                else {
+                  return n * fact(n - 1); // ra2
+                }
+              }**
+
+              int main() {
+                int num;
+                printf([["Enter a small integer: "]]);
+                scanf([["]]%%%d%%[["]], &num);
+                printf([["Its factorial is: "]]);
+                printf([["]]%%%d\n%%[["]], fact(num)); // ra1
+                return $$0$$;
+              }
+            \end{codeblock}
+          \end{onlyenv}
+          \begin{onlyenv}<3>
+            \begin{codeblock}[gobble=8]
+              **#include <stdio.h>
+
+              int fact(int n) {
+                if (n <= 1) {
+                  return 1;
+                }
+                else {
+                  return n * fact(n - 1); // ra2
+                }
+              }
+
+              int main() {
+                int num;
+                printf("Enter a small integer: ");
+                **scanf([["]]%%%d%%[["]], &num);**
+                printf("Its factorial is: ");
+                printf("%d\n", fact(num)); // ra1
+                return 0;
+              }
+            \end{codeblock}
+          \end{onlyenv}
+          \begin{onlyenv}<4>
+            \begin{codeblock}[gobble=8]
+              **#include <stdio.h>
+
+              int fact(int n) {
+                if (n <= 1) {
+                  return 1;
+                }
+                else {
+                  return n * fact(n - 1); // ra2
+                }
+              }
+
+              int main() {
+                int num;
+                printf("Enter a small integer: ");
+                scanf("%d", &num);
+                printf("Its factorial is: ");
+                printf("%d\n", **fact(num)**); // ra1
+                return 0;
+              }**
+            \end{codeblock}
+          \end{onlyenv}
+          \begin{onlyenv}<5,7,9>
+            \begin{codeblock}[gobble=8]
+              **#include <stdio.h>**
+
+              int fact(int n) {
+                if (n <= $$1$$) {
+                  return $$1$$;
+                }
+                else {
+                  return n * fact(n - $$1$$); // ra2
+                }
+              }
+
+              **int main() {
+                int num;
+                printf("Enter a small integer: ");
+                scanf("%d", &num);
+                printf("Its factorial is: ");
+                printf("%d\n", fact(num)); // ra1
+                return 0;
+              }**
+            \end{codeblock}
+          \end{onlyenv}
+          \begin{onlyenv}<6,8>
+            \begin{codeblock}[gobble=8]
+              **#include <stdio.h>
+
+              int fact(int n) {
+                if (n <= 1) {
+                  return 1;
+                }
+                else {
+                  return n * **fact(n - $$1$$)**; // ra2
+                }
+              }
+
+              int main() {
+                int num;
+                printf("Enter a small integer: ");
+                scanf("%d", &num);
+                printf("Its factorial is: ");
+                printf("%d\n", fact(num)); // ra1
+                return 0;
+              }**
+            \end{codeblock}
+          \end{onlyenv}
+          \begin{onlyenv}<10>
+            \begin{codeblock}[gobble=8]
+              **#include <stdio.h>
+
+              int fact(int n) {
+                if (n <= 1) {
+                  **return $$1$$;**
+                }
+                else {
+                  return n * fact(n - 1); // ra2
+                }
+              }
+
+              int main() {
+                int num;
+                printf("Enter a small integer: ");
+                scanf("%d", &num);
+                printf("Its factorial is: ");
+                printf("%d\n", fact(num)); // ra1
+                return 0;
+              }**
+            \end{codeblock}
+          \end{onlyenv}
+          \begin{onlyenv}<11-12>
+            \begin{codeblock}[gobble=8]
+              **#include <stdio.h>
+
+              int fact(int n) {
+                if (n <= 1) {
+                  return 1;
+                }
+                else {
+                  **return n * fact(n - $$1$$);** // ra2
+                }
+              }
+
+              int main() {
+                int num;
+                printf("Enter a small integer: ");
+                scanf("%d", &num);
+                printf("Its factorial is: ");
+                printf("%d\n", fact(num)); // ra1
+                return 0;
+              }**
+            \end{codeblock}
+          \end{onlyenv}
+          \begin{onlyenv}<13>
+            \begin{codeblock}[gobble=8]
+              **#include <stdio.h>
+
+              int fact(int n) {
+                if (n <= 1) {
+                  return 1;
+                }
+                else {
+                  return n * fact(n - 1); // ra2
+                }
+              }
+
+              int main() {
+                int num;
+                printf("Enter a small integer: ");
+                scanf("%d", &num);
+                printf("Its factorial is: ");**
+                printf([["]]%%%d\n%%[["]], fact(num));** // ra1
+                return 0;
+              }**
+            \end{codeblock}
+          \end{onlyenv}
+          \begin{onlyenv}<14>
+            \begin{codeblock}[gobble=8]
+              **#include <stdio.h>
+
+              int fact(int n) {
+                if (n <= 1) {
+                  return 1;
+                }
+                else {
+                  return n * fact(n - 1); // ra2
+                }
+              }
+
+              int main() {
+                int num;
+                printf("Enter a small integer: ");
+                scanf("%d", &num);
+                printf("Its factorial is: ");
+                printf("%d\n", fact(num)); // ra1
+                **return $$0$$;**
+              }**
+            \end{codeblock}
+          \end{onlyenv}
+          \begin{onlyenv}<15>
+            \begin{codeblock}[gobble=8]
+              **#include <stdio.h>
+
+              int fact(int n) {
+                if (n <= 1) {
+                  return 1;
+                }
+                else {
+                  return n * fact(n - 1); // ra2
+                }
+              }
+
+              int main() {
+                int num;
+                printf("Enter a small integer: ");
+                scanf("%d", &num);
+                printf("Its factorial is: ");
+                printf("%d\n", fact(num)); // ra1
+                return 0;
+              }**
+            \end{codeblock}
+          \end{onlyenv}
+          \begin{onlyenv}<2>
+            \begin{termblock}[gobble=8]
+              $ ./figure2-22
+            \end{termblock}
+          \end{onlyenv}
+          \begin{onlyenv}<3-12>
+            \begin{termblock}[gobble=8]
+              $ ./figure2-22
+              Enter a small integer: 3
+            \end{termblock}
+          \end{onlyenv}
+          \begin{onlyenv}<13-14>
+            \begin{termblock}[gobble=8]
+              $ ./figure2-22
+              Enter a small integer: 3
+              Its factorial is: 6
+            \end{termblock}
+          \end{onlyenv}
+          \begin{onlyenv}<15>
+            \begin{termblock}[gobble=8]
+              $ ./figure2-22
+              ...
+              $
+            \end{termblock}
+          \end{onlyenv}
+        \end{scriptsize}
+      \end{column}
+
+      \begin{column}{.35\textwidth}
+        \vspace*{5em}
+        \begin{onlyenv}<1,15>
+          \begin{tikzstack}[bg]
+            \draw[use as bounding box,bg] (0,0) rectangle (3,20);
+          \end{tikzstack}
+        \end{onlyenv}
+        \begin{onlyenv}<2-14>
+          \begin{tikzstack}[fg]
+            \draw[use as bounding box,bg] (0,0) rectangle (3,20);
+            \begin{stack}{east}
+              % stack variables
+              \only<2>{\variables{retVal/,retAddr/ra0,num/}}
+              \only<3-4>{\variables{retVal/,retAddr/ra0,num/3}}
+              \only<5-6>{\variables{retVal/,retAddr/ra0,num/3,retVal/,n/3,retAddr/ra1}}
+              \only<7-8>{\variables{retVal/,retAddr/ra0,num/3,retVal/,n/3,retAddr/ra1,retVal/,n/2,retAddr/ra2}}
+              \only<9>{\variables{retVal/,retAddr/ra0,num/3,retVal/,n/3,retAddr/ra1,retVal/,n/2,retAddr/ra2,retVal/,n/1,retAddr/ra2}}
+              \only<10>{\variables{retVal/,retAddr/ra0,num/3,retVal/,n/3,retAddr/ra1,retVal/,n/2,retAddr/ra2,retVal/1,n/1,retAddr/ra2}}
+              \only<11>{\variables{retVal/,retAddr/ra0,num/3,retVal/,n/3,retAddr/ra1,retVal/2,n/2,retAddr/ra2,/1,/1,/ra2}}
+              \only<12>{\variables{retVal/,retAddr/ra0,num/3,retVal/6,n/3,retAddr/ra1,/2,/2,/ra2,/1,/1,/ra2}}
+              \only<13>{\variables{retVal/,retAddr/ra0,num/3,/6,/3,/ra1,/2,/2,/ra2,/1,/1,/ra2}}
+              \only<14>{\variables{retVal/0,retAddr/ra0,num/3,/6,/3,/ra1,/2,/2,/ra2,/1,/1,/ra2}}
+              % stack frames
+              \only<2-4,13-14>{\frames{0/3}}
+              \only<5-6,12>{\frames{0/3,3/3}}
+              \only<7-8,11>{\frames{0/3,3/3,6/3}}
+              \only<9-10>{\frames{0/3,3/3,6/3,9/3}}
+            \end{stack}
+          \end{tikzstack}
+        \end{onlyenv}
+      \end{column}
+    \end{columns}
+  %}}}1
+  \end{frame}
+
+  \begin{frame}[fragile]{heap memory}
+  %{{{1
+    \begin{itemize}
+      \item designate a block of memory to store value(s) of a particular
+        data type
+    \end{itemize}
+
+    \begin{codeblock}[numbers=none]
+    int * ip = malloc($$100$$*sizeof(int));
+    \end{codeblock}
+
+    \begin{tikzstack}[fg]
+      \begin{stack}[xshift=7em]{east}
+        % global variables
+        \variables{/}
+      \end{stack}
+      \begin{stack}{west}
+        % global variables
+        \variables{ip/}
+        % valid pointers
+        \pointers{1/1-1}
+        % null pointers
+        %\nulls{3}
+      \end{stack}
+    \end{tikzstack}
+
+    \hspace{8pt}%
+    \begin{tikzpicture}[font=\ttfamily,noname/.style={text height=1.5ex, text depth=.25ex, text centered, minimum height=3em}]
+      \node[noname] at (-1.3,.3) {\textbf{0x000063DA}};
+      \foreach \x in {0,.6,...,7.2}
+        \draw (\x,0) rectangle ++(.6,.6);
+      \draw[bg, ultra thick] (-.1,.6) -- ++(8,0);
+      \foreach [count=\i,evaluate=\i as \x using .3+(\i-1)*.6] \c in {A7,38,DC,91,0F,F3,21,1E,76,4B,AA,01}
+        \node[noname] at (\x,.3) {\c};
+      \node at (7.6,.3) {$\boldsymbol{\cdots}$};
+
+      \node[noname] at (-1.3,-.7) {\textbf{0x????????}};
+      \foreach \x in {0,.6,...,2.4}
+        \draw (\x,-1) rectangle ++(.6,.6);
+      \draw[bg, ultra thick] (-.1,-.4) -- ++(3.2,0);
+      \foreach [count=\i,evaluate=\i as \x using .3+(\i-1)*.6] \c in {00,00,63,DA}
+        \node[noname] at (\x,-.7) {\c};
+    \end{tikzpicture}
+
+    \begin{onlyenv}<2->
+      \begin{itemize}
+        \item release a block of memory back to system to be used elsewhere
+      \end{itemize}
+      \begin{codeblock}[numbers=none]
+    free(ip);
+      \end{codeblock}
+    \end{onlyenv}
+  %}}}1
+  \end{frame}
+
+  \begin{frame}[fragile]{heap memory cont.}
+  %{{{1
+    \begin{codeblock}[numbers=none]
+    ip[$$0$$] = $$0x7$$; /* *ip = 0x7; */
+    \end{codeblock}
+
+    \hspace{8pt}%
+    \begin{tikzpicture}[font=\ttfamily,noname/.style={text height=1.5ex, text depth=.25ex, text centered, minimum height=3em}]
+      \node[noname] at (-1.3,.3) {\textbf{0x000063DA}};
+      \foreach \x in {0,.6,...,7.2}
+        \draw (\x,0) rectangle ++(.6,.6);
+      \draw[bg, ultra thick] (-.1,.6) -- ++(8,0);
+      \foreach [count=\i,evaluate=\i as \x using .3+(\i-1)*.6] \c in {00,00,00,07,0F,F3,21,1E,76,4B,AA,01}
+        \node[noname] at (\x,.3) {\c};
+      \node at (7.6,.3) {$\boldsymbol{\cdots}$};
+
+      \node[noname] at (-1.3,-.7) {\textbf{0x????????}};
+      \foreach \x in {0,.6,...,2.4}
+        \draw (\x,-1) rectangle ++(.6,.6);
+      \draw[bg, ultra thick] (-.1,-.4) -- ++(3.2,0);
+      \foreach [count=\i,evaluate=\i as \x using .3+(\i-1)*.6] \c in {00,00,63,DA}
+        \node[noname] at (\x,-.7) {\c};
+    \end{tikzpicture}
+
+    \begin{onlyenv}<2->
+      \begin{codeblock}[numbers=none]
+    ip[$$1$$] = $$0xA$$; /* *(ip + 1) = 0xA; */
+      \end{codeblock}
+
+      \hspace{8pt}%
+      \begin{tikzpicture}[font=\ttfamily,noname/.style={text height=1.5ex, text depth=.25ex, text centered, minimum height=3em}]
+        \node[noname] at (-1.3,.3) {\textbf{0x000063DA}};
+        \foreach \x in {0,.6,...,7.2}
+          \draw (\x,0) rectangle ++(.6,.6);
+        \draw[bg, ultra thick] (-.1,.6) -- ++(8,0);
+        \foreach [count=\i,evaluate=\i as \x using .3+(\i-1)*.6] \c in {00,00,00,07,00,00,00,0A,76,4B,AA,01}
+          \node[noname] at (\x,.3) {\c};
+        \node at (7.6,.3) {$\boldsymbol{\cdots}$};
+      \end{tikzpicture}
+    \end{onlyenv}
+  %}}}1
+  \end{frame}
+
+  %\begin{frame}{FIXME --- tikzstack testing}
+  %%{{{1
+  %  \begin{figure}
+  %    \centering
+  %    \begin{subfigure}[b]{.50\textwidth}
+  %      \centering
+  %      \begin{tikzstack}[bg]
+  %        \begin{stack}{west}
+  %          % global variables
+  %          \variables{j/424,ch/N,ptr2/}
+  %          % valid pointers
+  %          %\pointers{3/1,3/2}
+  %          % null pointers
+  %          \nulls{3}
+  %        \end{stack}
+  %        \begin{stack}[xshift=7em]{east}
+  %          % global variables
+  %          \variables{a/,b/1,c/}
+  %          % valid pointers
+  %          \pointers{1/1-2,3/1-2}
+  %        \end{stack}
+  %      \end{tikzstack}
+  %      \caption{Fixed location.}
+  %    \end{subfigure}
+  %    \quad
+  %    \begin{subfigure}[b]{.30\textwidth}
+  %      \centering
+  %      \begin{tikzstack}[fg]
+  %        \begin{stack}{east}
+  %          % stack variables
+  %          \variables{retVal/,retAddr/ra0,n/3,retAddr/ra1,k/}
+  %          % stack frames
+  %          \frames{0/2,2/3}
+  %        \end{stack}
+  %      \end{tikzstack}
+  %      \caption{Run-time stack.}
+  %    \end{subfigure}
+  %  \end{figure}
+  %%}}}1
+  %\end{frame}
 
   \begin{frame}{comparison}
   %{{{1
@@ -1047,123 +1469,6 @@
     }
   %}}}1
   \end{frame}
-
-%  \begin{frame}[fragile]{heap memory}
-%    \begin{itemize}
-%      \item designate a block of memory to store value(s) of a particular
-%        data type
-%    \end{itemize}
-%    \begin{codeblock}
-%    int * ip = malloc($$100$$*sizeof(int));
-%    \end{codeblock}
-%
-%    \hspace{8pt}%
-%    \begin{tikzpicture}[font=\ttfamily,noname/.style={text height=1.5ex, text depth=.25ex, text centered, minimum height=3em}]
-%      \node[noname] at (-1.3,.3) {\textbf{0x000063DA}};
-%      \foreach \x in {0,.6,...,7.2}
-%        \draw (\x,0) rectangle ++(.6,.6);
-%      \draw[bg, ultra thick] (-.1,.6) -- ++(8,0);
-%      \foreach [count=\i,evaluate=\i as \x using .3+(\i-1)*.6] \c in {r,@,!,X,t,v,9,1,S,?,{)},.}
-%        \node[noname] at (\x,.3) {\c};
-%      \node at (7.6,.3) {$\boldsymbol{\cdots}$};
-%
-%      \node[noname] at (-1.3,-.7) {\textbf{0x????????}};
-%      \foreach \x in {0,.6,...,2.4}
-%        \draw (\x,-1) rectangle ++(.6,.6);
-%      \draw[bg, ultra thick] (-.1,-.4) -- ++(3.2,0);
-%      \foreach [count=\i,evaluate=\i as \x using .3+(\i-1)*.6] \c in {00,00,63,DA}
-%        \node[noname] at (\x,-.7) {\c};
-%    \end{tikzpicture}
-%
-%    \begin{onlyenv}<2->
-%      \begin{itemize}
-%        \item release a block of memory back to system to be used elsewhere
-%      \end{itemize}
-%      \begin{codeblock}
-%    free(ip);
-%      \end{codeblock}
-%    \end{onlyenv}
-%
-%    \note{
-%      \begin{itemize}
-%        \item allocates enough consecutive memory for 100 \texttt{int} values
-%      \end{itemize}
-%    }
-%  \end{frame}
-%
-%  \begin{frame}[fragile]{heap memory cont.}
-%    \begin{codeblock}
-%    ip[$$0$$] = $$0x7$$; /* *ip = 0x7; */
-%    \end{codeblock}
-%
-%    \hspace{8pt}%
-%    \begin{tikzpicture}[font=\ttfamily,noname/.style={text height=1.5ex, text depth=.25ex, text centered, minimum height=3em}]
-%      \node[noname] at (-1.3,.3) {\textbf{0x000063DA}};
-%      \foreach \x in {0,.6,...,7.2}
-%        \draw (\x,0) rectangle ++(.6,.6);
-%      \draw[bg, ultra thick] (-.1,.6) -- ++(8,0);
-%      \foreach [count=\i,evaluate=\i as \x using .3+(\i-1)*.6] \c in {00,00,00,07,t,v,9,1,S,?,{)},.}
-%        \node[noname] at (\x,.3) {\c};
-%      \node at (7.6,.3) {$\boldsymbol{\cdots}$};
-%
-%      \node[noname] at (-1.3,-.7) {\textbf{0x????????}};
-%      \foreach \x in {0,.6,...,2.4}
-%        \draw (\x,-1) rectangle ++(.6,.6);
-%      \draw[bg, ultra thick] (-.1,-.4) -- ++(3.2,0);
-%      \foreach [count=\i,evaluate=\i as \x using .3+(\i-1)*.6] \c in {00,00,63,DA}
-%        \node[noname] at (\x,-.7) {\c};
-%    \end{tikzpicture}
-%
-%    \begin{onlyenv}<2->
-%      \begin{codeblock}
-%    ip[$$1$$] = $$0xA$$; /* *(ip + 1) = 0xA; */
-%      \end{codeblock}
-%
-%      \hspace{8pt}%
-%      \begin{tikzpicture}[font=\ttfamily,noname/.style={text height=1.5ex, text depth=.25ex, text centered, minimum height=3em}]
-%        \node[noname] at (-1.3,.3) {\textbf{0x000063DA}};
-%        \foreach \x in {0,.6,...,7.2}
-%          \draw (\x,0) rectangle ++(.6,.6);
-%        \draw[bg, ultra thick] (-.1,.6) -- ++(8,0);
-%        \foreach [count=\i,evaluate=\i as \x using .3+(\i-1)*.6] \c in {00,00,00,07,00,00,00,0A,S,?,{)},.}
-%          \node[noname] at (\x,.3) {\c};
-%        \node at (7.6,.3) {$\boldsymbol{\cdots}$};
-%      \end{tikzpicture}
-%    \end{onlyenv}
-%  \end{frame}
-%
-%  \begin{frame}[fragile]{file i/o}
-%    \begin{codeblock}
-%    ###include## $$<stdio.h>$$
-%
-%    int main(int argc, char * argv[]) {
-%      int m, n;
-%      FILE * fp;
-%
-%      if (!(fp = fopen("example.txt", "r")))
-%        return $$-1$$;
-%      if ($$2$$ != fscanf(fp, [["]]%%%d %d%%[["]], &m, &n))
-%        return $$-1$$;
-%      if (!fclose(fp))
-%        return $$-1$$;
-%
-%      return $$0$$;
-%    }
-%    \end{codeblock}
-%  \end{frame}
-%
-%  \begin{frame}{final thoughts}
-%    \begin{itemize}
-%      \item matrices
-%    \end{itemize}
-%  \end{frame}
-
-  %\begin{frame}[fragile]{practice}
-  %  \begin{itemize}
-  %    \item download \href{}{this} code
-  %    \item implement the \texttt{swap} method
-  %  \end{itemize}
-  %\end{frame}
 
   \appendix
 
