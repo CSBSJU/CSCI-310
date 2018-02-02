@@ -1428,7 +1428,7 @@
 
         struct { char *name; } bill;
 
-        char * find(char * str, char c) {
+        char * find(char *str, char c) {
           for (; *str != c; str++);
           return str;
         }
@@ -1437,12 +1437,12 @@
           char *first, *last;
 
           first = malloc($$100$$);
-          scanf([["]]%%%s%d%%[["]], first);
+          scanf([["]]%%%s%%[["]], first);
           last = find(first, '-') + $$1$$;
-          last[-1] = [['\0']];
+          last[$$-1$$] = %%'\0'%%;
           printf([["Initials: ]]%%%c%c\n%%[["]], first[$$0$$], *last);
           free(first);
-          bill.name = malloc(20);
+          bill.name = malloc($$100$$);
           printf([["Full name: ]]%%%s\n%%[["]], bill.name);
           free(bill.name);
 
