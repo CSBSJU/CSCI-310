@@ -787,11 +787,10 @@
           \begin{stack}{east}
             % stack variables
             \only<1>{\variables{retVal/,retAddr/ra0,a/6,b/2}}
-            \only<2>{\variables{retVal/0,retAddr/ra0,a/6,b/2,x/6,y/2,retAddr/ra1,r/2,s/6,retAddr/ra2,temp/6}}
-            \only<3>{\variables{retVal/0,retAddr/ra0,a/2,b/6,x/,y/,retAddr/ra1,r/,s/,retAddr/ra2,temp/6}}
+            \only<2>{\variables{retVal/,retAddr/ra0,a/6,b/2,/6,/2,/ra1,/2,/6,/ra2,/6}}
+            \only<3>{\variables{retVal/,retAddr/ra0,a/2,b/6,x/,y/,retAddr/ra1,r/,s/,retAddr/ra2,temp/6}}
             % stack frames
-            \only<1>{\frames{0/4}}
-            \only<2>{\frames{0/4,4/3,7/4}}
+            \only<1,2>{\frames{0/4}}
             \only<3>{\frames{0/4,4/3,7/4}}
             % valid pointers
             \only<3>{\ipointers{5/3/-1em,6/4/-1.5em,8/3/-2em,9/4/-2.5em}}
@@ -808,8 +807,10 @@
     \note[item]<1-2>{you will have to reconcile this example a little bit with
       the book, since the solution is written slightly different}
     \note[item]<1-2>{assume the user inputs the numbers 6 \& 2}
-    \note[item]<1>{what will the stack look like at the end of execution, i.e.,
-      when returning from \texttt{main} function?}
+    \note[item]<1-2>{what will the stack look like after the call to
+      \texttt{order}, but before the call to \texttt{printf}?}
+    \note[item]<3>{this is what the stack will look like just before returning
+      from the \texttt{swap} function}
     \note[item]<3>{now, instead of passing the values \texttt{a} and \texttt{b},
       we will pass their addresses, so that we can update their values, i.e.,
       pass them by ``reference''}
@@ -1385,6 +1386,70 @@
         \node at (7.6,.3) {$\boldsymbol{\cdots}$};
       \end{tikzpicture}
     \end{onlyenv}
+  %}}}1
+  \end{frame}
+
+  \begin{frame}[fragile]{structures}
+  %{{{1
+    \begin{scriptsize}
+      \begin{codeblock}[gobble=2]
+        ###include## $$<stdio.h>$$
+
+        int main() {
+          struct {
+            char first;
+            char last;
+            int age;
+            char gender;
+          } bill;
+
+          scanf([["]]%%%c%c%d%c%%[["]], &bill.first, &bill.last, &bill.age,
+            &bill.gender);
+          printf([["Initials: ]]%%%c%c\n%%[["]], bill.first, bill.last);
+          printf([["Age: ]]%%%d\n%%[["]], bill.age);
+          printf([["Gender: "]]);
+          if (bill.gender == 'f') {
+            printf("fe");
+          }
+          printf([["male]]%%\n%%[["]]);
+          return $$0$$;
+        }
+      \end{codeblock}
+    \end{scriptsize}
+  %}}}1
+  \end{frame}
+
+  \begin{frame}[fragile]{structures cont.}
+  %{{{1
+    \begin{scriptsize}
+      \begin{codeblock}[gobble=2]
+        ###include## $$<stdio.h>$$
+        ###include## $$<stdlib.h>$$
+
+        struct { char *name; } bill;
+
+        char * find(char * str, char c) {
+          for (; *str != c; str++);
+          return str;
+        }
+
+        int main() {
+          char *first, *last;
+
+          first = malloc($$100$$);
+          scanf([["]]%%%s%d%%[["]], first);
+          last = find(first, '-') + $$1$$;
+          last[-1] = [['\0']];
+          printf([["Initials: ]]%%%c%c\n%%[["]], first[$$0$$], *last);
+          free(first);
+          bill.name = malloc(20);
+          printf([["Full name: ]]%%%s\n%%[["]], bill.name);
+          free(bill.name);
+
+          return $$0$$;
+        }
+      \end{codeblock}
+    \end{scriptsize}
   %}}}1
   \end{frame}
 
