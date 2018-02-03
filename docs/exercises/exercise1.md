@@ -1,6 +1,8 @@
 ---
-title: "Exercise 1"
-permalink: /exercises/1/
+id: 73966
+title: "Assignment 1"
+due_at: '2018-02-05T17:30:00Z'
+notify_of_update: false
 ---
 
 Solve the following problems from the text book
@@ -11,6 +13,9 @@ Solve the following problems from the text book
     (i.e., static, heap, and stack memory) AND THEIR VALUES as in Figure 2.19.
     Make sure you clearly differentiate among the different types of memories
     being utilized by the program.
+  * **NOTE** You may change the actual parameters (`int k`) passed to the
+    function `reverse()` to be appropriate for size of the string being
+    reversed.
 
 1. Chapter 2, problem 7
   * See NOTE above.
