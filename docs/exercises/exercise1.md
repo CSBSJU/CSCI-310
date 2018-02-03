@@ -11,9 +11,9 @@ Solve the following problems from the text book
     (i.e., static, heap, and stack memory) AND THEIR VALUES as in Figure 2.19.
     Make sure you clearly differentiate among the different types of memories
     being utilized by the program.
-  * **NOTE** You may change the actual parameters (`int k`) passed to the
-    function `reverse()` to be appropriate for size of the string being
-    reversed.
+  * **NOTE** You may change the value of the actual parameters (i.e., `int k`)
+    passed to the function `reverse()` to be appropriate for size of the string
+    being reversed.
 
 1. Chapter 2, problem 7
   * See NOTE above.
