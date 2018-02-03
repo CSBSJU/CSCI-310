@@ -4,8 +4,6 @@ author: CSBSJU
 description: Course materials for CSCI 310.
 lang: en-US
 timezone: UTC
-include:
-  - docs/slides
 exclude:
   - AUTHORS
   - LICENSE
