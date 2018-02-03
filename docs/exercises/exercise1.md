@@ -1,8 +1,6 @@
 ---
-id: 73966
-title: "Assignment 1"
-due_at: '2018-02-05T17:30:00Z'
-notify_of_update: false
+title: "Exercise 1"
+permalink: /exercises/1/
 ---
 
 Solve the following problems from the text book
