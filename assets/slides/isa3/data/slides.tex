@@ -1,0 +1,269 @@
+\documentclass[10pt,t,svgnames]{beamer}
+
+\usetheme{metropolis} % use metropolis theme
+
+\usepackage{../../solarized}      % use solarized themed listings
+\usepackage{../../stack}          % use the tikzstack environment
+\usepackage{appendixnumberbeamer} % do not number appendix frames
+\usepackage[scale=3]{ccicons}     % creative commons icons
+
+% fix-up the handling of the notes pages
+\ifnotes
+  \hypersetup{final}
+  \usepackage{pgfpages}
+  \setbeamertemplate{note page}[plain]
+  \setbeameroption{show notes on second screen=right}
+  \AtBeginNote{%
+    \let\enumerate\itemize%
+    \let\endenumerate\enditemize%
+  }
+\fi
+
+% overrides default description environment
+\newlength\wideleftmargin{}
+\newlength\tightleftmargin{}
+\newlength\diffleftmargin{}
+\setlength\wideleftmargin{6em}    % controls location of term (> is more left)
+\setlength\tightleftmargin{1.5em} % controls location of description (same)
+\setlength\diffleftmargin{\dimexpr\wideleftmargin-\tightleftmargin}
+\makeatletter
+\providecommand{\nextline}{
+  \setlength\labelwidth{\tightleftmargin}
+  \setlength\leftmargin{\tightleftmargin}
+  \advance\linewidth\diffleftmargin{}
+  \advance\@totalleftmargin-\diffleftmargin{}
+  \parshape\@ne\@totalleftmargin\linewidth{}
+  \setlength\itemsep{1.5ex}
+}
+\makeatother
+\let\origdescription\description
+\let\endorigdescription\enddescription
+\renewenvironment{description}{\origdescription\nextline}{\endorigdescription}
+
+%-------------------------------------------------------------------------------
+
+\usepackage{tabularx} % tables
+\usepackage{booktabs} % cmidrule
+
+\title{Data representation}
+\date{}
+\author{College of Saint Benedict \& Saint John's University}
+\begin{document}
+  \maketitle
+
+  \begin{frame}{decimal refresher}
+  %{{{1
+    \renewcommand{\arraystretch}{2}
+    \begin{center}
+      \footnotesize
+      \only<+>{58036}
+      \begin{tabularx}{\textwidth}{XcXcXcXcX}
+        \only<+->{$5$ && $8$ && $0$ && $3$ && $6$\\\hline
+                  $50000$ & $+$ & $8000$ & $+$ & $0$ & $+$ & $30$ & $+$ & $6$}
+        \only<+->{\\\hline
+                  $5\times10000$ & $+$ & $8\times1000$ & $+$ & $0\times100$ & $+$ & $3\times10$ & $+$ & $6\times1$}
+        \only<+->{\\\hline
+                  $5\times10^4$ & $+$ & $8\times10^3$ & $+$ & $0\times10^2$ & $+$ & $3\times10^1$ & $+$ & $6\times10^0$}
+      \end{tabularx}
+    \end{center}
+  %}}}1
+  \end{frame}
+
+  \begin{frame}{binary refresher}
+  %{{{1
+    \renewcommand{\arraystretch}{2}
+    \begin{center}
+      \footnotesize
+      \only<+>{10110}
+      \begin{tabularx}{\textwidth}{XcXcXcXcXcXcX}
+        \only<+->{$1$ && $0$ && $1$ && $1$ && $0$\\\hline
+                  $1\times2^4$ & $+$ & $0\times2^3$ & $+$ & $1\times2^2$ & $+$ & $1\times2^1$ & $+$ & $0\times2^0$}
+        \only<+->{\\\hline
+                  $1\times16$ & $+$ & $0\times8$ & $+$ & $1\times4$ & $+$ & $1\times2$ & $+$ & $0\times1$}
+        \only<+->{\\\hline
+                  $16$ & $+$ & $0$ & $+$ & $4$ & $+$ & $2$ & $+$ & $0$}
+      \end{tabularx}
+    \end{center}
+
+    \note[item]<.->{this is the representation for unsigned binary integers}
+    \note[item]<.->{so how to represent signed integers?
+      \begin{itemize}
+        \item why not use the leftmost bit to store the sign?
+          \begin{itemize}
+            \item what is the range of values if we choose this? --- 0 is
+              represented twice, so our range has one less value --- not the end
+              of the world
+            \item what happens if we add to -5 to +5? --- the result is -10?
+          \end{itemize}
+      \end{itemize}}
+  %}}}1
+  \end{frame}
+
+  \begin{frame}{unsigned addition}
+  %{{{1
+    \renewcommand{\arraystretch}{2}
+    \begin{center}
+      \begin{tabular}{rrrrr}
+        $0$ & $+$ & $0$ & $=$ & $0$\\
+        $0$ & $+$ & $1$ & $=$ & $1$\\
+        $1$ & $+$ & $0$ & $=$ & $1$\\
+        $1$ & $+$ & $1$ & $=$ & $10$\\
+      \end{tabular}
+
+      \hrule
+
+      \begin{tabular}{rrrrrrrrl}
+            & $0$ & $0$ && $0$ & $1$ & $0$ & $1$ & $=5$\\
+        ADD & $0$ & $0$ && $0$ & $1$ & $0$ & $1$ & $=5$\\\cmidrule{1-8}
+        \only<2>{$\mbox{C}=0$ & $0$ & $0$ && $1$ & $0$ & $1$ & $0$ & $=10$}
+      \end{tabular}
+    \end{center}
+
+    \note[item]<2->{the hardware has a special bit known as the \emph{carry}
+      bit, denoted by C, which stores a 1 if the result of the addition was a
+      carry, and 0 otherwise.}
+  %}}}1
+  \end{frame}
+
+  \begin{frame}{signed addition}
+  %{{{1
+    \renewcommand{\arraystretch}{2}
+    \begin{center}
+      \begin{tabular}{rrrrrrrrl}
+            & $0$ & $0$ && $0$ & $1$ & $0$ & $1$ & $=+5$\\
+        ADD & $1$ & $0$ && $0$ & $1$ & $0$ & $1$ & $=-5$\\\cmidrule{1-8}
+        \only<2>{$\mbox{C}=0$ & $1$ & $0$ && $1$ & $0$ & $1$ & $0$ & $=-10$}
+      \end{tabular}
+    \end{center}
+
+    \note[item]<2->{what is the problem
+      \begin{itemize}
+        \item in this case, we had two additional symbols, $+$ and $-$, and we
+          were making some assumptions about their behavior.
+        \item For example, we know that $5 \mbox{ADD} 5=10$, but what does $+
+          \mbox{ADD} -$ equal? --- we have no rule for that in our definition of
+          decimal.
+        \item we are trying to apply the addition algorithm, when we should be
+          applying a different algorithm, called \emph{subtraction}
+        \item can we choose a different representation that we can directly use
+          the addition algorithm with?
+      \end{itemize}
+    }
+  %}}}1
+  \end{frame}
+
+  \begin{frame}{one's complement}
+  %{{{1
+    \renewcommand{\arraystretch}{2}
+    \begin{center}
+      \begin{tabular}{rrrrrrrr}
+              NOT & $0$ & $0$ && $0$ & $1$ & $0$ & $1$\\\hline
+        \only<2->{& $1$ & $1$ && $1$ & $0$ & $1$ & $0$}
+      \end{tabular}
+
+      \only<3->{\hrule}
+
+      \begin{tabular}{rrrrrrrr}
+        \only<3->{    & $0$ & $0$ && $0$ & $1$ & $0$ & $1$\\}
+        \only<3->{ADD & $1$ & $1$ && $1$ & $0$ & $1$ & $0$\\\hline}
+        \only<4->{$\mbox{C}=0$ & $1$ & $1$ && $1$ & $1$ & $1$ & $1$\\}
+        \only<5->{ADD & $0$ & $0$ && $0$ & $0$ & $0$ & $1$\\\hline}
+        \only<6->{$\mbox{C}=1$ & $0$ & $0$ && $0$ & $0$ & $0$ & $0$}
+      \end{tabular}
+    \end{center}
+
+    \note[item]<2->{one's complement is known as logical not}
+    \note[item]<4->{adding the one's complement will always result in all 1s}
+    \note[item]<6->{so two's complement is $\mbox{NOT}+1$}
+  %}}}1
+  \end{frame}
+
+  %\begin{frame}{overflow bit}
+  %%{{{1
+  %  \renewcommand{\arraystretch}{2}
+  %  \begin{center}
+  %    \begin{tabular}{rrrrrrrr}
+  %            NOT & $0$ & $0$ && $0$ & $1$ & $0$ & $1$\\\hline
+  %      \only<2->{& $1$ & $1$ && $1$ & $0$ & $1$ & $0$}
+  %    \end{tabular}
+
+  %    \only<3->{\hrule}
+
+  %    \begin{tabular}{rrrrrrrr}
+  %      \only<3->{    & $0$ & $0$ && $0$ & $1$ & $0$ & $1$\\}
+  %      \only<3->{ADD & $1$ & $1$ && $1$ & $0$ & $1$ & $0$\\\hline}
+  %      \only<4->{$\mbox{C}=0$ & $1$ & $1$ && $1$ & $1$ & $1$ & $1$\\}
+  %      \only<5->{ADD & $0$ & $0$ && $0$ & $0$ & $0$ & $1$\\\hline}
+  %      \only<6->{$\mbox{C}=1$ & $0$ & $0$ && $0$ & $0$ & $0$ & $0$}
+  %    \end{tabular}
+  %  \end{center}
+
+  %  \note[item]<2->{one's complement is known as logical not}
+  %  \note[item]<4->{adding the one's complement will always result in all 1s}
+  %  \note[item]<6->{so two's complement is $\mbox{NOT}+1$}
+  %%}}}1
+  %\end{frame}
+
+  %\begin{frame}{unsigned addition}
+  %%{{{1
+  %  \renewcommand{\arraystretch}{2}
+  %  \begin{center}
+  %    \begin{tabular}{rrrrrrrrl}
+  %      & \only<6->{$0$} & \only<5->{$0$} && \only<4->{$1$} & \only<3->{$0$} & \only<2->{$1$} & &      \\
+  %      \only<1->{& $0$ & $0$ && $0$ & $1$ & $0$ & $1$ & $=+5$\\
+  %            ADD & $1$ & $0$ && $0$ & $1$ & $0$ & $1$ & $=-5$\\\cmidrule{1-8}}
+  %      \only<7->{$\mbox{C}=0$} & \only<7->{$1$} & \only<6->{$0$} && \only<5->{$1$} &
+  %      \only<4->{$0$} & \only<3->{$1$} & \only<2->{$0$} & \only<7->{$=-10$} \\
+  %    \end{tabular}
+  %  \end{center}
+
+  %  \note[item]<7->{But this is not how we would add the numbers $+5$ and $-5$
+  %    anyway, we would use a different algorithm called \emph{subtraction}}
+
+
+  %  \note[item]<.->{this is the representation for unsigned binary integers}
+  %  \note[item]<.->{so how to represent signed integers?
+  %    \begin{itemize}
+  %      \item why not use the leftmost bit to store the sign?
+  %        \begin{itemize}
+  %          \item what is the range of values if we choose this? --- 0 is
+  %            represented twice, so our range has one less value --- not the end
+  %            of the world
+  %          \item what happens if we add to -5 to +5? --- the result is -10?
+  %        \end{itemize}
+  %    \end{itemize}}
+  %%}}}1
+  %\end{frame}
+
+  %\begin{frame}{signed integers}
+  %%{{{1
+  %  \renewcommand{\arraystretch}{2}
+  %  \begin{center}
+  %    \footnotesize
+  %    \only<+>{10110}
+  %    \begin{tabularx}{\textwidth}{XcXcXcXcXcXcX}
+  %      \only<+->{$1$ && $0$ && $1$ && $1$ && $0$\\\hline
+  %                $1\times2^4$ & $+$ & $0\times2^3$ & $+$ & $1\times2^2$ & $+$ & $1\times2^1$ & $+$ & $0\times2^0$}
+  %      \only<+->{\\\hline
+  %                $1\times16$ & $+$ & $0\times8$ & $+$ & $1\times4$ & $+$ & $1\times2$ & $+$ & $0\times1$}
+  %      \only<+->{\\\hline
+  %                $16$ & $+$ & $0$ & $+$ & $4$ & $+$ & $2$ & $+$ & $0$}
+  %    \end{tabularx}
+  %  \end{center}
+
+  %  \note[item]<.->{test}
+  %%}}}1
+  %\end{frame}
+
+  \appendix
+
+  \begin{frame}[c]
+  %{{{1
+    \begin{center}\ccbysa\end{center}
+
+    except where otherwise noted, this worked is licensed under
+    \href{http://creativecommons.org/licenses/by-sa/4.0/}{creative commons
+    attribution-sharealike 4.0 international license}
+  %}}}1
+  \end{frame}
+\end{document}

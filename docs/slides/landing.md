@@ -7,7 +7,9 @@ permalink: /slides/
 
 [HOL6](../assets/slides/hol6/slides-final.pdf)
 
-[ISA3](../assets/slides/isa3/slides-final.pdf)
+[ISA3-DATA](../assets/slides/isa3/data/slides-final.pdf)
+
+[ISA3-ARCH](../assets/slides/isa3/arch/slides-final.pdf)
 
 [ASM5](../assets/slides/asm5/slides-final.pdf)
 
