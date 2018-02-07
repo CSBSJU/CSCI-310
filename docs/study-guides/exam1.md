@@ -27,7 +27,7 @@ toc: true
     etc.)
   * 2's complement notation for signed numbers
   * Perform arithmetic/logical operations: **ADD**, **NEG**,
-    **AND**, **OR**, **XOR**, **NOT**, **XOR**, <span class="fas
+    **AND**, **OR**, **XOR**, **NOT**, <span class="fas
     fa-long-arrow-alt-right"></span> (i.e. implies), etc.
   * Status bits (**N**, **Z**, **V**, **C**)
 * Characters
