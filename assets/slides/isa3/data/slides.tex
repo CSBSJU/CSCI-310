@@ -44,6 +44,8 @@
 
 \usepackage{tabularx} % tables
 \usepackage{booktabs} % cmidrule
+\usepackage{fontspec} % language fonts
+\usepackage{luatexja-fontspec}
 
 \title{Data representation}
 \date{}
@@ -178,31 +180,96 @@
   %}}}1
   \end{frame}
 
-  %\begin{frame}{overflow bit}
-  %%{{{1
-  %  \renewcommand{\arraystretch}{2}
-  %  \begin{center}
-  %    \begin{tabular}{rrrrrrrr}
-  %            NOT & $0$ & $0$ && $0$ & $1$ & $0$ & $1$\\\hline
-  %      \only<2->{& $1$ & $1$ && $1$ & $0$ & $1$ & $0$}
-  %    \end{tabular}
+  \begin{frame}{cpu bits}
+  %{{{1
+    \renewcommand{\arraystretch}{2}
+    \begin{center}
+      \begin{tabular}{r|l|l}
+        & \multicolumn{1}{c|}{\textbf{0}} & \multicolumn{1}{c}{\textbf{1}}\\
+        \hline
+        \textbf{N} & otherwise & result is negative\\
+        \textbf{Z} & otherwise & result is all zeros\\
+        \textbf{V} & signed integer overflow occurred   & otherwise\\
+        \textbf{C} & unsigned integer overflow occurred & otherwise\\
+      \end{tabular}
+    \end{center}
 
-  %    \only<3->{\hrule}
+    \note[item]{C is set to carry out of leftmost bit}
+    \note[item]{V is set to  detects an overflow by comparing the carry into the
+      leftmost bit with the C bit. If they are different, an overflow has
+      occurred, and V gets 1. If they are the same, V gets 0.}
+  %}}}1
+  \end{frame}
 
-  %    \begin{tabular}{rrrrrrrr}
-  %      \only<3->{    & $0$ & $0$ && $0$ & $1$ & $0$ & $1$\\}
-  %      \only<3->{ADD & $1$ & $1$ && $1$ & $0$ & $1$ & $0$\\\hline}
-  %      \only<4->{$\mbox{C}=0$ & $1$ & $1$ && $1$ & $1$ & $1$ & $1$\\}
-  %      \only<5->{ADD & $0$ & $0$ && $0$ & $0$ & $0$ & $1$\\\hline}
-  %      \only<6->{$\mbox{C}=1$ & $0$ & $0$ && $0$ & $0$ & $0$ & $0$}
-  %    \end{tabular}
-  %  \end{center}
+  \begin{frame}{register transfer language}
+  %{{{1
+    \begin{center}
+      \begin{tabular}{l|c|l}
+        operation & RTL symbol\\
+        \hline
+        AND                  & $\wedge$\\
+        OR                   & $\vee$\\
+        XOR                  & $\oplus$\\
+        NOT                  & $\neg$\\
+        Implies              & $\rightarrow$\\
+        Transfer             & $\leftarrow$\\
+        Bit index            & $\langle~\rangle$\\
+        Informal description & \{~\}\\
+        Sequential separator & ;\\
+        Concurrent separator & ,\\
+      \end{tabular}
 
-  %  \note[item]<2->{one's complement is known as logical not}
-  %  \note[item]<4->{adding the one's complement will always result in all 1s}
-  %  \note[item]<6->{so two's complement is $\mbox{NOT}+1$}
-  %%}}}1
-  %\end{frame}
+      \vspace{\baselineskip}
+
+      \only<2>{$\mbox{c}\leftarrow\mbox{a}\oplus\mbox{b};\mbox{N}\leftarrow\mbox{c}<0,\mbox{Z}\leftarrow\mbox{c}=0$}
+
+      \note[item]<2>{XOR}
+    \end{center}
+  %}}}1
+  \end{frame}
+
+  \begin{frame}{another example}
+  %{{{1
+    \begin{center}
+      \begin{tabular}{r@{}lrrrrrrr}
+        \only<1->{&     & 0 & 0 && 0 & 1 & 0 & 1\\}
+        \only<1->{& ~ADD & 1 & 1 && 1 & 0 & 1 & 1\\\hline}
+        \only<1->{$\mbox{N}\leftarrow$ & ~1 & 1 & 1 && 1 & 1 & 1 & 1\\}
+        \only<1->{$\mbox{Z}\leftarrow$ & ~0\\}
+        \only<1> {$\mbox{V}\leftarrow$ & ~?\\}
+        \only<2> {$\mbox{V}\leftarrow$ & \multicolumn{8}{l}{\hspace{-.25em}$\neg(\mbox{a}\langle0\rangle\oplus\mbox{b}\langle0\rangle)\wedge(\mbox{a}\langle0\rangle\oplus\mbox{C})$}\\}
+        \only<1->{$\mbox{C}\leftarrow$ & ~0\\}
+      \end{tabular}
+    \end{center}
+  %}}}1
+  \end{frame}
+
+  \begin{frame}{arithmetic shift}
+  %{{{1
+    \begin{description}
+      \item[arithmetic shift left (asl)]\hfill \\
+        $\mbox{C}\leftarrow\mbox{r}\langle0\rangle,~\mbox{r}\langle0..4\rangle\leftarrow\langle1..5\rangle,~\mbox{r}\langle5\rangle\leftarrow0;$\\
+        $\mbox{N}\leftarrow\mbox{r}<0,~\mbox{Z}\leftarrow\mbox{r}=0,~\mbox{V}\leftarrow\{\mbox{overflow}\}$
+      \item[arithmetic shift right (asr)]\hfill\\
+        \only<1>{?}
+        \only<2>{$\mbox{C}\leftarrow\mbox{r}\langle5\rangle,~\mbox{r}\langle1..5\rangle\leftarrow\langle0..4\rangle;$\\
+        $\mbox{Z}\leftarrow\mbox{r}=0$}
+    \end{description}
+
+    \note[item]{how will you assign V bit? --- what is the RTL?}
+    \note[item]{$\mbox{V}\leftarrow\mbox{C}=\mbox{r}\langle0\rangle$}
+    \note[item]<+->{what is RTL for ASR?}
+    \note[item]<.->{where are the N and V bits for ASR?}
+  %}}}1
+  \end{frame}
+
+  \begin{frame}{unicode}
+  %{{{1
+    Hello world.\\
+    ¡Hola!, Grüß Gott, Hyvää päivää, Tere õhtust, Bonġu Cześć!, Dobrý den\\
+    {\fontspec{FandolSong} 你好, 早晨, こんにちは}
+  %}}}1
+  \end{frame}
 
   %\begin{frame}{unsigned addition}
   %%{{{1
