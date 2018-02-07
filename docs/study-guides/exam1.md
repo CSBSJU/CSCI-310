@@ -29,6 +29,7 @@ toc: true
   * Perform arithmetic/logical operations: **ADD**, **NEG**,
     **AND**, **OR**, **XOR**, **NOT**, <span class="fas
     fa-long-arrow-alt-right"></span> (i.e. implies), etc.
+  * Understand **RTL** symbols
   * Status bits (**N**, **Z**, **V**, **C**)
 * Characters
   * Characters and their ASCII numeric codes **(ASCII TABLE WILL BE PROVIDED)**
