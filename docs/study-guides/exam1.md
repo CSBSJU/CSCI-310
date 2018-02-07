@@ -23,16 +23,15 @@ toc: true
 ### Chapter 3
 * Integers
   * Range (min, max) for an N-bit signed/unsigned number
-  * Convert among all the numbering systems discussed (decimal, binary,
-    hexadecimal, etc.)
+  * Convert among any numbering base (decimal, binary, hexadecimal, base X,
+    etc.)
   * 2's complement notation for signed numbers
-  * Perform arithmetic/logical operations: **ADD**, **SUBTRACT**, **NEGATE**,
-    **NOT**, **AND**, **OR**, **NOT**, **XOR**, <span class="fas
+  * Perform arithmetic/logical operations: **ADD**, **NEG**,
+    **AND**, **OR**, **XOR**, **NOT**, **XOR**, <span class="fas
     fa-long-arrow-alt-right"></span> (i.e. implies), etc.
   * Status bits (**N**, **Z**, **V**, **C**)
 * Characters
   * Characters and their ASCII numeric codes **(ASCII TABLE WILL BE PROVIDED)**
-* Data representation and compression for audio and image data
 * Floating Point numbers
   * Design: sign, exponent, mantissa, excess value
   * Normalized, denormalized and special values
