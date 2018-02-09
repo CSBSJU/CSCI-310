@@ -189,8 +189,8 @@
         \hline
         \textbf{N} & otherwise & result is negative\\
         \textbf{Z} & otherwise & result is all zeros\\
-        \textbf{V} & signed integer overflow occurred   & otherwise\\
-        \textbf{C} & unsigned integer overflow occurred & otherwise\\
+        \textbf{V} & otherwise & signed integer overflow occurred\\
+        \textbf{C} & otherwise & unsigned integer overflow occurred\\
       \end{tabular}
     \end{center}
 
@@ -234,11 +234,11 @@
       \begin{tabular}{r@{}lrrrrrrr}
         \only<1->{&     & 0 & 0 && 0 & 1 & 0 & 1\\}
         \only<1->{& ~ADD & 1 & 1 && 1 & 0 & 1 & 1\\\hline}
-        \only<1->{$\mbox{N}\leftarrow$ & ~1 & 1 & 1 && 1 & 1 & 1 & 1\\}
-        \only<1->{$\mbox{Z}\leftarrow$ & ~0\\}
+        \only<1->{$\mbox{N}\leftarrow$ & ~0 & 0 & 0 && 0 & 0 & 0 & 0\\}
+        \only<1->{$\mbox{Z}\leftarrow$ & ~1\\}
         \only<1> {$\mbox{V}\leftarrow$ & ~?\\}
-        \only<2> {$\mbox{V}\leftarrow$ & \multicolumn{8}{l}{\hspace{-.25em}$\neg(\mbox{a}\langle0\rangle\oplus\mbox{b}\langle0\rangle)\wedge(\mbox{a}\langle0\rangle\oplus\mbox{C})$}\\}
-        \only<1->{$\mbox{C}\leftarrow$ & ~0\\}
+        \only<2> {$\mbox{V}\leftarrow$ & \multicolumn{8}{l}{\hspace{-.25em}$\neg(\mbox{a}\langle0\rangle\oplus\mbox{b}\langle0\rangle)\wedge(\mbox{a}\langle0\rangle\oplus\mbox{N})$}\\}
+        \only<1->{$\mbox{C}\leftarrow$ & ~1\\}
       \end{tabular}
     \end{center}
   %}}}1
@@ -263,64 +263,78 @@
   %}}}1
   \end{frame}
 
+  \begin{frame}{hexadecimal}
+  %{{{1
+  %}}}1
+  \end{frame}
+
   \begin{frame}{unicode}
   %{{{1
     Hello world.\\
     ¡Hola!, Grüß Gott, Hyvää päivää, Tere õhtust, Bonġu Cześć!, Dobrý den\\
     {\fontspec{FandolSong} 你好, 早晨, こんにちは}
+
+    \only<2>{\rmfamily https://www.paypal.com\\}
+    \only<3>{\rmfamily https://www.p\hspace{-.22em}\raisebox{-.11ex}{\fontsize{9.5pt}{0pt}\selectfont\char"0430}\hspace{-.20em}yp\hspace{-.22em}\raisebox{-.11ex}{\fontsize{9.5pt}{0pt}\selectfont\char"0430}\hspace{-.20em}l.com}
+
+    \note[item]{used to access >127 different characters}
+    \note[item]{backwards compatible with ASCII, i.e., code points have same
+      value in UTF that they have in ASCII}
+    \note[item]{comes in different flavors
+      \begin{itemize}
+        \item UTF-32 --- easier to understand, requires 32bits to represent each
+          of the code points (glyphs), but wasteful if you are mostly storing
+          ascii characters
+        \item UTF-8 --- variable width code, i.e., some bits in the pattern are
+          reserved for storing information about the structure of the pattern
+          instead of information about the code point
+      \end{itemize}
+    }
+    \note[item]{also define some emojis}
+    \note[item]<2->{can also be used for nefarious things}
   %}}}1
   \end{frame}
 
-  %\begin{frame}{unsigned addition}
-  %%{{{1
-  %  \renewcommand{\arraystretch}{2}
-  %  \begin{center}
-  %    \begin{tabular}{rrrrrrrrl}
-  %      & \only<6->{$0$} & \only<5->{$0$} && \only<4->{$1$} & \only<3->{$0$} & \only<2->{$1$} & &      \\
-  %      \only<1->{& $0$ & $0$ && $0$ & $1$ & $0$ & $1$ & $=+5$\\
-  %            ADD & $1$ & $0$ && $0$ & $1$ & $0$ & $1$ & $=-5$\\\cmidrule{1-8}}
-  %      \only<7->{$\mbox{C}=0$} & \only<7->{$1$} & \only<6->{$0$} && \only<5->{$1$} &
-  %      \only<4->{$0$} & \only<3->{$1$} & \only<2->{$0$} & \only<7->{$=-10$} \\
-  %    \end{tabular}
-  %  \end{center}
+  \begin{frame}{floating-point}
+  %{{{1
+    \begin{description}
+      \item[IEEE 754] \hfill\\
+        \begin{description}
+          \setlength{\itemsep}{0pt}
+          \item [single precision] 1.8.23 --- excess 127 / 126
+          \item [double precision] 1.11.52 --- excess 1023 / 1022
+          \item [special values] \hfill\\
+            \begin{tabular}{lll}
+              & \textbf{exponent} & \textbf{significand}\\
+              \hline
+              \textbf{zero} & all zeros & all zeros\\
+              \hline
+              \textbf{denormalized} & all zeros & non-zero\\
+              \hline
+              \textbf{inifinity} & all ones & all zeros\\
+              \hline
+              \textbf{not a number (NaN)} & all ones & non-zero\\
+              \hline
+            \end{tabular}
+        \end{description}
 
-  %  \note[item]<7->{But this is not how we would add the numbers $+5$ and $-5$
-  %    anyway, we would use a different algorithm called \emph{subtraction}}
+      \item [operations that result in NaN] \hfill\\
+        \begin{itemize}
+          \item The divisions 0/0 and ±∞/±∞
+          \item The multiplications 0×±∞ and ±∞×0
+          \item The additions ∞ + (−∞), (−∞) + ∞ and equivalent subtractions
+        \end{itemize}
+    \end{description}
 
-
-  %  \note[item]<.->{this is the representation for unsigned binary integers}
-  %  \note[item]<.->{so how to represent signed integers?
-  %    \begin{itemize}
-  %      \item why not use the leftmost bit to store the sign?
-  %        \begin{itemize}
-  %          \item what is the range of values if we choose this? --- 0 is
-  %            represented twice, so our range has one less value --- not the end
-  %            of the world
-  %          \item what happens if we add to -5 to +5? --- the result is -10?
-  %        \end{itemize}
-  %    \end{itemize}}
-  %%}}}1
-  %\end{frame}
-
-  %\begin{frame}{signed integers}
-  %%{{{1
-  %  \renewcommand{\arraystretch}{2}
-  %  \begin{center}
-  %    \footnotesize
-  %    \only<+>{10110}
-  %    \begin{tabularx}{\textwidth}{XcXcXcXcXcXcX}
-  %      \only<+->{$1$ && $0$ && $1$ && $1$ && $0$\\\hline
-  %                $1\times2^4$ & $+$ & $0\times2^3$ & $+$ & $1\times2^2$ & $+$ & $1\times2^1$ & $+$ & $0\times2^0$}
-  %      \only<+->{\\\hline
-  %                $1\times16$ & $+$ & $0\times8$ & $+$ & $1\times4$ & $+$ & $1\times2$ & $+$ & $0\times1$}
-  %      \only<+->{\\\hline
-  %                $16$ & $+$ & $0$ & $+$ & $4$ & $+$ & $2$ & $+$ & $0$}
-  %    \end{tabularx}
-  %  \end{center}
-
-  %  \note[item]<.->{test}
-  %%}}}1
-  %\end{frame}
+    \note[item]{mantissa $\rightarrow$ significand}
+    \note[item]{more bits in exponent $\rightarrow$ more range}
+    \note[item]{more bits in significand $\rightarrow$ more precision}
+    \note[item]{how to find the range for floating-point numbers}
+    \note[item]<2->{draw attention to Figure 3.38 --- make connection with radix
+      sort --- floats can be sorted using radix sort by NOT'ing the values then
+      treating them like unsigned integers}
+  %}}}1
+  \end{frame}
 
   \appendix
 
