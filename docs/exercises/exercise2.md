@@ -18,9 +18,9 @@ Solve the following problems
 
 1. Using the 8-bit floating-point design (excess 3) we used in class, can you
    figure out the exponent and mantissa portions of the floating-point number
-   representation for any power of 2 decimal normalized number such as 2n?
-   Justify your answer. (Recall that any floating-point number can be formatted
-   as +/&minus; 1.(mantissa) &times; 2<sup>exponent</sup>).
+   representation for any power of 2 decimal normalized number such as
+    2<sup>n</sup>? Justify your answer. (Recall that any floating-point number
+    can be formatted as +/&minus; 1.(mantissa) &times; 2<sup>exponent</sup>).
    1. mantissa = ???
    1. exponent = ???
 
