@@ -17,12 +17,12 @@ permalink: /schedule/
 | <del>19 FEB \|</del><br>\|<br><del>\|</del> | <br>ASM5: Assembly programming<br>&nbsp;                                                                               | <br>5.1<br>&nbsp;                | <br>[<span class="far fa-file-pdf"></span>][ASM5-ASM]<br>&nbsp; |
 | 26 FEB \|<br>\|<br>\|            | .<br>.<br>[Exam 1]                                                                                                                | 5.2<br>5.3-5.4<br>&nbsp;         | [<span class="fas fa-pencil-alt"></span>][EX3]<br><br>&nbsp; |
 | <del>05 MAR \|<br>\|<br>\|</del> |                                                                                                                                   |                                  |                                                              |
-| 12 MAR \|<br>\|<br>\|            | ASM5: Compiling<br>.<br>.                                                                                                         | 6.1<br>6.2<br>6.3                | [<span class="far fa-file-pdf"></span>][ASM5-COMP]&nbsp;[<span class="fas fa-pencil-alt"></span>][EX4]<br><br>&nbsp; |
-| 19 MAR \|<br>\|<br>\|            | .<br>.<br>.                                                                                                                       | 6.4<br><br>6.5                   | <br><br>[<span class="fas fa-pencil-alt"></span>][EX5]       |
-| 26 MAR \|<br>\|<br><del>\|</del> | .<br>[Exam 2]<br>&nbsp;                                                                                                           |                                  |                                                              |
-| <del>02 APR \|</del><br>\|<br>\| | <br>OS4: Process management<br>.                                                                                                  | <br>8.1-8.2<br>8.3               | <br>[<span class="far fa-file-pdf"></span>][OS4]<br>&nbsp;   |
-| 09 APR \|<br>\|<br>\|            | .<br>.<br>OS4: Storage management                                                                                                 | 8.4<br><br>9.1-9.2               | <br>[<span class="fas fa-pencil-alt"></span>][EX6]<br>&nbsp; |
-| 16 APR \|<br>\|<br>\|            | .<br>.<br>LG1: Combinational circuits                                                                                             | 9.3<br><br>10.1-10.2             | <br><br>[<span class="far fa-file-pdf"></span>][LG1]         |
+| 12 MAR \|<br>\|<br>\|            | ASM5: Compiling<br>.<br>.                                                                                                         | 6.1<br>6.2<br>&nbsp;             | [<span class="far fa-file-pdf"></span>][ASM5-COMP]&nbsp;[<span class="fas fa-pencil-alt"></span>][EX4]<br><br>&nbsp; |
+| 19 MAR \|<br>\|<br>\|            | .<br>.<br>.                                                                                                                       | 6.3<br><br>6.4                   |                                                              |
+| 26 MAR \|<br>\|<br><del>\|</del> | .<br>.<br>&nbsp;                                                                                                                  | <br>6.5<br>&nbsp;                | <br>[<span class="fas fa-pencil-alt"></span>][EX5]<br>&nbsp; |
+| <del>02 APR \|</del><br>\|<br>\| | <br>.<br>[Exam 2]                                                                                                                 |                                  |                                                              |
+| 09 APR \|<br>\|<br>\|            | OS4: Process management<br>.<br>.                                                                                                 | 8.1-8.2<br>8.3<br>               | [<span class="far fa-file-pdf"></span>][OS4-PROC]<br>[<span class="fas fa-pencil-alt"></span>][EX6]<br>&nbsp; |
+| 16 APR \|<br>\|<br>\|            | OS4: Storage management<br>.<br>LG1: Combinational circuits                                                                       | 9.1-9.2<br>9.3<br>10.1-10.2      | [<span class="far fa-file-pdf"></span>][OS4-FILE]<br><br>[<span class="far fa-file-pdf"></span>][LG1] |
 | 23 APR \|<br>\|<br>\|            | .<br>.<br>[Exam 3]                                                                                                                | 10.3<br>10.4<br>&nbsp;           | [<span class="fas fa-pencil-alt"></span>][EX7]<br><br>&nbsp; |
 | 30 APR \|<br>\|<br>\|            | LG1: Sequential circuits<br>.<br>.                                                                                                | 11.1,11.3<br><br>&nbsp;          | <br><br>[<span class="fas fa-pencil-alt"></span>][EX8]       |
 | 08 MAY \|                        | [Final exam]                                                                                                                      |                                  |                                                              |
@@ -43,7 +43,8 @@ permalink: /schedule/
 [HOL6]:      ../assets/slides/hol6/slides-final.pdf
 [ASM5-ASM]:  ../assets/slides/asm5/asm/slides-final.pdf
 [ASM5-COMP]: ../assets/slides/asm5/compile/slides-final.pdf
-[OS4]:       ../assets/slides/os4/slides-final.pdf
+[OS4-PROC]:  ../assets/slides/os4/proc/slides-final.pdf
+[OS4-FILE]:  ../assets/slides/os4/file/slides-final.pdf
 [ISA3-DATA]: ../assets/slides/isa3/data/slides-final.pdf
 [ISA3-ARCH]: ../assets/slides/isa3/arch/slides-final.pdf
 [LG1]:       ../assets/slides/lg1/slides-final.pdf
