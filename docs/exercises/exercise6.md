@@ -22,10 +22,3 @@ Solve the following problems
 1. Chapter 6, problem 28
 
 1. Chapter 6, problem 29
-
-1. <del>Chapter 6, problem 34</del>
-  * <del>**NOTE** You need to read and understand how `switch` statements are
-    treated in assemply (pages 350--355). This illustrates their superiority
-    over `if` statements.</del>
-
-1. <del>Chapter 6, problem 36</del>
