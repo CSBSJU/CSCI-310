@@ -15,6 +15,8 @@ permalink: /slides/
 
 [ASM5-COMPILE](../assets/slides/asm5/compile/slides-final.pdf)
 
-[OS4](../assets/slides/os4/slides-final.pdf)
+[OS4-PROC](../assets/slides/os4/proc/slides-final.pdf)
+
+[OS4-FILE](../assets/slides/os4/file/slides-final.pdf)
 
 [LG1](../assets/slides/lg1/slides-final.pdf)
