@@ -44,7 +44,7 @@ During the exam, I will provide you with the following (IF NEEDED):
   * **arrays (local, global, and parameters)**
   * `switch` **statements**
   * **pointers (local, global, and parameters)**
-  * **dynamic memory allocation via new operator**
+  * **dynamic memory allocation via malloc function**
   * `structs` **(local, global, and via local as well as global pointers)**
   * **linked data structures**
 
@@ -58,8 +58,9 @@ During the exam, I will provide you with the following (IF NEEDED):
   * **Memory vectors**
 * **Synchronous vs. asynchronous OS calls**
 * **Multitasking and process life cycle**
-* **Concurrency: attempts including Peterson’s algorithm, critical sections,
-  mutual exclusion, deadlocks, and semaphores**
+* **Memory management**
+  * **Partitioning schemes**
+  * **Paging and virtual memory**
 
 ### Sample exam questions
 * (Literally) translate a given C program to Pep/9 assembly
@@ -76,5 +77,3 @@ During the exam, I will provide you with the following (IF NEEDED):
 * (Reverse engineer) Produce a C program from a given Pep/9 assembly program
 * Write a Pep/9 assembly language program to achieve a specific purpose
 * **Multiple choice or T/F questions**
-* **Attempts at concurrency for mutual exclusion**
-  * **Deadlocks? Alternation? Spin locks?**
