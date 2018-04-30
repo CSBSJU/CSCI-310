@@ -24,8 +24,8 @@ permalink: /schedule/
 | 09 APR \|<br>\|<br>\|            | .<br>OS4: Process management<br>.                                                                                                 | 6.5<br>8.1-8.2<br>8.3            | <br>[<span class="far fa-file-pdf"></span>][OS4-PROC]<br>&nbsp; |
 | 16 APR \|<br>\|<br>\|            | .<br>OS4: Storage management<br>.                                                                                                 | <br>9.1-9.2<br>9.3               | [<span class="fas fa-pencil-alt"></span>][EX6]<br>[<span class="far fa-file-pdf"></span>][OS4-FILE]<br>&nbsp; |
 | 23 APR \|<br>\|<br>\|            | .<br>[Exam 3]<br>LG1: Combinational Circuits                                                                                      | <br><br>10.1-10.2                | <br><br>[<span class="far fa-file-pdf"></span>][LG1]         |
-| 30 APR \|<br>\|<br>\|            | .<br>LG1: Sequential circuits<br>.                                                                                                | 10.3-10.4<br>11.1,11.3<br>&nbsp; | <br><br>[<span class="fas fa-pencil-alt"></span>][EX8]       |
-| 08 MAY \|                        | [Final exam]                                                                                                                      |                                  |                                                              |
+| 30 APR \|<br>\|<br>\|            | .<br>.<br>.                                                                                                                       | 10.3-10.4<br><br>&nbsp;          |                                                              |
+| 08 MAY \|                        | [Final exam]                                                                                                                      |                                  | [<span class="fas fa-pencil-alt"></span>][EX8]               |
 
 [Exam 1]:     ../study-guides/exam1/
 [Exam 2]:     ../study-guides/exam2/
@@ -47,4 +47,4 @@ permalink: /schedule/
 [OS4-FILE]:  ../assets/slides/os4/file/slides-final.pdf
 [ISA3-DATA]: ../assets/slides/isa3/data/slides-final.pdf
 [ISA3-ARCH]: ../assets/slides/isa3/arch/slides-final.pdf
-[LG1]:       ../assets/slides/lg1/slides-final.pdf
+[LG1]:       ../assets/slides/lg1/comb/slides-final.pdf
