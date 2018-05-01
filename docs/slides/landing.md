@@ -19,4 +19,4 @@ permalink: /slides/
 
 [OS4-FILE](../assets/slides/os4/file/slides-final.pdf)
 
-[LG1](../assets/slides/lg1/slides-final.pdf)
+[LG1](../assets/slides/lg1/comb/slides-final.pdf)
