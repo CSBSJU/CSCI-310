@@ -26,6 +26,10 @@ gallery:
   - url: /exercises/8/
     image_path: /assets/images/eight.jpg
     alt: "Exercise 8"
+  - url: /exercises/8/
+    image_path: /assets/images/eight.jpg
+    alt: "Exercise 8"
+  - image_path: ""
 ---
 
 {% include gallery id="gallery" %}
