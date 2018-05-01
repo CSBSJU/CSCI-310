@@ -94,8 +94,6 @@ During the exam, I will provide you with the following (IF NEEDED):
   * Memory vectors
 * Synchronous vs. asynchronous OS calls
 * Multitasking and process life cycle
-* Concurrency: attempts including Peterson’s algorithm, critical sections,
-  mutual exclusion, deadlocks, and semaphores
 * Multiprogramming memory allocation techniques (advantages and disadvantages
   for each)
   * Fixed-partitioning (logical-to-physical address translation)
@@ -115,7 +113,7 @@ During the exam, I will provide you with the following (IF NEEDED):
     * Truth tables
     * Boolean expressions
     * Logic diagrams
-  * Simplifying expressions using Boolean algebra laws or Karnaugh maps
+  * Simplifying expressions using Boolean algebra laws
   * Sum of products method
   * NAND’s functional completeness (how to create any gate and/or any circuit
     using NANDs alone)
@@ -126,36 +124,6 @@ During the exam, I will provide you with the following (IF NEEDED):
     * Selective inverters
     * Decoders
     * Multiplexers
-  * Pep/9 ALU units and corresponding control instructions
-* Sequential circuits
-  * vs. combinational circuits
-  * Feedback mechanism
-  * Stable vs. unstable circuits
-  * SR Latches
-  * Flip-flops (SR, JK, D, and T)
-    * Characterization tables
-    * Excitation tables
-    * Generating a flip-flop **from any other flip flop** (design table, derive,
-      and simplify expression and draw circuit)
-  * How sequential circuits can be used to construct registers and memory chips
-  * Tri-state buffers and their use in bidirectional data buses
-
-### Chapter 12 and final notes
-* Cache memory
-  * Memory hierarchy
-  * Cache levels
-  * DRAM vs. SRAM
-  * Locality of reference
-  * Cache hits and misses
-  * Direct-mapped caching (memory to cache address translation and problems with
-    direct-mapped caching which motivate set-associative caching)
-* CPU components: data section and control section
-* Control signals
-* Data section of Pep/9 and how control section communicates with it: be able to
-  trace a set of control signals through Pep/9’s data section
-* CISC vs. RISC architectures
-* Control section: Microprogrammed control vs. hardwired control
-* Pipelining: How it is achieved and its advantages
 
 ### Sample questions
 * Multiple choice
@@ -174,8 +142,8 @@ During the exam, I will provide you with the following (IF NEEDED):
   * Complete/change a given Pep/9 assembly program to serve as a (literal)
     translation of a given C program
   * Change a given Pep/9 assembly language to achieve something different (e.g.,
-    use a while loop instead of a do loop or use local variables instead of global
-    variables)
+    use a while loop instead of a do loop or use local variables instead of
+    global variables)
   * Display the output of a given assembly program for some sample input
   * Display the values of labels/symbols in the symbol table of an assembly
     program
@@ -183,23 +151,13 @@ During the exam, I will provide you with the following (IF NEEDED):
     specific addressing modes
   * Write a Pep/9 assembly language program to achieve a specific purpose
 * OS
-  * Pep8 OS (except for DECI)
-  * Attempts at concurrency for mutual exclusion
-    * Deadlocks? Alternation? Spin locks?
+  * Pep/9 OS (except for DECI)
   * Logical-to-physical address translation
-  * Variable partitioning using best-fit vs. first-fit
-  * Page replacement in virtual memory (FIFO and LRU)
+  * Variable partitioning
+  * Page replacement in virtual memory
 * Combinational circuits
   * Convert between the different ways for describing combinational circuits:
     truth tables, Boolean expressions and logic diagrams
-  * Simplifying expressions using Boolean algebra laws or Karnaugh maps
-  * Designing circuits for given certain functionalities (e.g., ADD, SUB, AND,
-    etc.) given a truth table or by completing the truth table first
-  * Replacing gates with other gates (e.g. NAND and NOR)
-* Sequential circuits
-  * Sequential circuits: figure out if stable or not
-  * Design a flip-flop from another
-* Chapter 12
-  * Solving direct-mapped caching problems similar to problem 12.25 in book
-  * Be able to trace a set of control signals through Pep/9’s data section to
-    figure out what they achieve and to show effect on memory and CPU registers
+  * Designing circuits for given certain functionalities (e.g., `ADD`, `SUB`,
+    `AND`, etc.) given a truth table or by completing the truth table first
+  * Replacing gates with other gates (e.g. NAND)

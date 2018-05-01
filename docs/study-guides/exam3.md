@@ -58,9 +58,15 @@ During the exam, I will provide you with the following (IF NEEDED):
   * **Memory vectors**
 * **Synchronous vs. asynchronous OS calls**
 * **Multitasking and process life cycle**
-* **Memory management**
-  * **Partitioning schemes**
-  * **Paging and virtual memory**
+* **Multiprogramming memory allocation techniques (advantages and disadvantages
+  for each)**
+  * **Fixed-partitioning (logical-to-physical address translation)**
+  * **Variable-partitioning (fragmentation, compaction)**
+  * **Paging (pages, page tables, frames, and logical-to-physical address
+    translation)**
+  * **Virtual Memory (page tables, frame tables)**
+* **The internals of a hard disk:**
+  * **Access time**
 
 ### Sample exam questions
 * (Literally) translate a given C program to Pep/9 assembly
