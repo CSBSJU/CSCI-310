@@ -3,7 +3,7 @@ title: "Exercises"
 permalink: /exercises2/
 gallery:
   - url: /exercises/8/
-    image_path: /assets/images/eight-ball.jpg
+    image_path: /assets/images/eight.jpg
     alt: "Exercise 8"
   - url: https://flic.kr/p/8a738X
     image_path: https://farm5.staticflickr.com/4029/4697523701_249e93ba23_q.jpg
