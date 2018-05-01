@@ -97,11 +97,10 @@ During the exam, I will provide you with the following (IF NEEDED):
 * Multiprogramming memory allocation techniques (advantages and disadvantages
   for each)
   * Fixed-partitioning (logical-to-physical address translation)
-  * Variable-partitioning (fragmentation, compaction, and best-fit vs.
-    first-fit)
+  * Variable-partitioning (fragmentation, compaction)
   * Paging (pages, page tables, frames, and logical-to-physical address
     translation)
-  * Virtual Memory (page tables, frame tables, page replacement- FIFO and LRU)
+  * Virtual Memory (page tables, frame tables, page replacement)
 * The internals of a hard disk:
   * Access time
 
