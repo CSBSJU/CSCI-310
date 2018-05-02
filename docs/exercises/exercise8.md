@@ -10,7 +10,7 @@ Solve the following problems
 
 1. Chapter 10, problem 21
   * **NOTE** For XOR gates, you may need to replace them with their definitions:
-    a XOR b = ab' + a'b
+    a &#8853; b = ab' + a'b
 
 1. Use the _Logism_ circuit simulator to construct a circuit for the Boolean
    expression given below. Construct your circuit from the following gates only:
