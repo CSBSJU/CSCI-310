@@ -43,7 +43,6 @@ During the exam, I will provide you with the following (IF NEEDED):
   * Status bits (**N**, **Z**, **V**, **C**)
 * Characters
   * Characters and their ASCII numeric codes **(ASCII TABLE WILL BE PROVIDED)**
-* Data representation and compression for audio and image data
 * Floating Point numbers
   * Design: sign, exponent, mantissa, excess value
   * Normalized, denormalized and special values
