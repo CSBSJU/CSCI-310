@@ -1,7 +1,5 @@
 ---
 title: "Assignment 5"
-due_at: '2018-03-26T16:30:00Z'
-notify_of_update: false
 ---
 
 Pep/9 programs that do not adhere to the following WILL NOT be accepted or

@@ -1,7 +1,5 @@
 ---
 title: "Assignment 3"
-due_at: '2018-02-26T17:30:00Z'
-notify_of_update: false
 ---
 
 Solve the following problems

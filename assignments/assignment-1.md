@@ -1,7 +1,5 @@
 ---
 title: "Assignment 1"
-due_at: '2018-02-05T17:30:00Z'
-notify_of_update: false
 ---
 
 Solve the following problems from the text book
