@@ -21,43 +21,30 @@ During the exam, I will provide you with the following (IF NEEDED):
 * Assemblers and loaders
 * 1-to-1 mapping between assembly and machine language programs
 * Assembly labels/symbols and symbol lookup tables
-* Addressing modes: immediate, direct, stack-relative and stack-relative
-  deferred, **indexed, and stack-indexed and stack-indexed deferred**
+* Addressing modes: immediate, direct, **stack-relative and stack-relative
+  deferred, indexed, and stack-indexed and stack-indexed deferred**
 * Branching
-* von Neumann logic: Why increment PC before execute?
+* **von Neumann logic: Why increment PC before execute?**
 * Enforcing data type compatibility at the HOL6 level (symbol tables)
-* Structured vs. unstructured code: spaghetti code in assembly
-* Stack allocation (procedure and function calls)
+* **Structured vs. unstructured code: spaghetti code in assembly**
+* **Stack allocation (procedure and function calls)**
 * Translating C constructs to assembly:
   * I/O commands
   * local/global variables
   * constants
-  * `if/else` statements with `OR` and/or `AND` conditions
-  * `while` loops
-  * `do` loops
-  * `for` loops
-  * procedure/function calls
-  * passing parameters by value and by reference
-  * recursion
+  * `if/else` **statements with** `OR` **and/or** `AND` **conditions**
+  * `while` **loops**
+  * `do` **loops**
+  * `for` **loops**
+  * **procedure/function calls**
+  * **passing parameters by value and by reference**
+  * **recursion**
   * **arrays (local, global, and parameters)**
   * `switch` **statements**
   * **pointers (local, global, and parameters)**
   * **dynamic memory allocation via malloc function**
   * `structs` **(local, global, and via local as well as global pointers)**
   * **linked data structures**
-
-### Chapters 8-9
-* **Pep/9 OS (understand Pep/9 OS code)**
-  * **RAM**
-  * **ROM**
-  * **Trap mechanism: asserting addressing modes, setting address of trap
-    operand, saving PCB on system stack, RETTR
-  * **Memory vectors**
-* **Synchronous vs. asynchronous OS calls**
-* **Multitasking and process life cycle**
-* **Memory management**
-  * **Partitioning schemes**
-  * **Paging and virtual memory**
 
 ### Sample exam questions
 * (Literally) translate a given C program to Pep/9 assembly
@@ -73,4 +60,3 @@ During the exam, I will provide you with the following (IF NEEDED):
   specific addressing modes
 * (Reverse engineer) Produce a C program from a given Pep/9 assembly program
 * Write a Pep/9 assembly language program to achieve a specific purpose
-* **Multiple choice or T/F questions**

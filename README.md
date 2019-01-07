@@ -62,13 +62,14 @@ unexcused absence
 : An absence that is not excused.
 
 original work
-: ...
+: TBD
 
 closed book
-: ...
+: The book and any accompanying materials MUST NOT be used.
 
 open note
-: ...
+: A single 8.5" x 11" piece of paper, front and back with nothing attached MAY
+  be used.
 
 ## Course policies
 ### Attendance
@@ -114,7 +115,7 @@ The final grade for the course will be based on the percentages shown below.
 | Final exam     | 28% |
 
 Grading is mainly based on the performance of each student compared to the class
-as a whole. In general, the following guidelines are followed expect in certain
+as a whole. In general, the following guidelines are followed except in certain
 situations where the instructor sees a need for adjustments. A grade of F MAY be
 given in situations of frequent unexcused absences, unsuccessful completion of
 required work in a timely manner, or evident lack of understanding of core
