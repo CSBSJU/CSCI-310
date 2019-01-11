@@ -1,5 +1,5 @@
 ---
-title: "Final exam study guide"
+title: "Final exam"
 ---
 
 {% capture notice-text %}

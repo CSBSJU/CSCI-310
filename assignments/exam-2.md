@@ -1,5 +1,5 @@
 ---
-title: "Exam 3 study guide"
+title: "Exam 2"
 ---
 
 {% capture notice-text %}
@@ -15,44 +15,48 @@ During the exam, I will provide you with the following (IF NEEDED):
   <div class="ic-flash__icon" aria-hidden="true"><i class="icon-info"></i></div>{{ notice-text | markdownify }}
 </div>
 
-### Chapters 5-6
+### Chapter 4
+* Pep/9 CPU and memory architecture
+* Pep/9 Instruction format
+* Pep/9 Instructions **(INSTRUCTION TABLE WILL BE PROVIDED)**
+  * Operand vs. operand specifier
+  * Unary vs. non-unary instruction
+  * Byte vs. word operations
+  * RTL specification for instructions
+  * Effects on CPU, NZVC, and memory
+* von Neumann Architecture
+  * Memory holds both program and data
+  * Sequence of steps in the von Neumann cycle
+  * Be able to trace the effects of program execution on CPU registers and
+    memory
+* Machine Level Programming
+  * Write a program at the level of the examples in class and in Chapter 4
+  * Understand programming details
+* Loader
+  * What is a loader? What does it do?
+  * Distinguish between RAM and ROM
+  * Pep/9 memory architecture
+
+### Chapters 5
 * Pep/9 CPU registers and memory architecture
 * Improvements of assembly language over machine language
 * Assemblers and loaders
 * 1-to-1 mapping between assembly and machine language programs
 * Assembly labels/symbols and symbol lookup tables
-* Addressing modes: immediate, direct, **stack-relative and stack-relative
-  deferred, indexed, and stack-indexed and stack-indexed deferred**
-* Branching
-* **von Neumann logic: Why increment PC before execute?**
+* Addressing modes: immediate, direct
 * Enforcing data type compatibility at the HOL6 level (symbol tables)
-* **Structured vs. unstructured code: spaghetti code in assembly**
-* **Stack allocation (procedure and function calls)**
 * Translating C constructs to assembly:
   * I/O commands
-  * local/global variables
+  * global variables
   * constants
-  * `if/else` **statements with** `OR` **and/or** `AND` **conditions**
-  * `while` **loops**
-  * `do` **loops**
-  * `for` **loops**
-  * **procedure/function calls**
-  * **passing parameters by value and by reference**
-  * **recursion**
-  * **arrays (local, global, and parameters)**
-  * `switch` **statements**
-  * **pointers (local, global, and parameters)**
-  * **dynamic memory allocation via malloc function**
-  * `structs` **(local, global, and via local as well as global pointers)**
-  * **linked data structures**
 
 ### Sample exam questions
+* Write or modify a machine language program
+* Find output and/or trace the execution of a given machine language program
+  (von Neumann tracing)
 * (Literally) translate a given C program to Pep/9 assembly
 * Complete/change a given Pep/9 assembly program to serve as a (literal)
   translation of a given C program
-* Change a given Pep/9 assembly language to achieve something different (e.g.,
-  use a while loop instead of a do loop or use local variables instead of global
-  variables)
 * Display the output of a given assembly program for some sample input
 * Display the values of labels/symbols in the symbol table of an assembly
   program
