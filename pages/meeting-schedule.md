@@ -89,7 +89,7 @@ title: "Meeting schedule"
       <td>3.1&ndash;3.2</td>
     </tr>
     <tr>
-      <td><a href="https://csbsju.instructure.com/courses/11790/assignments/103567">{% icon edit %}</a></td>
+      <td><a href="https://csbsju.instructure.com/courses/{{ site.canvas.course }}/assignments/{% assignment Assignment 1 %}">{% icon edit %}</a></td>
       <td><strong>ISA3:</strong> Data representation (<em>binary ops, hex, ASCII, etc.</em>)</td>
       <td>3.3&ndash;3.4</td>
     </tr>
@@ -113,10 +113,10 @@ title: "Meeting schedule"
       <td rowspan="0" style="vertical-align:top">04-FEB</td>
       <td></td>
       <td><strong>ISA3:</strong> Data representation (<em>miscellaneous</em>)</td>
-      <td><a href="https://csbsju.instructure.com/courses/11790/pages/exam-1-study-guide">Exam 1 review</a></td>
+      <td><a href="https://csbsju.instructure.com/courses/{{ site.canvas.course }}/assignments/{% assignment Exam 1 %}">Exam 1 review</a></td>
     </tr>
     <tr>
-      <td><a href="https://csbsju.instructure.com/courses/11790/assignments/103565">{% icon edit %}</a></td>
+      <td><a href="https://csbsju.instructure.com/courses/{{ site.canvas.course }}/assignments/{% assignment Assignment 2 %}">{% icon edit %}</a></td>
       <td><strong>ISA3:</strong> Computer architecture (<em>hardware &amp; instructions</em>)</td>
       <td>4.1&ndash;4.2</td>
     </tr>
@@ -170,7 +170,7 @@ title: "Meeting schedule"
       <td>5.1</td>
     </tr>
     <tr>
-      <td><a href="https://csbsju.instructure.com/courses/11790/assignments/103564">{% icon edit %}</a></td>
+      <td><a href="https://csbsju.instructure.com/courses/{{ site.canvas.course }}/assignments/{% assignment Assignment 3 %}">{% icon edit %}</a></td>
       <td><strong>ASM5:</strong> Assembly programming (<em>immediate addressing &amp; traps</em>)</td>
       <td>5.2</td>
     </tr>
@@ -194,10 +194,10 @@ title: "Meeting schedule"
       <td rowspan="0" style="vertical-align:top">25-FEB</td>
       <td></td>
       <td><strong>ASM5:</strong> Assembly programming (<em>miscellaneous</em>)</td>
-      <td><a href="https://csbsju.instructure.com/courses/11790/pages/exam-2-study-guide">Exam 2 review</a></td>
+      <td><a href="https://csbsju.instructure.com/courses/{{ site.canvas.course }}/assignments/{% assignment Exam 2 %}">Exam 2 review</a></td>
     </tr>
     <tr>
-      <td><a href="https://csbsju.instructure.com/courses/11790/assignments/103569">{% icon edit %}</a></td>
+      <td><a href="https://csbsju.instructure.com/courses/{{ site.canvas.course }}/assignments/{% assignment Assignment 4 %}">{% icon edit %}</a></td>
       <td><strong>ASM5:</strong> Compiling (<em>local variables</em>)</td>
       <td>6.1</td>
     </tr>
@@ -278,7 +278,7 @@ title: "Meeting schedule"
       <td>6.4</td>
     </tr>
     <tr>
-      <td><a href="https://csbsju.instructure.com/courses/11790/assignments/103568">{% icon edit %}</a></td>
+      <td><a href="https://csbsju.instructure.com/courses/{{ site.canvas.course }}/assignments/{% assignment Assignment 5 %}">{% icon edit %}</a></td>
       <td><strong>ASM5:</strong> Compiling (<em>more arrays</em>)</td>
       <td></td>
     </tr>
@@ -302,10 +302,10 @@ title: "Meeting schedule"
       <td rowspan="0" style="vertical-align:top">25-MAR</td>
       <td></td>
       <td><strong>ASM5:</strong> Compiling (<em>miscellaneous</em>)</td>
-      <td><a href="https://csbsju.instructure.com/courses/11790/pages/exam-3-study-guide">Exam 3 review</a></td>
+      <td><a href="https://csbsju.instructure.com/courses/{{ site.canvas.course }}/assignments/{% assignment Exam 3 %}">Exam 3 review</a></td>
     </tr>
     <tr>
-      <td><a href="https://csbsju.instructure.com/courses/11790/assignments/103566">{% icon edit %}</a></td>
+      <td><a href="https://csbsju.instructure.com/courses/{{ site.canvas.course }}/assignments/{% assignment Assignment 6 %}">{% icon edit %}</a></td>
       <td><strong>OS4:</strong> Process management (<em>loaders &amp; traps</em>)</td>
       <td>8.1&ndash;8.2</td>
     </tr>
@@ -464,7 +464,7 @@ title: "Meeting schedule"
       <td>07-MAY</td>
       <td>{% icon warning %}</td>
       <td><strong>Final exam</strong> (13:00&ndash;15:00)</td>
-      <td><a href="https://csbsju.instructure.com/courses/11790/pages/final-exam-study-guide">Final exam review</a></td>
+      <td><a href="https://csbsju.instructure.com/courses/{{ site.canvas.course }}/assignments/{% assignment Final exam %}">Final exam review</a></td>
     </tr>
   </tbody>
 </table>
