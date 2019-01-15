@@ -3,7 +3,7 @@ title: "Meeting schedule"
 layout: schedule
 weeks:
 -
-  - link: "[{% icon ms-ppt %}](#)"
+  - link: "[{% icon ms-ppt %}]({% file slides/00 intro/slides-final.pdf %})"
     topic: "**CSCI 310:** Introduction"
   - topic: "**APP7:** Computer Systems (*abstraction*)"
     reading: 1.1--1.4 (up to QR codes)
