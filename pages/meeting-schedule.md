@@ -5,7 +5,8 @@ weeks:
 -
   - link: "[{% icon ms-ppt %}]({% file slides/00 intro/slides-final.pdf %})"
     topic: "**CSCI 310:** Introduction"
-  - topic: "**APP7:** Computer Systems (*abstraction*)"
+  - link: "[{% icon ms-ppt %}]({% file slides/01 app7/slides-final.pdf %})"
+    topic: "**APP7:** Computer Systems (*abstraction*)"
     reading: 1.1--1.4 (up to QR codes)
   - topic: "**APP7:** Computer Systems (*miscellaneous*)"
 -
