@@ -10,7 +10,8 @@ weeks:
     reading: 1.1--1.4 (up to QR codes)
   - topic: "**APP7:** Computer Systems (*miscellaneous*)"
 -
-  - topic: "**HOL6:** C (*variables, control flow, functions*)"
+  - link: "[{% icon ms-ppt %}]({% file slides/02 hol6/slides-final.pdf %})"
+    topic: "**HOL6:** C (*variables, control flow, functions*)"
     reading: 2.1--2.3
   - topic: "**HOL6:** C (*recursion*)"
     reading: 2.4
