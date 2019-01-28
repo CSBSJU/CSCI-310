@@ -2,8 +2,6 @@
 
 \usetheme{metropolis} % use metropolis theme
 
-\usepackage{../../solarized}      % use solarized themed listings
-\usepackage{../../stack}          % use the tikzstack environment
 \usepackage{appendixnumberbeamer} % do not number appendix frames
 \usepackage[scale=3]{ccicons}     % creative commons icons
 
@@ -88,16 +86,16 @@
     \end{center}
 
     \note[item]<.->{this is the representation for unsigned binary integers}
-    \note[item]<.->{so how to represent signed integers?
-      \begin{itemize}
-        \item why not use the leftmost bit to store the sign?
-          \begin{itemize}
-            \item what is the range of values if we choose this? --- 0 is
-              represented twice, so our range has one less value --- not the end
-              of the world
-            \item what happens if we add to -5 to +5? --- the result is -10?
-          \end{itemize}
-      \end{itemize}}
+    %\note[item]<.->{so how to represent signed integers?
+    %  \begin{itemize}
+    %    \item why not use the leftmost bit to store the sign?
+    %      \begin{itemize}
+    %        \item what is the range of values if we choose this? --- 0 is
+    %          represented twice, so our range has one less value --- not the end
+    %          of the world
+    %        \item what happens if we add to -5 to +5? --- the result is -10?
+    %      \end{itemize}
+    %  \end{itemize}}
   %}}}1
   \end{frame}
 
@@ -117,13 +115,28 @@
       \begin{tabular}{rrrrrrrrl}
             & $0$ & $0$ && $0$ & $1$ & $0$ & $1$ & $=5$\\
         ADD & $0$ & $0$ && $0$ & $1$ & $0$ & $1$ & $=5$\\\cmidrule{1-8}
-        \only<2>{$\mbox{C}=0$ & $0$ & $0$ && $1$ & $0$ & $1$ & $0$ & $=10$}
+        \only<2>{$\mbox{C}\leftarrow0$ & $0$ & $0$ && $1$ & $0$ & $1$ & $0$ & $=10$}
       \end{tabular}
     \end{center}
 
     \note[item]<2->{the hardware has a special bit known as the \emph{carry}
       bit, denoted by C, which stores a 1 if the result of the addition was a
       carry, and 0 otherwise.}
+  %}}}1
+  \end{frame}
+
+  \begin{frame}{more unsigned addition}
+  %{{{1
+    \renewcommand{\arraystretch}{2}
+    \begin{center}
+      \begin{tabular}{rrrrrrrrl}
+            & $1$ & $1$ && $0$ & $1$ & $0$ & $1$ & $=53$\\
+        ADD & $1$ & $1$ && $0$ & $0$ & $0$ & $0$ & $=48$\\\cmidrule{1-8}
+        \only<2>{$\mbox{C}\leftarrow1$ & $1$ & $0$ && $0$ & $1$ & $0$ & $1$ & $=37$}
+      \end{tabular}
+    \end{center}
+
+    \note[item]<2->{$(53+48)\%2^5=37$, $2^5=64$}
   %}}}1
   \end{frame}
 
@@ -138,6 +151,7 @@
       \end{tabular}
     \end{center}
 
+    \note[item]<1->{designate first bit as 0 (+) or 1 (-)}
     \note[item]<2->{what is the problem
       \begin{itemize}
         \item in this case, we had two additional symbols, $+$ and $-$, and we
@@ -154,7 +168,30 @@
   %}}}1
   \end{frame}
 
-  \begin{frame}{one's complement}
+  \begin{frame}{method of complements}
+  %{{{1
+    \begin{itemize}
+      \item technique used to subtract one number from another using only
+        addition of positive numbers
+      \item represent negative numbers as two's complement of their positive
+        counterparts
+    \end{itemize}
+
+    \pause
+
+    \note[item]{so naturally we ask, well how to get the two's complement of
+      a number?}
+
+    \begin{block}{two's complement}
+      \begin{itemize}
+        \item find one's complement
+        \item add one
+      \end{itemize}
+    \end{block}
+  %}}}1
+  \end{frame}
+
+  \begin{frame}{\only<1-4>{one's}\only<5->{two's} complement}
   %{{{1
     \renewcommand{\arraystretch}{2}
     \begin{center}
@@ -174,9 +211,24 @@
       \end{tabular}
     \end{center}
 
-    \note[item]<2->{one's complement is known as logical not}
+    \note[item]<1->{in binary,one's complement is known as logical not}
     \note[item]<4->{adding the one's complement will always result in all 1s}
     \note[item]<6->{so two's complement is $\mbox{NOT}+1$}
+  %}}}1
+  \end{frame}
+
+  \begin{frame}{two's complement cont'd}
+  %{{{1
+    \renewcommand{\arraystretch}{2}
+    \begin{center}
+      \begin{tabular}{rrrrrrrr}
+        & $1$ & $1$ && $1$ & $0$ & $1$ & $0$\\
+        ADD & $0$ & $0$ && $0$ & $0$ & $0$ & $1$\\\hline
+        & $1$ & $1$ && $1$ & $0$ & $1$ & $1$
+      \end{tabular}
+    \end{center}
+
+    \note[item]{so two's complement is NOT + 1}
   %}}}1
   \end{frame}
 

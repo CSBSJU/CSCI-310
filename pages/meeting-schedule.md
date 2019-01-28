@@ -18,7 +18,8 @@ weeks:
   - topic: "**HOL6:** C (*dynamic memory allocation*)"
     reading: 2.5
 -
-  - topic: "**ISA3:** Data representation (*integers*)"
+  - link: "[{% icon ms-ppt %}]({% file slides/03 isa3/data/slides-final.pdf %})"
+    topic: "**ISA3:** Data representation (*integers*)"
     reading: 3.1--3.2
   - link: "[{% icon edit %}]({{ site.canvas.prefix }}/courses/{{ site.canvas.course }}/assignments/{% assignment Assignment 1 %})"
     topic: "**ISA3:** Data representation (*binary ops, hex, ASCII, etc.*)"
