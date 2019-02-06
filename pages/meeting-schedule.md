@@ -35,7 +35,8 @@ weeks:
   - link: "{% icon warning %}"
     topic: "**Exam 1**"
 -
-  - topic: "**ISA3:** Computer architecture (*direct addressing*)"
+  - link: "[{% icon ms-ppt %}]({% file slides/03 isa3/arch/slides-final.pdf %})"
+    topic: "**ISA3:** Computer architecture (*direct addressing*)"
     reading: 4.3
   - topic: "**ISA3:** Computer architecture (*von Neumann machines*)"
     reading: 4.4
