@@ -32,19 +32,21 @@ During the exam, I will provide you with the following (IF NEEDED):
   * I/O commands
   * local/global variables
   * constants
-  * `if/else` **statements with** `OR` **and/or** `AND` **conditions**
+  * `if/else` **statements** <del>**with** `OR` **and/or** `AND`
+    **conditions**</del>
   * `while` **loops**
-  * `do` **loops**
+  * <del>`do` **loops**</del>
   * `for` **loops**
   * **procedure/function calls**
   * **passing parameters by value and by reference**
   * **recursion**
   * **arrays (local, global, and parameters)**
-  * `switch` **statements**
+  * <del>`switch` **statements**</del>
   * **pointers (local, global, and parameters)**
-  * **dynamic memory allocation via malloc function**
-  * `structs` **(local, global, and via local as well as global pointers)**
-  * **linked data structures**
+  * <del>**dynamic memory allocation via malloc function**</del>
+  * <del>`structs` **(local, global, and via local as well as global
+    pointers)**</del>
+  * <del>**linked data structures**</del>
 
 ### Sample exam questions
 * (Literally) translate a given C program to Pep/9 assembly
