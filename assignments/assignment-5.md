@@ -8,7 +8,7 @@ graded:
 * Your assembly programs must include comments showing the corresponding C code
   that produces the each line of assembly code in your program. 
 * In addition, I expect to see complete trace tags in your program (for global
-  and stack tracers) such that I can see a complete picture of memory (static
+  and stack tracers) such that I can see a complete picture of memory (fixed
   memory and stack) when using Pep/9's tracer.
 * Finally, your program must be indented nicely to make it readable.
 
