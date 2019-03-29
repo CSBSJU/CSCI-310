@@ -29,20 +29,21 @@ weeks:
 -
   - topic: "**ISA3:** Data representation (*miscellaneous*)"
     reading: "[Exam 1 review]({{ site.canvas.prefix }}/courses/{{ site.canvas.course }}/assignments/{% assignment Exam 1 %})"
-  - link: "[{% icon edit %}]({{ site.canvas.prefix }}/courses/{{ site.canvas.course }}/assignments/{% assignment Assignment 2 %})"
+  - link: "[{% icon ms-ppt %}]({% file slides/03 isa3/arch/slides-final.pdf %}) [{% icon edit %}]({{ site.canvas.prefix }}/courses/{{ site.canvas.course }}/assignments/{% assignment Assignment 2 %})"
     topic: "**ISA3:** Computer architecture (*hardware & instructions*)"
     reading: 4.1--4.2
   - link: "{% icon warning %}"
     topic: "**Exam 1**"
 -
-  - link: "[{% icon ms-ppt %}]({% file slides/03 isa3/arch/slides-final.pdf %})"
-    topic: "**ISA3:** Computer architecture (*direct addressing*)"
-    reading: 4.3
+  - topic: "**ISA3:** Computer architecture (*direct addressing*)"
+    reading: 4.2
   - topic: "**ISA3:** Computer architecture (*von Neumann machines*)"
-    reading: 4.4
+    reading: 4.3
   - topic: "**ISA3:** Computer architecture (*miscellaneous*)"
+    reading: 4.4
 -
-  - topic: "**ASM5:** Assembly programming (*assemblers*)"
+  - link: "[{% icon ms-ppt %}]({% file slides/04 asm5/asm/slides-final.pdf %})"
+    topic: "**ASM5:** Assembly programming (*assemblers*)"
     reading: 5.1
   - link: "[{% icon edit %}]({{ site.canvas.prefix }}/courses/{{ site.canvas.course }}/assignments/{% assignment Assignment 3 %})"
     topic: "**ASM5:** Assembly programming (*immediate addressing & traps*)"
@@ -62,39 +63,39 @@ weeks:
   - topic: "NO CLASS"
   - topic: "NO CLASS"
 -
+  - topic: "Guest speaker"
   - topic: "**ASM5:** Compiling (*control flow*)"
     reading: 6.2
+  - topic: "**ASM5:** Compiling (*more control flow*)"
+-
   - topic: "**ASM5:** Compiling (*functions*)"
     reading: 6.3
-  - topic: "**ASM5:** Compiling (*more functions*)"
--
+  - link: "[{% icon edit %}]({{ site.canvas.prefix }}/courses/{{ site.canvas.course }}/assignments/{% assignment Assignment 5 %})"
+    topic: "**ASM5:** Compiling (*more functions*)"
   - topic: "**ASM5:** Compiling (*arrays*)"
     reading: 6.4
-  - link: "[{% icon edit %}]({{ site.canvas.prefix }}/courses/{{ site.canvas.course }}/assignments/{% assignment Assignment 5 %})"
-    topic: "**ASM5:** Compiling (*more arrays*)"
+-
+  - topic: "**ASM5:** Compiling (*more arrays*)"
   - topic: "**ASM5:** Compiling (*dynamic memory allocation*)"
     reading: 6.5
--
   - topic: "**ASM5:** Compiling (*miscellaneous*)"
     reading: "[Exam 3 review]({{ site.canvas.prefix }}/courses/{{ site.canvas.course }}/assignments/{% assignment Exam 3 %})"
+-
   - link: "[{% icon edit %}]({{ site.canvas.prefix }}/courses/{{ site.canvas.course }}/assignments/{% assignment Assignment 6 %})"
     topic: "**OS4:** Process management (*loaders & traps*)"
     reading: 8.1--8.2
   - link: "{% icon warning %}"
     topic: "**Exam 3**"
--
   - topic: "**OS4:** Process management (*concurrent processes*)"
     reading: 8.3
+-
   - topic: "**OS4:** Process management (*deadlocks*)"
     reading: 8.4
-  - topic: "**OS4:** Process management (*miscellaneous*)"
--
   - topic: "**OS4:** Storage management (*memory*)"
     reading: 9.1--9.2
   - link: "[{% icon edit %}](#)"
     topic: "**OS4:** Storage management (*files*)"
     reading: 9.3
-  - topic: "**OS4:** Storage management (*miscellaneous*)"
 -
   - topic: "**LG1:** Combinational circuits (*Boolean algebra*)"
     reading: 10.1--10.2
