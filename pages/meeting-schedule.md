@@ -81,37 +81,36 @@ weeks:
   - topic: "**ASM5:** Compiling (*miscellaneous*)"
     reading: "[Exam 3 review]({{ site.canvas.prefix }}/courses/{{ site.canvas.course }}/assignments/{% assignment Exam 3 %})"
 -
-  - link: "[{% icon edit %}]({{ site.canvas.prefix }}/courses/{{ site.canvas.course }}/assignments/{% assignment Assignment 6 %})"
-    topic: "**OS4:** Process management (*loaders & traps*)"
-    reading: 8.1--8.2
-  - link: "{% icon warning %}"
+  - topic: "NO CLASS"
+  - topic: "NO CLASS"
+  - link: "[{% icon edit %}]({{ site.canvas.prefix }}/courses/{{ site.canvas.course }}/assignments/{% assignment Assignment 6 %}) {% icon warning %}"
     topic: "**Exam 3**"
+-
+  - topic: "**OS4:** Process management (*loaders & traps*)"
+    reading: 8.1--8.2
   - topic: "**OS4:** Process management (*concurrent processes*)"
     reading: 8.3
--
   - topic: "**OS4:** Process management (*deadlocks*)"
     reading: 8.4
+-
   - topic: "**OS4:** Storage management (*memory*)"
     reading: 9.1--9.2
-  - link: "[{% icon edit %}](#)"
+  - link: "[{% icon edit %}]({{ site.canvas.prefix }}/courses/{{ site.canvas.course }}/assignments/{% assignment Assignment 7 %}) {% icon warning %}"
     topic: "**OS4:** Storage management (*files*)"
     reading: 9.3
+  - topic: "NO CLASS"
 -
+  - topic: "NO CLASS"
   - topic: "**LG1:** Combinational circuits (*Boolean algebra*)"
     reading: 10.1--10.2
   - topic: "**LG1:** Combinational circuits (*design*)"
     reading: 10.3
-  - topic: "NO CLASS"
 -
-  - topic: "NO CLASS"
   - topic: "**LG1:** Combinational circuits (*application*)"
     reading: 10.4
-  - topic: "**LG1:** Combinational circuits (*miscellaneous*)"
--
   - topic: "**LG1:** Sequential circuits"
   - link: "[{% icon edit %}](#)"
     topic: "**LG1:** Sequential circuits"
-  - topic: "**LG1:** Sequential circuits"
 -
   - date: 2019-05-07
     topic: "**Final exam** (13:00--15:00)"
