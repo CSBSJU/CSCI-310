@@ -2,11 +2,13 @@
 title: "Assignment 7"
 ---
 
+## This assignment may be completed in groups of two!
+
 Pep/9 programs that do not adhere to the following WILL NOT be accepted or
 graded:
-* You are expected to do literal line-by-line translation. 
+* You are expected to do literal line-by-line translation.
 * Your assembly programs must include comments showing the corresponding C code
-  that produces the each line of assembly code in your program. 
+  that produces the each line of assembly code in your program.
 * In addition, I expect to see complete trace tags in your program (for global
   and stack tracers) such that I can see a complete picture of memory (static
   memory and stack) when using Pep/9's tracer.
@@ -21,7 +23,7 @@ Solve the following problems:
    for normalized numbers and excess 30 for denormalized numbers.* Based on the
    input number, your program will then output one of the following describing
    the input number (consult Fig. 3.32 and all of Sec. 3.5 to refresh your
-   memory on IEEE floating point numbers): 
+   memory on IEEE floating point numbers):
    * `NaN` if the number is not a number
    * `–Inf` if the number is negative infinity number
    * `Inf` if the number is positive infinity number
