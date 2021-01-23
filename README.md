@@ -62,7 +62,8 @@ unexcused absence
 : An absence that is not excused.
 
 original work
-: TBD
+: An original work is one not received from others nor one copied from or based
+  upon the work of others.
 
 closed book
 : The book and any accompanying materials MUST NOT be used.
