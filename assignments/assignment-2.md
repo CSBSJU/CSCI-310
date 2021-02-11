@@ -45,15 +45,15 @@ Solve the following problems
         return 0;
       }
       ```
-   1. (Extra credit) Modify the program to print the alphabet of a language of
-      your choosing (other than Latin/English). You’ll need to do some research
-      to figure out how to use Unicode instead of ASCII in C (hint: changing
-      locale might help).
+   <del>1. (Extra credit) Modify the program to print the alphabet of a language
+      of your choosing (other than Latin/English). You’ll need to do some
+      research to figure out how to use Unicode instead of ASCII in C (hint:
+      changing locale might help).</del>
 
-1. Go to
+1. **JUST FOR FUN** Go to
    [this](http://www.csbsju.edu/computerscience/curriculum/launch/default.htm)
    webpage and launch the Data Representation program (Click on it and then
-   click Open). If you’re working on Linux instead of Windows, go to
+   click Open). If you're working on Linux instead of Windows, go to
    Applications\>CSBSJU\>Computer Science\>Launch Page Apps\>Data Representation
    and then click to maximize in order to see all text fields and buttons. This
    simulator program is a tool to assist beginners in learning several different

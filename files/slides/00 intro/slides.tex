@@ -6,16 +6,6 @@
   \usepackage{pgfpages}
   \setbeamertemplate{note page}[plain]
   \setbeameroption{show notes on second screen=right}
-  % the following fixes bug which causes normal text to be white instead of
-  % template default when notes are enabled
-  % (see https://tex.stackexchange.com/questions/232168/normal-text-is-invisible-when-using-beamer-with-notes-and-xelatex)
-  \makeatletter 
-  \def\beamer@framenotesbegin{% at beginning of slide
-    \usebeamercolor[fg]{normal text}
-    \gdef\beamer@noteitems{}% 
-    \gdef\beamer@notes{}% 
-  }
-  \makeatother
 \fi
 
 \usepackage{appendixnumberbeamer}
@@ -35,8 +25,8 @@
       \item instructor
         \begin{itemize}
           \item Jeremy Iverson (\href{mailto:jiverson002@csbsju.edu}{\nolinkurl{jiverson002@csbsju.edu}})
-          \item PENGL 213, (320) 363-3083
-          \item office hours: TBD
+          \item MAIN 258, (320) 363-5542
+          \item office hours: MTThF 12--1pm
         \end{itemize}
       \item textbook
         \begin{itemize}
@@ -44,7 +34,7 @@
         \end{itemize}
       \item website
         \begin{itemize}
-          \item \url{https://csbsju.instructure.com/courses/11790}
+          \item \url{https://csbsju.instructure.com/courses/16318}
         \end{itemize}
     \end{itemize}
 
@@ -82,7 +72,7 @@
 
   \begin{frame}{evaluation}
     \begin{itemize}[itemsep=10pt]
-      \item eight (8) assignments
+      \item seven (7) assignments
         \begin{itemize}[label=\cdot]
           \item mix of worked problems and programming
           \item do your own work
@@ -95,7 +85,7 @@
         \end{itemize}
       \item point distribution
         \begin{itemize}
-          \item assignments: 4\% each
+          \item assignments: 32\% total
           \item exams: 14\% each
           \item final: 26\%
         \end{itemize}
@@ -108,15 +98,12 @@
   \end{frame}
 
   \begin{frame}[standout]{\mbox{need more info\dots}}
-    \ifnotes
-      \usebeamercolor[white]{normal text} % override bug fix in preamble
-    \fi
-    see~\href{https://csbsju.instructure.com/courses/11790/assignments/syllabus}{\nolinkurl{course} \nolinkurl{syllabus}}!
+    see~\href{https://csbsju.instructure.com/courses/16318/assignments/syllabus}{\nolinkurl{course} \nolinkurl{syllabus}}!
   \end{frame}
 
   \begin{frame}{a word to the wise}
-    \begin{center} 
-      \Large 
+    \begin{center}
+      \Large
       $\mbox{computers}\not\equiv\mbox{magic}$\\
       $\mbox{programming}\not\equiv\mbox{magic}$\\[1\baselineskip]
     \end{center}
@@ -124,6 +111,7 @@
     \pause
 
     \begin{alertblock}{banned phrases}
+      \vspace{.5ex}
       ``it worked when I tried it earlier''
 
       ``I don't know, it just works''
@@ -190,7 +178,7 @@
     \begin{itemize}[itemsep=10pt]
       \item become proficient in C
       \item internalize the von Neumann architecture
-      \item \textbf<2->{develop a mental model for program execution}
+      \item develop a mental model for program execution
       \item get very comfortable with binary
     \end{itemize}
 
@@ -220,7 +208,7 @@
 
     It is easy to give in to the frustration that results from seeing amazing
     possibilities for the people you are teaching, and you want it more for them
-    than they want it for themselves. 
+    than they want it for themselves.
 
     Don’t give in to that frustration! \\
     \hfill \footnotesize{--- Based on passage from ``Resisting Happiness'' by
@@ -233,9 +221,6 @@
   \end{frame}
 
   \begin{frame}[standout]
-    \ifnotes
-      \usebeamercolor[white]{normal text} % override bug fix in preamble
-    \fi
     questions?
   \end{frame}
 
@@ -254,7 +239,7 @@
   \ifnotes\else
   \begin{frame}{next slide}
     \begin{itemize}
-      \item find out what the reading is for Wednesday
+      \item find out what the reading is for tomorrow
     \end{itemize}
   \end{frame}
   \fi

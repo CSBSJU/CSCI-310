@@ -22,7 +22,7 @@ During the exam, I will provide you with the following (IF NEEDED):
 * 1-to-1 mapping between assembly and machine language programs
 * Assembly labels/symbols and symbol lookup tables
 * Addressing modes: immediate, direct, **stack-relative and stack-relative
-  deferred, indexed, and stack-indexed and stack-indexed deferred**
+  deferred, <del>indexed, and stack-indexed and stack-indexed deferred</del>**
 * Branching
 * **von Neumann logic: Why increment PC before execute?**
 * Enforcing data type compatibility at the HOL6 level (symbol tables)
@@ -40,7 +40,7 @@ During the exam, I will provide you with the following (IF NEEDED):
   * **procedure/function calls**
   * **passing parameters by value and by reference**
   * **recursion**
-  * **arrays (local, global, and parameters)**
+  * <del>**arrays (local, global, and parameters)**</del>
   * <del>`switch` **statements**</del>
   * **pointers (local, global, and parameters)**
   * <del>**dynamic memory allocation via malloc function**</del>
