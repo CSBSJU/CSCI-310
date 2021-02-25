@@ -107,28 +107,28 @@ weeks:
     reading: "8.4"
 -
   - date: 12-FEB
-    link: "[{% icon ms-ppt %}]({% file slides/05 os4/file/slides-final.pdf %})"
-    topic: "**OS4:** Storage management (*memory*)"
-    reading: 9.1--9.2
-  - topic: "**OS4:** Storage management (*files*)"
-    reading: 9.3
-  - link: "{% icon warning %}"
+    zoom: "[{% icon media %}](https://www.youtube.com/playlist?list=PLowKtXNTBypFbtuVMUVXNR0z1mu7dp7eH)"
+    link: "{% icon warning %}"
     topic: "**Exam 3**"
     reading: "[Exam 3 review]({{ site.canvas.prefix }}/courses/{{ site.canvas.course }}/assignments/{% assignment Exam 3 %})"
 -
   - date: 15-FEB
-    link: "[{% icon ms-ppt %}]({% file slides/06 lg1/comb/slides-final.pdf %}) [{% icon edit %}]({{ site.canvas.prefix }}/courses/{{ site.canvas.course }}/assignments/{% assignment Assignment 7 %})"
+    zoom: "[{% icon media %}](https://csbsju.zoom.us/rec/share/tP9UIZQjRd4WyjGFNHElfE-MKA4yWGG3LB9sexE2q9gcr_dLDRIbSgpqQgmTzaqW.47baTwkydLQKW6b6)"
+    link: "[{% icon ms-ppt %}]({% file slides/05 os4/file/slides-final.pdf %}) [{% icon edit %}]({{ site.canvas.prefix }}/courses/{{ site.canvas.course }}/assignments/{% assignment Assignment 7 %})"
+    topic: "**OS4:** Storage management (*memory*)"
+    reading: 9.1--9.2
+  - topic: "**OS4:** Storage management (*files*)"
+    reading: 9.3
+  - topic: "**OS4:** Storage management (*miscellaneous*)"
+-
+  - date: 16-FEB
+    link: "[{% icon ms-ppt %}]({% file slides/06 lg1/comb/slides-final.pdf %})"
     topic: "**LG1:** Combinational circuits (*Boolean algebra*)"
     reading: 10.1--10.2
   - topic: "**LG1:** Combinational circuits (*design*)"
     reading: 10.3
   - topic: "**LG1:** Combinational circuits (*application*)"
     reading: 10.4
--
-  - date: 16-FEB
-    topic: "**LG1:** Sequential circuits"
-  - topic: "**LG1:** Sequential circuits"
-  - topic: "**LG1:** Sequential circuits"
 -
   - date: 18-FEB
     topic: "**CSCI 310:** Wrap-up"
